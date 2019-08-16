@@ -17,6 +17,11 @@ trigger:
     for:
       minutes: 5
   - platform: state
+    entity_id: input_select.person4_status_dropdown
+    to: 'Just Arrived'
+    for:
+      minutes: 5
+  - platform: state
     entity_id: input_select.person2_status_dropdown
     from: 'Just Left'
     to: 'Just Arrived'
@@ -28,6 +33,10 @@ trigger:
     entity_id: input_select.person1_status_dropdown
     from: 'Just Left'
     to: 'Just Arrived'
+  - platform: state
+    entity_id: input_select.person4_status_dropdown
+    from: 'Just Left'
+    to: 'Just Arrived'
 action:
   - service: input_select.select_option
     data_template:
@@ -36,7 +45,9 @@ action:
           input_select.person2_status_dropdown
         {% elif trigger.entity_id == 'input_select.person3_status_dropdown' %}
           input_select.person3_status_dropdown
-        {% else %}
+        {% elif trigger.entity_id == 'input_select.person1_status_dropdown' %}
           input_select.person1_status_dropdown
+        {% else %}
+          input_select.person4_status_dropdown
         {% endif %}
       option: Home

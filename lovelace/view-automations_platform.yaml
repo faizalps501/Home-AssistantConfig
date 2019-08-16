@@ -4,21 +4,24 @@ path: automations_platform
 icon: mdi:settings
 cards:
 - type: entities
+  title: Camera related
+  show_header_toggle: false
+  entities:
+  - automation.stream_to_living_room
+  - automation.stop_stream_to_living_room
+- type: entities
   title: Core HA automations
   show_header_toggle: false
   entities:
   - automation.ha_update_available_notifications
   - automation.ha_started
-  - automation.ha_started_later
   - automation.ha_stopped
 - type: entities
   title: Misc HA automations
   show_header_toggle: false
   entities:
   - automation.clear_states
-  - automation.sunrise_enable_automations
   - automation.plex_hook
-  - automation.ha_theme
   - automation.device_unavailable
 - type: entities
   title: Zigbee mesh automations

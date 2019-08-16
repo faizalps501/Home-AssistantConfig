@@ -1,5 +1,5 @@
 alias: 'Stream to living room'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.test_mode

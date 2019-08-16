@@ -37,7 +37,7 @@ cards:
     - entity: sensor.master_ensuite_pressure
       name: Pressure
     - entity: binary_sensor.master_window_ensuite
-      name: Window
+      name: Ensuite
 - type: glance
   title: Second bedroom
   #column_width: 25%
@@ -85,9 +85,9 @@ cards:
         action: toggle
       name: Socket
     - entity: binary_sensor.guest_bedroom_window_left
-      name: Left window
+      name: Left
     - entity: binary_sensor.guest_bedroom_window_right
-      name: Right window
+      name: Right
 - type: glance
   title: Bathroom
   columns: 4
@@ -102,10 +102,8 @@ cards:
       name: Bathroom
 - type: glance
   title: Office
-  columns: 4
+  columns: 6
   entities:
-    - entity: binary_sensor.office_multi_sensor
-      name: Motion
     - entity: sensor.office_multi_temperature
       name: Temperature
     - entity: sensor.office_multi_luminance
@@ -113,7 +111,7 @@ cards:
     - entity: sensor.office_multi_relative_humidity
       name: Humidity
     - entity: binary_sensor.office_window
-      name: Office window
+      name: Window
     - entity: media_player.office
       name: Sonos
     - entity: media_player.office_display

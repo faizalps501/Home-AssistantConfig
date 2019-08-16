@@ -33,10 +33,12 @@ cards:
       name: "Light level"
     - entity: media_player.samsung_tv_remote
       name: TV
-    - entity: media_player.living_room
-      name: "Sonos"
+    - entity: media_player.cast_living_room_tv
+      name: Chromecast
     - entity: media_player.living_room_smart_displa
       name: "Home Hub"
+    - entity: media_player.living_room
+      name: "Sonos"
 - type: glance
   title: Hall
   columns: 4
@@ -58,9 +60,9 @@ cards:
     - entity: binary_sensor.front_door_sensor
       name: Front door
     - entity: binary_sensor.vestibule_window_front
-      name: Front window
+      name: Front
     - entity: binary_sensor.vestibule_window_side
-      name: Side window
+      name: Side
     - entity: binary_sensor.vestibule_occupancy
       name: Motion
     - entity: sensor.vestibule_illuminance
@@ -84,14 +86,14 @@ cards:
   title: Family room & Kitchen
   columns: 4
   entities:
-    - binary_sensor.family_window_left
-    - binary_sensor.family_window_right
+    - entity: binary_sensor.family_window_left
+      name: Left
+    - entity: binary_sensor.family_window_right
+      name: Right
     - entity: switch.family_room_socket_switch
       name: Socket
       tap_action: 
         action: toggle
-    - entity: sensor.person1
-      name: XBox
     - entity: device_tracker.family_tv
       name: TV
     - entity: media_player.family_room

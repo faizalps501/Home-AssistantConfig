@@ -1,19 +1,23 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Living room table light'
 trigger:
   - platform: state
-    entity_id: sensor.circadian_values
+    entity_id: light.living_room_table
+    to: 'on'
 condition:
-  - condition: and
+  - condition: or
     conditions:
     - condition: state
-      entity_id: light.living_room_table
-      state: 'on'
-    - condition: template
-      value_template: "{{ not is_state('input_select.living_room','Off') }}"
+      entity_id: input_select.living_room
+      state: 'Off'
+    - condition: state
+      entity_id: input_select.living_room
+      state: 'Away'
+    - condition: state
+      entity_id: input_select.living_room
+      state: 'Day on'
 action:
-  - service: light.turn_on
+  - service: light.turn_off
     data_template:
       entity_id: light.living_room_table
-      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round }}"
       transition: 30

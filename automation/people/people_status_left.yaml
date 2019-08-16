@@ -10,6 +10,9 @@ trigger:
   - platform: state
     entity_id: input_boolean.person1_home
     to: 'off'
+  - platform: state
+    entity_id: input_boolean.person4_home
+    to: 'off'
 action:
   - service: input_select.select_option
     data_template:
@@ -18,7 +21,9 @@ action:
           input_select.person2_status_dropdown
         {% elif trigger.entity_id == 'input_boolean.person3_home' %}
           input_select.person3_status_dropdown
-        {% else %}
+        {% elif trigger.entity_id == 'input_boolean.person1_home' %}
           input_select.person1_status_dropdown
+        {% else %}
+          input_select.person4_status_dropdown
         {% endif %}
       option: Just Left

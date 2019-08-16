@@ -12,11 +12,12 @@ views:
   - !include lovelace/view-train_status.yaml
   - !include lovelace/view-media.yaml
   - !include lovelace/view-people.yaml
-  - !include lovelace/view-spacer.yaml
   - !include lovelace/view-information.yaml
   - !include lovelace/view-devices.yaml
+  - !include lovelace/view-inputs.yaml
   - !include lovelace/view-zigbee.yaml
   - !include lovelace/view-zwave.yaml
+  - !include lovelace/view-spacer.yaml
   - !include lovelace/view-automations.yaml
   - !include lovelace/view-automations_living_room.yaml
   - !include lovelace/view-automations_master_bedroom.yaml
@@ -28,5 +29,5 @@ views:
   - !include lovelace/view-automations_group.yaml
   - !include lovelace/view-automations_platform.yaml
   - !include lovelace/view-alarm.yaml
-  - !include lovelace/view-inputs.yaml
   - !include lovelace/view-scripts.yaml
+  - !include lovelace/view-cast-floorplan.yaml

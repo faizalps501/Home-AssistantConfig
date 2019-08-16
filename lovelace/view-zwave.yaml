@@ -1,7 +1,7 @@
 title: Z-Wave
 id: zwave
 path: zwave
-icon: mdi:zwave
+icon: mdi:z-wave
 cards:
   - type: entities
     entities:
