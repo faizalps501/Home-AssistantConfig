@@ -9,6 +9,8 @@ condition:
     entity_id: light.living_room_table
     state: 'on'
 action:
+  - condition: template
+    value_template: "{{ is_state_attr('sensor.dimmer_switch_action','action','up-press') }}"
   # Make it brighter
   - service: light.turn_on
     data:

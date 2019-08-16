@@ -1,13 +1,16 @@
 # Home Assistant (0.97.2) configuration
-This is my [Home Assistant](https://home-assistant.io/) configuration, I'm currently running 0.97.2. It is installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
+This is my [Home Assistant](https://home-assistant.io/) configuration, I'm currently running 0.97.2. This instance runs on a VM, using an old laptop, with a manual Python virtual environment install [following this guide](https://home-assistant.io/docs/installation/raspberry-pi/).
+
+Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
+
+## Z-Wave
+My Z-Wave stack runs on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
 
 To limit the risk brought by SD card corruption (a known risk with Pi3) I store the Home Assistant database on a USB stick, and use a multi-port USB charger with sufficient power for all ports, but have left one unused. The power cables are short, and high quality, to minimise issues with voltage drop. Of course, I also take [many different backups](https://blog.ceard.tech/2017/10/backing-up-home-assistant.html) to reduce the risk of losing anything.
 
 This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackable case](https://www.modmypi.com/raspberry-pi/cases-183/multi-pi-stacker/multi-pi-stackable-raspberry-pi-case), to keep the footprint down. They share an HDMI cable to a nearby monitor, and an old USB keyboard I've got kicking around, because having a Pi fail to respond isn't that uncommon.
 
-Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
-
-## On the Pi itself I run
+## The key software I run is
 
 * [Home Assistant](https://home-assistant.io/)
 * [Floorplan](https://github.com/pkozul/ha-floorplan) for a high level overview
@@ -23,6 +26,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
   * The floorplan was created in [Inkscape](https://inkscape.org/), by importing the image of the house's floorplan from the purchase paperwork, then drawing over it. If you look [at it](www/custom_ui/floorplan/floorplan.svg) you'll see that I built it up in layers, one for the foundation (ground), one for the structure, and one for the sensors. I don't really use those currently, other than to ensure that the right things are on top (sensors).
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
 * [Mosquitto](https://mosquitto.org/) for the MQTT broker
+* MariaDB for the database
 
 I used to run the following, but don't currently:
 
@@ -31,7 +35,7 @@ I used to run the following, but don't currently:
 
 ## The devices, services, and software I use (with HA)
 
-* [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards
+* [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards (for the Z-Wave Pi)
 * [Z-Wave](https://home-assistant.io/docs/z-wave/)
   * Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
   * Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
@@ -65,6 +69,7 @@ I used to run the following, but don't currently:
 * Presence detection:
   * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) when I upgraded my router, the router ran out of memory
   * [Monitor](https://github.com/andrewjfreyer/monitor) on another Pi3, and a Pi Zero W. This has completely replaced the use of the built in Bluetooth device tracker, and more than halved the startup time of HA.
+    * This works with our mobile phones, tablets, and beacons
   * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for remote device tracking
     * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only did it have an [annoying bug](https://github.com/owntracks/android/issues/508) that caused it to randomly disable reporting, but it had been abandoned by the developer. Version 2.0 of the app solved both of those, but I've seen no reason to go back.
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/components/sensor.uk_transport/) component
@@ -81,7 +86,7 @@ I used to run the following, but don't currently:
 * [PiVPN](http://www.pivpn.io/) for remote access to my network
 * [Pi Hole](https://pi-hole.net/) for blocking those pesky adverts
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
-* [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups
+* [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups of the Pis
 * [rclone](https://rclone.org/) for offsite backups
 * [rsnapshot](https://rsnapshot.org/) runs on another system, and pulls backups 
 
@@ -110,8 +115,7 @@ A large amount of this will require a rewire of the lighting circuits, so that a
 * Multisensors (light/motion/temperature) in all other rooms
 * Lots more door and window sensors, including on the garden gate
 * Some form of distance sensor (ultrasonic or laser) in the garage
-* BLE beacons
-* Digital LED strip for the front of the garage, based upon the [Bruh Automation](https://github.com/bruhautomation/ESP-MQTT-JSON-Digital-LEDs) work
+* Digital LED strip for the front of the garage
 * Analogue LED strips (likely with a Z-Wave controller) for accent lighting and pathway lighting
 
 ## Automation thoughts

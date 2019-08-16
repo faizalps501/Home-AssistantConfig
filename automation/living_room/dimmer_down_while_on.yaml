@@ -3,8 +3,10 @@ initial_state: 'on'
 trigger:
   - platform: state
     entity_id: sensor.dimmer_switch_action
-    to: 'down_press'
+    to: 'down-press'
 condition:
+  - condition: template
+    value_template: "{{ is_state_attr('sensor.dimmer_switch_action','action','down-press') }}"
   - condition: state
     entity_id: light.living_room_table
     state: 'on'

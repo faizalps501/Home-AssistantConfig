@@ -65,7 +65,7 @@ cards:
       name: Motion
     - entity: sensor.vestibule_illuminance
       name: "Light level"
-    - entity: switch.vestibule_switch
+    - entity: switch.vestibule_socket_switch
       name: Socket
       tap_action: 
         action: toggle

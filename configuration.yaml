@@ -36,6 +36,7 @@ discovery:
 
 history:
 logbook:
+recorder: !include recorder.yaml
 
 tts:
   - platform: google_translate

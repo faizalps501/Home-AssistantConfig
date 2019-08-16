@@ -5,6 +5,8 @@ trigger:
     entity_id: sensor.dimmer_switch_action
     to: 'off-press'
 action:
+  - condition: template
+    value_template: "{{ is_state_attr('sensor.dimmer_switch_action','action','off-press') }}"
   - service: notify.logfile
     data:
       message: "Turning the living room status up one?"
