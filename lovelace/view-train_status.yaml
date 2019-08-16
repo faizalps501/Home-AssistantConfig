@@ -82,4 +82,3 @@ cards:
           name: Scheduled
         - entity: sensor.third_train_abc_estimated
           name: Expected
-- type: custom:compact-custom-header

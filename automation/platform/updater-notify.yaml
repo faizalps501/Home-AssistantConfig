@@ -6,4 +6,4 @@ trigger:
 action:
   service: notify.logfile
   data:
-    message: 'SENDME Update for Home Assistant is available.'
+    message: 'SENDME Update for Home Assistant is available on Vision.'

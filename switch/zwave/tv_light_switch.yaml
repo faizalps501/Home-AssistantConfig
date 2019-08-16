@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "TV light switch"
+  state_topic: 'homeassistant/switch/tv_light_switch/state'
+  command_topic: 'homeassistant/switch/tv_light_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-tv_light_switch'

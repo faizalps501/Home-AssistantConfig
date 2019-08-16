@@ -3,7 +3,6 @@ id: people
 path: people
 icon: mdi:account-multiple
 cards:
-- type: custom:compact-custom-header
 - type: vertical-stack
   cards:
   - type: picture-entity
@@ -41,9 +40,6 @@ cards:
           name: Phone charging
         - entity: sensor.person3s_time_to_home
           name: Car home
-          icon: mdi:map-marker-distance
-        - entity: sensor.person3s_time_to_home_2
-          name: Bus home
           icon: mdi:map-marker-distance
         - entity: proximity.person3_home
           name: To home
@@ -93,7 +89,7 @@ cards:
       - entity: device_tracker.person4_mobile
         name: GPS
         icon: mdi:crosshairs-gps
-      - entity: device_tracker.001d29a549ae
+      - entity: device_tracker.00_1d_29_a5_49_ae
         name: WiFi
         icon: mdi:wifi
       - entity: sensor.battery_person4_mobile
@@ -126,7 +122,7 @@ cards:
         - entity: device_tracker.person2_mobile_gps
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.404e36245315
+        - entity: device_tracker.40_4e_36_24_53_15
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.person2_bt_front_mobile
@@ -139,7 +135,7 @@ cards:
           name: Battery
         - entity: input_boolean.person2_phone_charging
           name: Phone charging
-        - entity: sensor.person2s_time_to_home_2
+        - entity: sensor.person2s_time_to_home
           name: Car home
           icon: mdi:map-marker-distance
         - entity: proximity.person2_home
@@ -178,7 +174,7 @@ cards:
         - entity: device_tracker.person2_tablet_5
           name: Tablet
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372113
+        - entity: device_tracker.f0_0f_ec_d5_b1_70
           name: Tablet
           icon: mdi:wifi
         - entity: device_tracker.person2_bt_front_tablet
@@ -191,7 +187,7 @@ cards:
           name: Tablet
         - entity: input_boolean.person2_tablet_charging
           name: Tablet charging
-        - entity: device_tracker.9c305b3c6c87
+        - entity: device_tracker.9c_30_5b_3c_6c_87
           name: Laptop
           icon: mdi:wifi
         - entity: device_tracker.person2_bt_laptop
@@ -242,7 +238,7 @@ cards:
         title: Work
         columns: 6
         entities:
-        - entity: device_tracker.80b03de23ba2
+        - entity: device_tracker.80_b0_3d_e2_3b_a2
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.person2_bt_front_work
@@ -251,7 +247,7 @@ cards:
         - entity: device_tracker.person2_bt_work
           name: Rear
           icon: mdi:phone-bluetooth
-        - entity: device_tracker.00e04c680550
+        - entity: device_tracker.00_e0_4c_68_05_50
           name: Laptop 
           icon: mdi:laptop
         - entity: device_tracker.work_front_laptop
@@ -307,7 +303,7 @@ cards:
         - entity: device_tracker.person1_mobile
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.3c286ddaeba1
+        - entity: device_tracker.3c_28_6d_da_eb_a1
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.person1_bt_front_mobile
@@ -331,12 +327,6 @@ cards:
           name: Awake
         - entity: input_boolean.person1_in_bed
           name: In bed
-        - entity: sensor.person1s_time_to_home_2
-          name: Walking home
-          icon: mdi:map-marker-distance
-        - entity: sensor.person1s_time_to_home_by_transit
-          name: Bus home
-          icon: mdi:map-marker-distance
         - entity: sensor.person1s_time_to_home
           name: Car home
           icon: mdi:map-marker-distance
@@ -367,7 +357,7 @@ cards:
         - entity: device_tracker.person1_tablet
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372108
+        - entity: device_tracker.e4_a7_c5_8d_3b_e4
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.person1_bt_front_tablet

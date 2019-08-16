@@ -2,9 +2,9 @@ name: House
 options:
   # Auto mode - let each room do its own thing - other modes (mostly) only apply if the room is occupied
   - Auto
-  # Holiday mode - eventually this will have lights turn on automatically like our normal routines - over-rides all other room settings
+  # Holiday mode - eventually this will have lights turn on automatically like our normal routines - manages other room settings
   - Holiday
-  # Turn it all off, arm the alarm, prepare to repel boarders - over-rides all other room settings
+  # Turn it all off, arm the alarm, prepare to repel boarders - sets all other rooms to Away
   - Away
   # Just enough light to move around by
   - Dim

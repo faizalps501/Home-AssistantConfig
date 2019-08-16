@@ -3,7 +3,6 @@ id: rooms
 path: rooms
 icon: mdi:floor-plan
 cards:
-  - type: custom:compact-custom-header
   - type: picture-glance
     title: "Home"
     image: /local/images/house.jpg

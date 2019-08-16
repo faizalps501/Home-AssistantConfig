@@ -3,7 +3,6 @@ id: scripts
 path: scripts
 icon: mdi:script
 cards: 
-- type: custom:compact-custom-header
 - type: entities
   title: person3
   entities:

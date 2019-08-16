@@ -3,7 +3,6 @@ id: automations_alarm
 path: automations_alarm
 icon: mdi:alarm-bell
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Alarm
   show_header_toggle: false

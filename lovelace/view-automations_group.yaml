@@ -3,7 +3,6 @@ id: automations_group
 path: automations_group
 icon: mdi:account-group
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: People driven automations
   show_header_toggle: false

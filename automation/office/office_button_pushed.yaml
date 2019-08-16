@@ -1,4 +1,4 @@
-initial_state: 'off'
+initial_state: 'on'
 alias: 'Office button pushed'
 trigger:
   - platform: state

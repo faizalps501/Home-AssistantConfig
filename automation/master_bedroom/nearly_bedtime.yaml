@@ -1,4 +1,4 @@
-initial_state: 'off'
+initial_state: 'on'
 alias: 'Nearly bedtime'
 trigger:
   - platform: state
@@ -14,7 +14,7 @@ condition:
 action:
   - service: light.turn_on
     data_template:
-      entity_id: light.master_bedroom_bedhead
+      entity_id: light.yeelight_strip1_286c07afc307
       kelvin: >-
         {{ state_attr('sensor.circadian_values','colortemp')|round|int }}
       brightness_pct: 100

@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Number sign switch"
+  state_topic: 'homeassistant/switch/number_sign_switch/state'
+  command_topic: 'homeassistant/switch/number_sign_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-number_sign_switch'

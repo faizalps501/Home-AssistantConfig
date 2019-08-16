@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Office luminamce"
+  state_topic: 'homeassistant/sensor/office_multi_luminance/state'
+  device_class: 'illuminance'
+  unit_of_measurement: 'lux'
+  unique_id: 'zwave-office_multi_luminance'

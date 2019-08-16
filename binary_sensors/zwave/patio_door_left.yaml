@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Patio door left"
+  state_topic: 'homeassistant/binary_sensor/patio_door_left_sensor/state'
+  payload_on: 'on'
+  payload_off: 'off'
+  device_class: 'door'
+  unique_id: 'zwave-patio_door_left_sensor'

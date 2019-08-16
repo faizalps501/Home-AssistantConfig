@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Spare socket switch"
+  state_topic: 'homeassistant/switch/spare_socket_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-sensor-spare_socket_switch'

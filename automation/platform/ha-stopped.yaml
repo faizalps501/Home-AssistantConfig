@@ -7,4 +7,4 @@ trigger:
 action:
   - service: script.notify_person2
     data:
-      message: "Home Assistant has shut down"
+      message: "Home Assistant has shut down on Vision"

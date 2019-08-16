@@ -1,15 +1,17 @@
-alias: Dimmer off 
-initial_state: 'off'
+alias: Dimmer off
+initial_state: 'on'
 trigger:
   - platform: state
     entity_id: sensor.dimmer_switch_action
+    to: 'off-press'
 condition:
-  - condition: template
-    value_template: "{{ is_state_attr('sensor.dimmer_switch_action','action','off-press') }}"
   - condition: state
     entity_id: input_boolean.living_room_occupied
     state: 'on'
 action:
+  - service: notify.logfile
+    data:
+      message: "Turning the living room status down one"
   - service: input_boolean.turn_on
     entity_id: input_boolean.living_room_occupied
   - service: input_select.select_option
@@ -25,3 +27,4 @@ action:
         {% else %}
           Off
         {% endif %}
+

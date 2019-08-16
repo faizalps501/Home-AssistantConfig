@@ -3,7 +3,6 @@ id: automations
 path: automations
 icon: mdi:home-variant
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Automations for the Family room
   show_header_toggle: false

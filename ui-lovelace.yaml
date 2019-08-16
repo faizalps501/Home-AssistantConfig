@@ -1,5 +1,6 @@
 title: Our Home
 resources: !include lovelace/resources.yaml
+cch: !include lovelace/cch.yaml
 views:
   - !include lovelace/view-overview.yaml
   - !include lovelace/view-floorplan.yaml
@@ -15,6 +16,7 @@ views:
   - !include lovelace/view-information.yaml
   - !include lovelace/view-devices.yaml
   - !include lovelace/view-zigbee.yaml
+  - !include lovelace/view-zwave.yaml
   - !include lovelace/view-automations.yaml
   - !include lovelace/view-automations_living_room.yaml
   - !include lovelace/view-automations_master_bedroom.yaml

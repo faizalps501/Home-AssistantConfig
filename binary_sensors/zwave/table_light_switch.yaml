@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Table light switch"
+  state_topic: 'homeassistant/switch/table_light_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-sensor-table_light_switch'

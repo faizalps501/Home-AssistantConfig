@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Hall downstairs switch"
+  state_topic: 'homeassistant/switch/hall_downstairs_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-sensor-hall_downstairs_switch'

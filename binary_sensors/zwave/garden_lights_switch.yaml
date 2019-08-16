@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Garden lights switch"
+  state_topic: 'homeassistant/switch/garden_lights_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-sensor-garden_lights_switch'

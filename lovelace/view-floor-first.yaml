@@ -3,13 +3,6 @@ id: first-floor
 path: first-floor
 icon: mdi:numeric-1-box
 cards:
-- type: custom:compact-custom-header
-  main_config: true
-  menu: overflow
-  notifications: overflow
-  options: clock
-  voice: hide
-  clock_format: 24
 - type: glance
   title: Master bedroom
   columns: 5
@@ -123,7 +116,7 @@ cards:
       name: Office window
     - entity: media_player.office
       name: Sonos
-    - entity: media_player.googlehomehub8747
+    - entity: media_player.office_display
       name: "Home Hub"
 - type: glance
   title: Spare bedroom

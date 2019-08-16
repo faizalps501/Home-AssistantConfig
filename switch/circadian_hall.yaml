@@ -1,5 +1,5 @@
 - platform: circadian_lighting
-  name: circadian hall
+  name: hall
   lights_ct:
     - light.hall
   disable_brightness_adjust: true

@@ -1,0 +1,10 @@
+alias: "Remote zwave second bedroom switch"
+sequence:
+  - service: notify.logfile
+    data_template:
+      message: "Issued the {{ domain }}.{{ action }} service on {{ entity }}"
+  - service: rest_command.pi3_zwave
+    data_template:
+      domain: "{{ domain }}"
+      action: "{{ action }}"
+      entity: "{{ entity }}"

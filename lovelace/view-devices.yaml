@@ -3,7 +3,6 @@ id: devices
 path: devices
 icon: mdi:engine
 cards:
-- type: custom:compact-custom-header
 - type: glance
   title: Devices
   show_header_toggle: false

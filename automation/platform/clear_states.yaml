@@ -7,6 +7,7 @@ trigger:
 action:
   - service: switch.turn_on
     entity_id: 
-      - switch.circadian_lighting_circadian_hall
-      - switch.circadian_lighting_circadian_master_bedroom
-      - switch.circadian_lighting_circadian_second_bedroom
+      - switch.circadian_lighting_hall
+      - switch.circadian_lighting_living_room
+      - switch.circadian_lighting_master_bedroom
+      - switch.circadian_lighting_second_bedroom

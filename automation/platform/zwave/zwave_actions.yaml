@@ -1,0 +1,25 @@
+initial_state: 'on'
+alias: 'Zwave actions'
+trigger:
+  - platform: state
+    entity_id:
+      - binary_sensor.cabinet_light_switch
+      - binary_sensor.tv_light_switch
+      - binary_sensor.table_light_switch
+      - binary_sensor.vestibule_socket_switch
+      - binary_sensor.family_room_socket_switch
+      - binary_sensor.garden_lights_switch
+      - binary_sensor.master_bedroom_socket_switch
+      - binary_sensor.number_sign_switch
+      - binary_sensor.second_bedroom_switch
+      - binary_sensor.spare_socket_switch
+      - binary_sensor.livingroom_socket_switch
+      - binary_sensor.hall_downstairs_switch
+      - binary_sensor.front_bedroom_switch
+action:
+  - service_template: >-
+      script.remote_zwave_{{ trigger.entity_id.split('.')[1] }}
+    data_template:
+      domain: "switch"
+      action: "turn_{{ trigger.to_state.state }}"
+      entity: "switch.{{ trigger.entity_id.split('.')[1] }}"

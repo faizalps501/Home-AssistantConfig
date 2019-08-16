@@ -1,0 +1,23 @@
+initial_state: 'on'
+alias: 'Zwave sync'
+trigger:
+  - platform: state
+    entity_id:
+      - switch.cabinet_light_switch
+      - switch.tv_light_switch
+      - switch.table_light_switch
+      - switch.vestibule_socket_switch
+      - switch.family_room_socket_switch
+      - switch.garden_lights_switch
+      - switch.master_bedroom_socket_switch
+      - switch.number_sign_switch
+      - switch.second_bedroom_switch
+      - switch.spare_socket_switch
+      - switch.livingroom_socket_switch
+      - switch.hall_downstairs_switch
+      - switch.front_bedroom_switch
+action:
+  - service: mqtt.publish
+    data_template:
+      topic: "homeassistant/switch/{{ trigger.entity_id.split('.')[1] }}/command"
+      payload: "{{ trigger.to_state.state }}"

@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Vestibule socket switch"
+  state_topic: 'homeassistant/switch/vestibule_switch/state'
+  command_topic: 'homeassistant/switch/vestibule_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-vestibule_switch'

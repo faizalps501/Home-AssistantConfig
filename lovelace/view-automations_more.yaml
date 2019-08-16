@@ -3,7 +3,6 @@ id: automations_more
 path: automations_more
 icon: mdi:engine-outline
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Automations at startup
   show_header_toggle: false
@@ -32,9 +31,6 @@ cards:
   - automation.weather_notification
   - automation.bin_notification
   - automation.printer_low
-  - automation.test
-  - automation.test_notify
-  - automation.test_media
 - type: entities
   title: Car related automations
   show_header_toggle: false

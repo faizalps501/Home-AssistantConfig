@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Master bedroom socket switch"
+  state_topic: 'homeassistant/switch/master_bedroom_socket_switch/command'
+  payload_on: 'on'
+  payload_off: 'off'
+  unique_id: 'zwave-sensor-master_bedroom_socket_switch'

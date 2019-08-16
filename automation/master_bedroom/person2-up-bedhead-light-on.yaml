@@ -15,14 +15,14 @@ action:
     entity_id: switch.circadian_lighting_circadian_master_bedroom
   - service: light.turn_on
     data:
-      entity_id: light.master_bedroom_bedhead
+      entity_id: light.yeelight_strip1_286c07afc307
       transition: 30
       brightness_pct: 100
       color_name: white
   - delay: '00:00:30'
   - service: light.turn_on
     data:
-      entity_id: light.master_bedroom_bedhead
+      entity_id: light.yeelight_strip1_286c07afc307
       transition: 30
       brightness_pct: 100
       color_name: white

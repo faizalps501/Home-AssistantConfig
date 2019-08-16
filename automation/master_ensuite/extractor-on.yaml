@@ -1,5 +1,5 @@
 alias: 'Extractor on'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   - platform: numeric_state
     entity_id: sensor.master_ensuite_humidity

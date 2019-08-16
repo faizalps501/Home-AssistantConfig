@@ -3,7 +3,6 @@ id: automations_upstairs
 path: automations_upstairs
 icon: mdi:home-modern
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Automations for the 2nd bedroom light
   show_header_toggle: false
@@ -11,16 +10,6 @@ cards:
   - automation.person1_up_bedhead_light_on
   - automation.person1_up_bedhead_light_off
   - automation.person1_bedside_left_on
-  - automation.person1_bedside_turn_on
-  - automation.person1_bedside_turn_off
-  - automation.person1_bedside_turn_on_min
-  - automation.person1_bedside_turn_on_max
-  - automation.person1_bedside_turn_on_cool
-  - automation.person1_bedside_turn_on_warm
-  - automation.person1_bedside_turn_white
-  - automation.person1_bedside_turn_white_max
-  - automation.person1_bedside_turn_on_red
-  - automation.person1_bedside_turn_red
 - type: entities
   title: Automations for the second bedroom
   show_header_toggle: false

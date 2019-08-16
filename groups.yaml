@@ -6,38 +6,38 @@ car:
 person_dor:
   name: person4
   entities:
-  - device_tracker.001d29a549ae
+  - device_tracker.00_1d_29_a5_49_ae
   - device_tracker.person4_mobile
 person_person2:
   name: person2
   entities:
-  - device_tracker.404e36245315
+  - device_tracker.40_4e_36_24_53_15
   - device_tracker.person2_bt_mobile
   - device_tracker.person2_bt_front_mobile
 person_person2_tablet:
   name: person2's tablet
   icon: mdi:tablet-android
   entities:
-  - device_tracker.pc1722372113
+  - device_tracker.f0_0f_ec_d5_b1_70
   - device_tracker.person2_bt_tablet
   - device_tracker.person2_bt_front_tablet
 person_person2_laptop:
   name: person2's laptop
   icon: mdi:laptop-windows
   entities:
-  - device_tracker.9c305b3c6c87
+  - device_tracker.9c_30_5b_3c_6c_87
   - device_tracker.person2_bt_laptop
   - device_tracker.person2_bt_front_laptop
 person_person2_work:
   name: person2's work phone
   entities:
-  - device_tracker.80b03de23ba2
+  - device_tracker.80_b0_3d_e2_3b_a2
   - device_tracker.person2_bt_work
   - device_tracker.person2_bt_front_work
 work_laptop:
   name: Work laptop
   entities:
-  - device_tracker.00e04c680550
+  - device_tracker.00_e0_4c_68_05_50
 person_person3:
   name: person3
   entities:
@@ -47,14 +47,14 @@ person_person3:
 person_person1:
   name: person1
   entities:
-  - device_tracker.3c286ddaeba1
+  - device_tracker.3c_28_6d_da_eb_a1
   - device_tracker.person1_bt_mobile
   - device_tracker.person1_bt_front_mobile
 person_person1_tablet:
   name: person1's tablet
   icon: mdi:tablet
   entities:
-  - device_tracker.pc1722372108
+  - device_tracker.e4_a7_c5_8d_3b_e4
   - device_tracker.person1_bt_tablet
   - device_tracker.person1_bt_front_tablet
 tv:
@@ -137,23 +137,6 @@ living_room_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   - light.living_room_table
-my_automations_battery:
-  name: Battery level automations
-  entities:
-  - automation.battery_garage_door_closed_car
-  - automation.battery_garage_door_closed_bike
-  - automation.battery_livingroom_multi
-  - automation.battery_utility_door
-  - automation.battery_utility_light_switch
-  - automation.battery_front_door
-  - automation.battery_patio_door_left
-  - automation.battery_remote
-  - automation.battery_green_remote
-garage_alert:
-  name: Garage alert
-  entities:
-  - alert.garage_door_l
-  - alert.garage_door_r
 guests:
   name: Guests
   entities:

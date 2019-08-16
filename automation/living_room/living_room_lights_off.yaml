@@ -6,6 +6,9 @@ trigger:
     to: 'Off'
   - platform: state
     entity_id: input_select.living_room
+    to: 'Night off'
+  - platform: state
+    entity_id: input_select.living_room
     to: 'Away'
 condition:
   condition: and

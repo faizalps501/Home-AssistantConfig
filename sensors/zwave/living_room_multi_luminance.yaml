@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Living room luminamce"
+  state_topic: 'homeassistant/sensor/living_room_multi_luminance/state'
+  device_class: 'illuminance'
+  unit_of_measurement: 'lux'
+  unique_id: 'zwave-living_room_multi_luminance'

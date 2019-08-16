@@ -1,0 +1,4 @@
+- platform: mqtt
+  name: "Living room multi burglar"
+  state_topic: 'homeassistant/sensor/living_room_multi_burglar/state'
+  unique_id: 'zwave-living_room_multi_burglar'

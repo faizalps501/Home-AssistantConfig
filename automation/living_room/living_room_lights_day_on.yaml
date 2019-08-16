@@ -18,13 +18,13 @@ action:
     entity_id:
       - switch.tv_light_switch
       - switch.livingroom_socket_switch
+  - service: light.turn_off
+    data:
+      entity_id: light.living_room_table
+      transition: 5
   - condition: state
     entity_id: switch.cabinet_light_switch
     state: 'on'
   - service: switch.turn_off
     entity_id:
       - switch.cabinet_light_switch
-  - service: light.turn_off
-    data:
-      entity_id: light.living_room_table
-      transition: 5

@@ -1,8 +1,8 @@
 alias: 'Bedhead light left on'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   platform: state
-  entity_id: light.master_bedroom_bedhead
+  entity_id: light.yeelight_strip1_286c07afc307
   to: 'on'
   for: 
     minutes: 30
@@ -21,5 +21,5 @@ condition:
 action:
   - service: light.turn_off
     data:
-      entity_id: light.master_bedroom_bedhead
+      entity_id: light.yeelight_strip1_286c07afc307
       transition: 30

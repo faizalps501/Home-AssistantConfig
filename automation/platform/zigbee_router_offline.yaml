@@ -9,10 +9,10 @@ trigger:
 condition:
   - condition: state
     entity_id: light.hall
-    state: 'offline'
+    state: 'unavailable'
   - condition: state
     entity_id: light.living_room_table
-    state: 'offline'
+    state: 'unavailable'
 action:
   - service: notify.logfile
     data:

@@ -7,7 +7,7 @@ trigger:
 action:
   - service: script.notify_person2
     data:
-      message: "Home Assistant has started"
+      message: "Home Assistant has started on vision"
   - service: frontend.set_theme
     data:
       name: 'midnight'

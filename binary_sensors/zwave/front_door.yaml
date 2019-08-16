@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Front door"
+  state_topic: 'homeassistant/binary_sensor/front_door_sensor/state'
+  payload_on: 'on'
+  payload_off: 'off'
+  device_class: 'door'
+  unique_id: 'zwave-front_door_sensor'

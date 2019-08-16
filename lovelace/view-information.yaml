@@ -3,7 +3,6 @@ id: information
 path: info
 icon: mdi:information-outline
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Downstairs rooms
   show_header_toggle: false
@@ -52,7 +51,6 @@ cards:
   entities:
   - sun.sun
   - sensor.sun_elevation
-  - binary_sensor.zwave_health
   - entity: sensor.last_opened
     icon: mdi:door
   - entity: sensor.last_motion

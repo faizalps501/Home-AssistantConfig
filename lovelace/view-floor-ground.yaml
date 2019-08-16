@@ -3,13 +3,6 @@ id: ground-floor
 path: ground-floor
 icon: mdi:alpha-g-box
 cards:
-- type: custom:compact-custom-header
-  main_config: true
-  menu: overflow
-  notifications: overflow
-  options: clock
-  voice: hide
-  clock_format: 24
 - type: glance
   title: Living room
   columns: 4
@@ -42,7 +35,7 @@ cards:
       name: TV
     - entity: media_player.living_room
       name: "Sonos"
-    - entity: media_player.lenovosmartdisplay109233
+    - entity: media_player.living_room_smart_displa
       name: "Home Hub"
 - type: glance
   title: Hall
@@ -105,7 +98,7 @@ cards:
       name: Sonos
     - entity: media_player.cast_kitchen_speaker
       name: Home Mini
-    - entity: media_player.googlehomehub3435
+    - entity: media_player.family_room_display
       name: Home Hub
 - type: glance
   title: Utility room & back

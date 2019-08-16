@@ -1,0 +1,9 @@
+alias: Dimmer
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: sensor.dimmer_switch_action
+action:
+  - service: notify.logfile
+    data_template:
+      message: "The following button was pressed: {{ trigger.to_state.state }}"

@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: The House
+  name: Our home
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
@@ -10,73 +10,53 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/London
-  #time_zone: Etc/UTC
+  # Customization file
   customize: !include customize.yaml
-  whitelist_external_dirs: 
+  whitelist_external_dirs:
     - /data/homeassistant
+    - /home/homeassistant/maps
+
+logger:
+  default: info
 
 default_config:
 
-person:
-
 config:
 
-map:
-
-cloud: !include cloud.yaml
-
 frontend: !include frontend.yaml
-
+map:
 lovelace:
   mode: yaml
 
 http: !include http.yaml
 
 discovery:
+  ignore:
+    - plex_mediaserver
 
 history:
-
 logbook:
 
-recorder: !include recorder.yaml
-
-influxdb: !include influxdb.yaml
-
 tts:
-  - platform: google
-  - platform: picotts
-    language: 'en-GB'
+  - platform: google_translate
+    service_name: google_say
 
-zwave: !include zwave.yaml
+group: !include groups.yaml
 
-mqtt: !include mqtt.yaml
+script: !include_dir_named scripts/
+automation: !include automations.yaml
+automation mine: !include_dir_list automation/
 
-mqtt_statestream: !include mqtt_statestream.yaml
-
+ 
 device_tracker: !include_dir_list device_tracker/
-
-zone: !include zones.yaml
-
-proximity: !include_dir_merge_named proximity/ 
-
-notify: !include_dir_merge_list notify/
-
-alert: !include_dir_named alerts/
-
-lametric:
-  client_id: !secret lametric_id
-  client_secret: !secret lametric_secret
-
-google: !include google.yaml
-
+proximity: !include_dir_merge_named proximity/
 sensor: !include_dir_merge_list sensors/
 binary_sensor: !include_dir_merge_list binary_sensors/
+google: !include google.yaml
 
 sun:
-climate: !include_dir_merge_list climate/
-
-camera: !include_dir_list camera/
-ffmpeg:
+weather: !include_dir_merge_list weather/
+zone: !include zones.yaml
 
 input_number: !include_dir_named input_number/
 input_boolean: !include_dir_named input_boolean/
@@ -86,25 +66,28 @@ input_text: !include_dir_named input_text/
 
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
-media_player: !include_dir_merge_list media_player/ 
 
-script: !include_dir_named scripts/
- # This is for the automation editor, you'll not find anything in there
-automation: !include automations.yaml
- # This is for my automations, `old` is just a tag - see https://www.home-assistant.io/docs/configuration/devices/
-automation old: !include_dir_list automation/
-shell_command: !include_dir_merge_named shell_commands/
-group: !include groups.yaml
+media_player: !include_dir_merge_list media_player/
 
-panel_custom: !include_dir_list panel_custom/
+rest_command: !include_dir_named rest_command/
 
 alarm_control_panel: !include_dir_list alarm/
 
-weather: !include_dir_merge_list weather/
+alert: !include_dir_named alerts/
+notify: !include_dir_merge_list notify/
+
+camera: !include_dir_list camera/
+ffmpeg:
+  ffmpeg_bin: /usr/local/bin/ffmpeg
+stream:
+
+mqtt: !include mqtt.yaml
+
+hacs:
+  token: !secret hacs
 
 circadian_lighting:
   interval: 300
   transition: 60
   min_colortemp: 2000
   max_colortemp: 6500
-

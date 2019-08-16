@@ -3,7 +3,6 @@ id: inputs
 path: inputs
 icon: mdi:information-variant
 cards:
-- type: custom:compact-custom-header
 - type: entities
   title: Toggles for automations
   show_header_toggle: false
@@ -63,10 +62,10 @@ cards:
   title: Switches
   show_header_toggle: false
   entities:
-  - switch.circadian_lighting_circadian_hall
-  - switch.circadian_lighting_circadian_master_bedroom
-  - switch.circadian_lighting_circadian_second_bedroom
+  - switch.circadian_lighting_hall
   - switch.circadian_lighting_living_room
+  - switch.circadian_lighting_master_bedroom
+  - switch.circadian_lighting_second_bedroom
 - type: entities
   title: People
   show_header_toggle: false
