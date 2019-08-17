@@ -3,7 +3,14 @@ alias: 'person1 location update'
 trigger:
   # I've moved
   - platform: state
-    entity_id: device_tracker.person1_mobile
+    entity_id: 
+      - device_tracker.person1_mobile
+      - input_select.person1_status_dropdown
+      - input_boolean.person1_home
+      - sensor.person1s_time_to_home
+      - sensor.person1s_time_to_home_by_bus
+      - sensor.person1s_time_to_home_by_foot
+      - sensor.person1s_time_to_home_waze
 action:
   - service: notify.logfile
     data_template:

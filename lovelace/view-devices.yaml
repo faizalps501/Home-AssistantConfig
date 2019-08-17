@@ -130,63 +130,19 @@ cards:
 - type: glance
   title: Printer status
   show_header_toggle: false
-  entities:
-  - entity: sensor.samsung_m283x_series_172237250_toner_black
-    name: Toner
-  - sensor.printer_toner_remaining
-  - entity: sensor.samsung_m283x_series_172237250_drum_black
-    name: Drum
-  - sensor.printer_imaging_unit_remaining
-  - sensor.printer_forward_roller_remaining
-  - sensor.printer_pick_up_roller_remaining
-  - sensor.printer_retard_roller_remaining
-  - sensor.printer_transfer_roller_remaining
-  - sensor.printer_fuser_life_remaining
-- type: glance
-  title: Z-Wave battery devices
-  show_header_toggle: false
   columns: 4
   entities:
-    - entity: zwave.garage_closed_bike
-      name: Garage left
-    - entity: sensor.zwave_battery_garage_closed_bike
-      name: Garage left
-    - entity: zwave.garage_closed_car
-      name: Garage car
-    - entity: sensor.zwave_battery_garage_closed_car
-      name: Garage car
-    - zwave.front_door
-    - sensor.zwave_battery_front_door
-    - zwave.patio_door_left
-    - sensor.zwave_battery_patio_door_left
-    - zwave.utility_door_exterior
-    - entity: sensor.zwave_battery_utility_door_exterior
-      name: Utility door
-    - zwave.living_room_multi
-    - sensor.zwave_battery_living_room_multi
-    - zwave.nodon_crc3100_octan_remote
-    - sensor.zwave_battery_nodon_crc3100_octan_remote
-    - zwave.green_remote
-    - sensor.zwave_battery_green_remote
-    - zwave.utility
-    - entity: sensor.zwave_battery_utility
-      name: Utility switch
-- type: glance
-  title: Z-Wave mains
-  show_header_toggle: false
-  entities:
-  - zwave.zwaveme_razberry_controller_2016_zwave
-  - zwave.table_light
-  - zwave.cabinet_light
-  - zwave.tv_light
-  - zwave.number_sign
-  - zwave.garden_lights
-  - zwave.spare_socket
-  - zwave.master_bedroom_socket
-  - zwave.office_multi
-  - zwave.second_bedroom
-  - zwave.family_room_socket
-  - zwave.hall_downstairs
-  - zwave.livingroom_socket
-  - zwave.vestibule
-  - zwave.front_bedroom
+  - entity: sensor.printer_toner_remaining
+    name: Toner
+  - entity: sensor.printer_imaging_unit_remaining
+    name: Imaging unit
+  - entity: sensor.printer_forward_roller_remaining
+    name: Forward
+  - entity: sensor.printer_pick_up_roller_remaining
+    name: Pick up
+  - entity: sensor.printer_retard_roller_remaining
+    name: Retard
+  - entity: sensor.printer_transfer_roller_remaining
+    name: Transfer
+  - entity: sensor.printer_fuser_life_remaining
+    name: Fuser
