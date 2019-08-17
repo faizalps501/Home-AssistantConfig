@@ -6,7 +6,7 @@ cards:
 - type: vertical-stack
   cards:
   - type: picture-entity
-    entity: sensor.person3_travel
+    entity: input_text.person_person3
     image: /local/person3.png
     tap_action:
       action: call-service
@@ -69,7 +69,7 @@ cards:
         entities: 
           - calendar.person3
 - type: picture-entity
-  entity: sensor.person4_travel
+  entity: input_text.person_person4
   image: /local/person4.png
   tap_action:
     action: call-service
@@ -102,7 +102,7 @@ cards:
 - type: vertical-stack
   cards:
   - type: picture-entity
-    entity: sensor.person2_travel
+    entity: input_text.person_person2
     image: /local/person2.png
     tap_action:
       action: call-service
@@ -282,7 +282,7 @@ cards:
 - type: vertical-stack
   cards:
   - type: picture-entity
-    entity: sensor.person1_travel
+    entity: input_text.person_person1
     image: /local/person1.png
     tap_action:
       action: call-service

@@ -23,14 +23,18 @@ cards:
   - automation.bedtime_something_open
   - automation.adults_away_something_open
 - type: entities
-  title: Guest and visitor related automations
+  title: person4
   show_header_toggle: false
   entities:
   - automation.person4_coming_home
   - automation.person4_away
   - automation.person4_home
   - automation.person4_on_the_move
-  - type: divider
+  - automation.person4_location_update
+- type: entities
+  title: Guest and visitor related automations
+  show_header_toggle: false
+  entities:
   - automation.guest_mode_on
   - automation.guest_mode_off
 - type: entities

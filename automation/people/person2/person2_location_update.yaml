@@ -9,3 +9,8 @@ action:
     data_template:
       message: >
         Location for person2 updated at {{ now() }}
+  - service: script.person2_travel_sensor
+  - condition: state
+    entity_id: input_boolean.person2_driving
+    state: 'on'
+  - service: script.update_car_location

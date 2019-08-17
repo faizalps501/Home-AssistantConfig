@@ -6,12 +6,11 @@ sequence:
         Updated travel time for person1 at {{ now() }}
   - service: homeassistant.update_entity
     entity_id: sensor.person1s_time_to_home
-  - condition: template
-    value_template: "{{ states('sensor.person1s_time_to_home_2') != 'unknown' }}"
-  - service: homeassistant.update_entity
-    entity_id: sensor.person1s_time_to_home_2
   - delay: '00:00:10'
-  - condition: template
-    value_template: "{{ states('sensor.person1s_time_to_home_by_transit') != 'unknown' }}"
   - service: homeassistant.update_entity
-    entity_id: sensor.person1s_time_to_home_by_transit
+    entity_id: sensor.person1s_time_to_home_by_bus
+  - delay: '00:00:10'
+  - service: homeassistant.update_entity
+    entity_id: sensor.person1s_time_to_home_by_foot
+  - service: homeassistant.update_entity
+    entity_id: sensor.person1s_time_to_home_waze

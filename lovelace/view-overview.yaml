@@ -21,10 +21,10 @@ cards:
     show_name: false
     entities:
       - alarm_control_panel.ha_alarm
-      - sensor.person3_travel
-      - sensor.person1_travel
-      - sensor.person2_travel
-      - sensor.person4_travel
+      - input_text.person_person3
+      - input_text.person_person1
+      - input_text.person_person2
+      - input_text.person_person4
         
   - type: entity-filter
     entities:

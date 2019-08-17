@@ -1,9 +1,9 @@
-- platform: template
-  sensors:
-    person1_travel:
-      friendly_name: "person1's location"
-      entity_id: input_boolean.person1_home, device_tracker.person1_mobile, sensor.person1s_time_to_home_by_foot, input_select.person1_status_dropdown
-      value_template: >- 
+alias: person1 travel sensor
+sequence:
+  - service: input_text.set_value
+    data_template:
+      entity_id: input_text.person_person1
+      value: >-
         {% if is_state("input_boolean.person1_home", "on") %} 
           {{ states("input_select.person1_status_dropdown") }}
         {% elif is_state("device_tracker.person1_mobile", "home") and is_state("input_boolean.person1_home", "off") %}

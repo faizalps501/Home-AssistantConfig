@@ -1,10 +1,10 @@
 device_tracker.person1_mobile:
-  friendly_name: person1 GPS
+  friendly_name: person1's Mobile
 device_tracker.person1_mobile_wifi:
   friendly_name: person1 WiFi
   icon: mdi:wifi
 device_tracker.person3_mobile:
-  friendly_name: person3 GPS
+  friendly_name: person3's Mobile
 device_tracker.person3_mobile_wifi:
   friendly_name: person3 WiFi
   icon: mdi:wifi
@@ -179,3 +179,15 @@ light.hall:
   icon: mdi:led-strip
 switch.hall_downstairs_switch:
   icon: mdi:power-socket-uk
+device_tracker.person2_mobile_gps:
+  friendly_name: person2 Mobile
+device_tracker.car_gps:
+  friendly_name: Car
+input_text.person_person3:
+  entity_picture: /local/person3Thumb.jpg
+input_text.person_person4:
+  entity_picture: /local/person4Thumb.jpg
+input_text.person_person1:
+  entity_picture: /local/person1Thumb.jpg
+input_text.person_person2:
+  entity_picture: /local/person2Thumb.jpg

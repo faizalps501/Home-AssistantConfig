@@ -1,0 +1,12 @@
+initial_state: 'on'
+alias: 'person1 location update'
+trigger:
+  # I've moved
+  - platform: state
+    entity_id: device_tracker.person1_mobile
+action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        Location for person1 updated at {{ now() }}
+  - service: script.person1_travel_sensor

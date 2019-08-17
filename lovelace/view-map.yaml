@@ -39,4 +39,4 @@ cards:
         aspect_ratio: 105%
         default_zoom: 18
         entities:
-          - device_tracker.person4_mobile
+          - device_tracker.car_gps

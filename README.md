@@ -28,11 +28,6 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [Mosquitto](https://mosquitto.org/) for the MQTT broker
 * MariaDB for the database
 
-I used to run the following, but don't currently:
-
-* [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface, but it's been replaced by the new Google Home app (for now anyway)
-  * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
-
 ## The devices, services, and software I use (with HA)
 
 * [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards (for the Z-Wave Pi)
