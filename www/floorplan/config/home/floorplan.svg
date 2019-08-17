@@ -908,9 +908,9 @@
      inkscape:window-height="1057"
      id="namedview3682"
      showgrid="false"
-     inkscape:zoom="27.512821"
-     inkscape:cx="661.59713"
-     inkscape:cy="408.6371"
+     inkscape:zoom="6.8782053"
+     inkscape:cx="539.82271"
+     inkscape:cy="95.237605"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -7108,8 +7108,8 @@
       <text
          style="font-size:18.86697388px;display:inline;fill:#d4d4d4;fill-opacity:1;stroke-width:1.57224798"
          transform="scale(0.93757302,1.0665836)"
-         inkscape:label="sensor.kyle_travel"
-         id="sensor.kyle_travel"
+         inkscape:label="input_text.person_kyle"
+         id="input_text.person_kyle"
          y="483.5488"
          x="523.03711"
          xml:space="preserve"><tspan
@@ -7121,8 +7121,8 @@
       <text
          style="font-size:18.86697388px;display:inline;fill:#d4d4d4;fill-opacity:1;stroke:none;stroke-width:1.57224798"
          transform="scale(0.93757302,1.0665836)"
-         inkscape:label="sensor.angie_travel"
-         id="sensor.angie_travel"
+         inkscape:label="input_text.person_angie"
+         id="input_text.person_angie"
          y="452.60889"
          x="523.03717"
          xml:space="preserve"><tspan
@@ -7134,8 +7134,8 @@
       <text
          style="font-size:18.86697578px;display:inline;fill:#d4d4d4;fill-opacity:1;stroke-width:1.57224798"
          transform="scale(0.93757302,1.0665836)"
-         inkscape:label="sensor.rob_travel"
-         id="sensor.rob_travel"
+         inkscape:label="input_text.person_rob"
+         id="input_text.person_rob"
          y="421.66901"
          x="523.03711"
          xml:space="preserve"><tspan

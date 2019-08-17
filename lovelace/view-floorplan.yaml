@@ -332,9 +332,9 @@ cards:
           propagate: true
 
         - entities:
-            - sensor.person3_travel
-            - sensor.person1_travel
-            - sensor.person2_travel
+            - input_text.person_person3
+            - input_text.person_person1
+            - input_text.person_person2
           text_template: '${entity.state ? entity.state : "unknown"}'
           class_template: '
               return "info-text";
