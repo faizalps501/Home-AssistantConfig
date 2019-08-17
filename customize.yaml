@@ -177,3 +177,5 @@ switch.livingroom_socket_switch:
   icon: mdi:power-socket-uk
 light.hall:
   icon: mdi:led-strip
+switch.hall_downstairs_switch:
+  icon: mdi:power-socket-uk
