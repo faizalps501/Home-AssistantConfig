@@ -13,6 +13,7 @@ cards:
   - automation.person2_away
   - automation.person2_home
   - automation.person2_up
+  - automation.person2_awake
   - automation.workday_for_person2
   - automation.person2_travelling
   - automation.person2_returning

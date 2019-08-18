@@ -41,9 +41,6 @@ condition:
       after: '22:00:00'
       before: '05:00:00'
     - condition: state
-      entity_id: input_boolean.family_room_occupied
-      state: 'off'
-    - condition: state
       entity_id: input_boolean.person1_phone_charging
       state: 'on'
     - condition: state

@@ -28,15 +28,17 @@ condition:
     conditions:
     - condition: state
       entity_id: input_boolean.person1_home
-      state: 'off'
+      state: 'on'
     - condition: state
-      entity_id: input_boolean.person1_is_awake
-      state: 'off'
+      entity_id: input_boolean.person1_in_bed
+      state: 'on'
     - condition: time
-      before: '22:00:00'
       after: '04:00:00'
+      before: '22:00:00'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_in_bed
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.person1_is_awake
+  - service: notify.logfile
+    data_template:
+      message: >
+        Turned off person1 in bed because the {{ trigger.to_state.name }} was {{ trigger.to_state.state }} at {{ now() }}

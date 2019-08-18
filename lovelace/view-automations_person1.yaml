@@ -15,6 +15,7 @@ cards:
   - automation.person1_home
   - automation.person1_home_after_work
   - automation.person1_up
+  - automation.person1_awake
   - automation.person1_up_reminder
   - automation.person1_mobile_low_battery
   - automation.person1_tablet_away

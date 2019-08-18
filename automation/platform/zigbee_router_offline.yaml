@@ -6,13 +6,9 @@ trigger:
     to: 'off'
     for:
       minutes: 10
-condition:
-  - condition: state
-    entity_id: light.hall
-    state: 'unavailable'
-  - condition: state
-    entity_id: light.living_room_table
-    state: 'unavailable'
+  - platform: state
+    entity_id: binary_sensor.zigbee2mqtt_router_1
+    to: 'unavailable'
 action:
   - service: notify.logfile
     data:
