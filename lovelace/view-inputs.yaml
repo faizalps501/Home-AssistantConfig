@@ -1,7 +1,7 @@
 title: Inputs
 id: inputs
 path: inputs
-icon: mdi:information-variant
+icon: mdi:toggle-switch
 cards:
 - type: entities
   title: Toggles for automations
