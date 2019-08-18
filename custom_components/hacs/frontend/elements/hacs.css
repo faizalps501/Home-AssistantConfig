@@ -194,6 +194,13 @@ a.dropdown-list-item:hover {
 }
 
 @media all and (max-width: 550px) {
+  select.hacs-select.custom_repository {
+    width: 100%;
+  }
+  input#custom_url {
+    width: 100% !important;
+  }
+
   .actionlink {
     width: 100%;
     padding: 5px;

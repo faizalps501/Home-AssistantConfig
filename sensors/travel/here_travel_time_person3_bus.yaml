@@ -3,6 +3,6 @@
   scan_interval: 604800
   app_id: !secret  here_app_id
   app_code: !secret here_app_code
-  origin: device_tracker.person3_mobile
-  destination: zone.home
+  origin_entity_id: device_tracker.person3_mobile
+  destination_entity_id: zone.home
   mode: publicTransportTimeTable

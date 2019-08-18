@@ -13,6 +13,6 @@ sequence:
         {% elif (states('proximity.person2_home')|int) > 670000 %}
           Overseas
         {% else %}
-          {{ state_attr('sensor.person2s_time_to_home', 'duration')|round(0) }} {{ state_attr('sensor.person2s_time_to_home', 'unit_of_measurement') }} to home
+          {{ state_attr('sensor.person2s_time_to_home', 'duration_in_traffic')|round(0) }} {{ state_attr('sensor.person2s_time_to_home', 'unit_of_measurement') }} to home
         {% endif %}
 

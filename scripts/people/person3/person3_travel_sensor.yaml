@@ -11,5 +11,5 @@ sequence:
         {% elif not is_state("device_tracker.person3_mobile", "not_home") %}
           At {{ states("device_tracker.person3_mobile") }}
         {% else %}
-          {{ state_attr('sensor.person3s_time_to_home_by_bus', 'duration')|round(0) }} {{ state_attr('sensor.person3s_time_to_home_by_bus', 'unit_of_measurement') }} to home
+          {{ state_attr('sensor.person3s_time_to_home_by_bus', 'duration_in_traffic')|round(0) }} {{ state_attr('sensor.person3s_time_to_home_by_bus', 'unit_of_measurement') }} to home
         {% endif %}

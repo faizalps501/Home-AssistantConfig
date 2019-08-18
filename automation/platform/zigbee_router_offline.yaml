@@ -9,8 +9,28 @@ trigger:
   - platform: state
     entity_id: binary_sensor.zigbee2mqtt_router_1
     to: 'unavailable'
+    for:
+      minutes: 10
+condition:
+  - condition: state
+    entity_id: sensor.zigbee2mqtt_bridge_state
+    state: 'online'
+  - condition: state
+    entity_id: light.hall
+    state: 'unavailable'
+  - condition: state
+    entity_id: light.living_room_table
+    state: 'unavailable'
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.zigbee2mqtt_router_1
+        state: 'unavailable'
+      - condition: state
+        entity_id: binary_sensor.zigbee2mqtt_router_1
+        state: 'off'
 action:
   - service: notify.logfile
-    data:
+    data_template:
       message: >-
-        SENDME The Zigbee router has been offline for 10 minutes, and the lights are offline too. Time to reset the stick again.
+        SENDME The Zigbee router has been {{ trigger.to_state.state }} for 10 minutes, and the lights are offline too. Time to reset the stick again.
