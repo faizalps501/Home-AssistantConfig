@@ -169,21 +169,6 @@ cards:
       title: Lights
       show_state: false
 
-  - type: entity-filter
-    entities:
-      - entity: light.hall
-        name: Hall
-      - entity: light.living_room_table
-        name: Table
-      - entity: binary_sensor.zigbee2mqtt_router_1
-        name: Router
-    show_empty: false
-    state_filter:
-      - 'unavailable'
-    card:
-      type: glance
-      title: Unavailable entities
-
   - type: 'custom:dark-sky-weather-card'
     entity_sun: sun.sun
     entity_visibility: sensor.dark_sky_visibility
