@@ -1,0 +1,12 @@
+alias: 'Telegram command status'
+initial_state: 'on'
+trigger:
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/status'
+action:
+  - service: telegram_bot.send_message
+    data_template:
+      message: >
+        The following doors and windows are open: {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id') + state_attr('group.my_upstairs_windows', 'entity_id') + state_attr('group.my_exterior_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}

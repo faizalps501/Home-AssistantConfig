@@ -1,16 +1,10 @@
 alias: person2 traveltime
 sequence:
-  - service: homeassistant.update_entity
-    entity_id: sensor.person2s_time_to_home
   - service: notify.logfile
     data_template:
       message: >
         Updated travel time for person2 at {{ now() }}, currently at {{ state_attr('sensor.person2s_time_to_home','origin_name') }}
-  - condition: template
-    value_template: "{{ states('sensor.person2s_time_to_home_2') != 'unknown' }}"
-  - service: notify.logfile
-    data_template:
-      message: >
-        Updated travel time for person2 at {{ now() }}, currently at {{ state_attr('sensor.person2s_time_to_home_2','origin_addresses') }}
   - service: homeassistant.update_entity
-    entity_id: sensor.person2s_time_to_home_2
+    entity_id: sensor.person2s_time_to_home
+  - service: homeassistant.update_entity
+    entity_id: sensor.person2s_time_to_home_waze
