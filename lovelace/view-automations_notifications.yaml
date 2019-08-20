@@ -1,0 +1,17 @@
+title: Notification automations
+id: notifications
+path: notifications
+icon: mdi:bell-ring
+cards:
+- type: entities
+  show_header_toggle: false
+  title: Telegram
+  entities:
+  - automation.telegram_callback
+  - automation.telegram_command
+  - automation.telegram_command_lights
+  - automation.telegram_command_lights_on
+  - automation.telegram_command_lights_off
+  - automation.telegram_command_status
+  - automation.telegram_command_where
+  - automation.telegram_text

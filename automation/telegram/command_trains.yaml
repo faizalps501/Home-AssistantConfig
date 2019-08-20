@@ -1,0 +1,62 @@
+alias: 'Telegram command trains'
+initial_state: 'on'
+trigger:
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/trains'
+action:
+  - service: homeassistant.update_entity
+    data_template:
+      entity_id: >-
+        {%- if states('proximity.person2_home')|int < 2000 -%}
+          {%- if "other" in states('calendar.person2_work') -%}
+            sensor.next_train_to_xyz
+          {%- else -%}
+            sensor.next_train_to_xyz
+          {%- endif -%}
+        {%- elif states('proximity.person2_work')|int < 5 -%}
+          sensor.next_train_to_abc
+        {%- elif states('proximity_person2_work_2')|int < 5 -%}
+          sensor.next_train_to_lsn
+        {%- else -%}
+          sensor.next_train_to_xyz
+        {%- endif %}
+  - delay: '00:00:10'
+  - service: telegram_bot.send_message
+    data_template:
+      message: >
+        {%- if states('proximity.person2_home')|int < 2000 -%}
+          {%- if "other" in states('calendar.person2_work') -%}
+            {%- macro getTrainStatus() -%}
+            {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
+            {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+            {%- endfor -%}
+            {%- endmacro -%}
+            {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains are on time
+          {%- else -%}
+            {%- macro getTrainStatus() -%}
+            {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
+            {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+            {%- endfor -%}
+            {%- endmacro -%}
+            {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains are on time
+            {%- endif -%}
+        {%- elif states('proximity.person2_work')|int < 5 -%}
+          {%- macro getTrainStatus() -%}
+          {%- for train in state_attr('sensor.next_train_to_abc', 'next_trains') -%}
+          {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+          {%- endfor -%}
+          {%- endmacro -%}
+          {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains are on time
+        {%- elif states('proximity_person2_work_2')|int < 5 -%}
+          {%- macro getTrainStatus() -%}
+          {%- for train in state_attr('sensor.next_train_to_lsn', 'next_trains') -%}
+          {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+          {%- endfor -%}
+          {%- endmacro -%}
+          {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains are on time
+        {%- else -%}
+          Not sure where you are
+        {%- endif %}
+

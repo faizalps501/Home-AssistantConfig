@@ -1,0 +1,119 @@
+initial_state: 'on'
+alias: 'Zwave resync'
+trigger:
+  - platform: state
+    entity_id: switch.cabinet_light_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.cabinet_light_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.tv_light_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.tv_light_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.table_light_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.table_light_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.vestibule_socket_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.vestibule_socket_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.family_room_socket_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.family_room_socket_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.garden_lights_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.garden_lights_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.master_bedroom_socket_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.master_bedroom_socket_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.number_sign_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.number_sign_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.second_bedroom_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.second_bedroom_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.spare_socket_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.spare_socket_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.livingroom_socket_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.livingroom_socket_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.hall_downstairs_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.hall_downstairs_switch
+    to: 'off'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.front_bedroom_switch
+    to: 'on'
+    for: '00:01:00'
+  - platform: state
+    entity_id: switch.front_bedroom_switch
+    to: 'off'
+    for: '00:01:00'
+condition:
+  - condition: template
+    value_template: >-
+      {% set entity = trigger.entity_id.split('.')[1] %}
+      {% set switch = "switch" %}
+      {% set sensor = "binary_sensor" %}
+      {{ states[switch][entity].state != states[sensor][entity].state }}
+action:
+  - service: mqtt.publish
+    data_template:
+      topic: "homeassistant/switch/{{ trigger.entity_id.split('.')[1] }}/command"
+      payload: "{{ trigger.to_state.state }}"

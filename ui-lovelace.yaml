@@ -29,6 +29,6 @@ views:
   - !include lovelace/view-automations_person4.yaml
   - !include lovelace/view-automations_group.yaml
   - !include lovelace/view-automations_platform.yaml
-  - !include lovelace/view-alarm.yaml
+  - !include lovelace/view-automations_notifications.yaml
   - !include lovelace/view-scripts.yaml
   - !include lovelace/view-cast.yaml

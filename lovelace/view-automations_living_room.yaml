@@ -43,6 +43,7 @@ cards:
   title: Remote automations
   show_header_toggle: false
   entities:
+  - automation.dimmer
   - automation.dimmer_on
   - automation.dimmer_off
   - automation.dimmer_on_while_away

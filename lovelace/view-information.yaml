@@ -19,10 +19,13 @@ cards:
   - input_select.utility
   - input_boolean.utility_occupied
   - type: divider
+  - input_select.toilet
   - input_boolean.toilet_occupied
   - type: divider
   - input_select.garage
   - input_boolean.garage_occupied
+  - type: divider
+  - input_select.vestibule
 - type: entities
   title: Upstairs rooms
   show_header_toggle: false
@@ -32,10 +35,12 @@ cards:
   - type: divider
   - input_select.master_bedroom
   - input_boolean.master_bedroom_occupied
+  - input_select.master_ensuite
   - input_boolean.master_ensuite_occupied
   - type: divider
   - input_select.second_bedroom
   - input_boolean.second_bedroom_occupied
+  - input_select.second_ensuite
   - input_boolean.second_ensuite_occupied
   - type: divider
   - input_select.guest_bedroom
@@ -44,7 +49,14 @@ cards:
   - input_select.spare_bedroom
   - input_boolean.spare_bedroom_occupied
   - type: divider
+  - input_select.bathroom
   - input_boolean.bathroom_occupied
+- type: entities
+  title: House
+  show_header_toggle: false
+  entities:
+  - input_select.house
+  - input_boolean.home_occupied
 - type: entities
   title: Sensors
   show_header_toggle: false

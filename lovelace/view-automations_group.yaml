@@ -8,11 +8,15 @@ cards:
   show_header_toggle: false
   entities:
   - automation.bedtime
+  - automation.nearly_bedtime
   - automation.adults_away
   - automation.adults_away_home_off
   - automation.adults_returned
   - automation.all_away
   - automation.all_returned
+  - type: divider
+  - automation.home_occupied
+  - automation.home_not_occupied
   - type: divider
   - automation.mark_person_as_just_arrived
   - automation.mark_person_as_away
@@ -28,6 +32,7 @@ cards:
   entities:
   - automation.guest_mode_on
   - automation.guest_mode_off
+  - automation.guest_mode_off_nobody_home
 - type: entities
   title: Automations for travel
   show_header_toggle: false
@@ -44,6 +49,8 @@ cards:
   - automation.person2_at_lcy
   - automation.person2_at_lhr
   - automation.person2_at_sin
+  - type: divider
+  - automation.startup_location_update
 - type: entities
   title: Automations for work
   show_header_toggle: false

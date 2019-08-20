@@ -1,4 +1,4 @@
-alias: 'Guest mode off'
+alias: 'Guest mode off nobody home'
 initial_state: 'on'
 trigger:
   - platform: state
