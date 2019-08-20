@@ -18,7 +18,7 @@ action:
         {%- elif states('proximity.person2_work')|int < 5 -%}
           sensor.next_train_to_abc
         {%- elif states('proximity_person2_work_2')|int < 5 -%}
-          sensor.next_train_to_lsn
+          sensor.next_train_to_def
         {%- else -%}
           sensor.next_train_to_xyz
         {%- endif %}
@@ -51,7 +51,7 @@ action:
           {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains are on time
         {%- elif states('proximity_person2_work_2')|int < 5 -%}
           {%- macro getTrainStatus() -%}
-          {%- for train in state_attr('sensor.next_train_to_lsn', 'next_trains') -%}
+          {%- for train in state_attr('sensor.next_train_to_def', 'next_trains') -%}
           {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
           {%- endfor -%}
           {%- endmacro -%}
