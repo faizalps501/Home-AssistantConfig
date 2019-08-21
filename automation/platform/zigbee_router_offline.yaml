@@ -30,7 +30,7 @@ condition:
         entity_id: binary_sensor.zigbee2mqtt_router_1
         state: 'off'
 action:
-  - service: notify.logfile
+  - service: notify.person2_telegram
     data_template:
       message: >-
-        SENDME The Zigbee router has been {{ trigger.to_state.state }} for 10 minutes, and the lights are offline too. Time to reset the stick again.
+        The Zigbee router has been {{ trigger.to_state.state }} for 10 minutes, and the lights are offline too. Time to reset the stick again.

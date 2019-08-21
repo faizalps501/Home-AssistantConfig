@@ -20,3 +20,7 @@ action:
         {%- else -%}
           person1 is {{ states('input_text.person_person1') }}
         {%- endif -%}
+
+        {% if ( states('device_tracker.car_gps') != states('device_tracker.person2_mobile_gps') ) and (not is_state('device_tracker.car_gps','not_home')) -%}
+          The car is at {{ states('device_tracker.car_gps') }}
+        {%- endif -%}
