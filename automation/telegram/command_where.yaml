@@ -10,13 +10,13 @@ action:
     data_template:
       message: >
         {%- if is_state('device_tracker.person3_mobile','not_home') -%}
-          person3 is at {{ state_attr('sensor.person3s_time_to_home','origin_name') }} {{ states('input_text.person_person3') }}
+          person3 is at {{ state_attr('sensor.person3s_time_to_home','origin_name') }}, {{ states('input_text.person_person3') }}
         {%- else -%}
           person3 is {{ states('input_text.person_person3') }}
         {%- endif %}
 
         {% if is_state('device_tracker.person1_mobile','not_home') -%}
-          person1 is at {{ state_attr('sensor.person1s_time_to_home','origin_name') }} {{ states('input_text.person_person1') }}
+          person1 is at {{ state_attr('sensor.person1s_time_to_home','origin_name') }}, {{ states('input_text.person_person1') }}
         {%- else -%}
           person1 is {{ states('input_text.person_person1') }}
         {%- endif -%}

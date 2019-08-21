@@ -24,3 +24,4 @@ cards:
   - automation.person3_coming_home
   - automation.person3_on_the_move
   - automation.person3_location_update
+  - automation.person3_changing_zones

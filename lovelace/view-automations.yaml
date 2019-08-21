@@ -4,13 +4,60 @@ path: automations
 icon: mdi:home-variant
 cards:
 - type: entities
-  title: Automations for the Family room
+  title: Living room motion
+  show_header_toggle: false
+  entities:
+  - automation.living_room_dark_motion
+  - automation.living_room_dark_no_motion
+- type: entities
+  title: Room status
+  show_header_toggle: false
+  entities:
+  - automation.living_room_arrival
+  - automation.living_room_away
+  - automation.living_room_dim
+  - automation.living_room_off
+  - automation.living_room_day_on
+  - automation.living_room_night_on
+  - automation.living_room_occupied
+  - automation.living_room_not_occupied
+- type: entities
+  title: Automations for the living room lights
+  show_header_toggle: false
+  entities:
+  - automation.tv_light_on
+  - automation.living_room_lights_day_on
+  - automation.living_room_lights_dim_on
+  - automation.living_room_lights_night_on
+  - automation.living_room_lights_off
+  - automation.living_room_table_light
+- type: entities
+  title: Living room media automations
+  show_header_toggle: false
+  entities:
+  - automation.all_away_media_off
+  - automation.tv_on_sonos_off
+  - automation.sonos_on_tv_mute
+  - automation.sonos_off_tv_unmute
+- type: entities
+  title: Remote automations
+  show_header_toggle: false
+  entities:
+  - automation.dimmer
+  - automation.dimmer_on
+  - automation.dimmer_off
+  - automation.dimmer_on_while_away
+  - automation.dimmer_off_while_off
+  - automation.dimmer_up_while_on
+  - automation.dimmer_down_while_on
+- type: entities
+  title: Family room automations
   show_header_toggle: false
   entities:
   - automation.family_room_occupied
   - automation.family_room_not_occupied
 - type: entities
-  title: Automations for downstairs
+  title: Downstairs automations
   show_header_toggle: false
   entities:
   - automation.hall_lights_on
@@ -24,7 +71,7 @@ cards:
   - automation.hall_lights_motion_dull
   - automation.hall_lights_unavailable_off
 - type: entities
-  title: Automations for the front of the house
+  title: Front of the house
   show_header_toggle: false
   entities:
   - automation.number_on_at_sunset
@@ -40,7 +87,7 @@ cards:
   - automation.person2_away_garage_open
   - automation.probably_leaving
 - type: entities
-  title: Automations for the garden
+  title: Garden
   show_header_toggle: false
   entities:
   - automation.utility_door_open_after_sunset_closed
@@ -49,3 +96,13 @@ cards:
   - automation.nighttime_garden_off
   - automation.garden_lights_left_on
   - binary_sensor.garden_lights_left_on
+- type: entities
+  title: Automations for the office
+  show_header_toggle: false
+  entities:
+  - automation.play_music_in_the_office
+  - automation.pause_music_in_the_office
+  - automation.resume_music_in_the_office
+  - automation.office_occupied
+  - automation.office_not_occupied
+  - automation.office_button_pushed

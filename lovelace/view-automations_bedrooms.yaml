@@ -1,10 +1,10 @@
-title: Master bedroom automations
-id: automations_master_bedroom
-path: automations_master_bedroom
+title: Bedroom automations
+id: automations_bedrooms
+path: automations_bedrooms
 icon: mdi:hotel
 cards:
 - type: entities
-  title: Automations for the master bedroom
+  title: Master bedroom
   show_header_toggle: false
   entities:
   - automation.person2_up_bedhead_light_on
@@ -24,9 +24,28 @@ cards:
   - automation.late_disable_fluxer
   - automation.alarm_monitor_person2
 - type: entities
-  title: Remote automations for the en-suite
+  title: Master en-suite
   show_header_toggle: false
   entities:
   - automation.extractor_notification
   - automation.extractor_on
   - automation.extractor_off
+- type: entities
+  title: 2nd bedroom light
+  show_header_toggle: false
+  entities:
+  - automation.person1_up_bedhead_light_on
+  - automation.person1_up_bedhead_light_off
+  - automation.person1_bedside_left_on
+- type: entities
+  title: Second bedroom
+  show_header_toggle: false
+  entities:
+  - automation.person1_alarm_on
+  - automation.person1_alarm_off
+  - automation.person1_radio_on
+  - automation.person1_radio_on_late
+  - automation.person1_radio_on_night
+  - automation.person1_radio_off
+  - automation.person1_radio_off_late
+  - automation.alarm_monitor_person1

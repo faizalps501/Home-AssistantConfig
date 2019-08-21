@@ -35,6 +35,7 @@ cards:
   - automation.person1_is_not_travelling
   - automation.person1_on_the_move
   - automation.person1_location_update
+  - automation.person1_changing_zones
 - type: entities
   title: Automations changing inputs
   show_header_toggle: false

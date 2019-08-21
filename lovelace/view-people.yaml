@@ -407,8 +407,11 @@ cards:
       cards: 
       - type: glance
         title: Car
-        columns: 2
+        columns: 3
         entities:
+        - entity: device_tracker.car_gps
+          name: GPS
+          icon: mdi:crosshairs-gps
         - entity: device_tracker.car_front
           name: Front
           icon: mdi:bluetooth
