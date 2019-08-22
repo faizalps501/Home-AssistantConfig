@@ -1,5 +1,4 @@
 name: 'No brighter than this'
-initial: 255
 min: 50
 max: 255
 step: 1

@@ -31,7 +31,7 @@ EOM
 		WHAT=$(cat ${TDIR}/xx02 | grep "email reminder" |  sed -e "s/.* POST CODE. Your //" -e "s/ .*//")
 		WHEN=$(cat ${TDIR}/xx02 | grep "email reminder" |  sed -e "s/.*will be collected //" -e "s/.\s*$//" -e "s/\([0-9]\)[snrt][tdh]/\1/")
 		case ${WHEN} in
-			tomorrow* )	WHEN='$(date --date="tomorrow ${EMAIL_DATE}" +"%F 00:00:00")'
+			tomorrow* )	WHEN="$(date --date=\"tomorrow ${EMAIL_DATE}\" +\"%F 00:00:00\")"
 				;;
 			* ) 	WHEN="$(echo "${WHEN}" | sed -e "s/^.*\([0-9]\)/\1" -e "s/\.$//")"
 				# If this is December, and that's January, we need to add a year

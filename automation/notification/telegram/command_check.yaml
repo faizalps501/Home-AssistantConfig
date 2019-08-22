@@ -1,15 +1,23 @@
-alias: 'Telegram command where'
+alias: 'Telegram command check'
 initial_state: 'on'
 trigger:
   - platform: event
     event_type: telegram_command
     event_data:
-      command: '/where'
+      command: '/check'
 action:
   - service: telegram_bot.send_message
     data_template:
       message: >
-        {%- if is_state('device_tracker.person3_mobile','not_home') -%}
+        The alarm is {{ states('alarm_control_panel.ha_alarm') }}
+        
+        The zigbee bridge is {{ states('sensor.zigbee2mqtt_bridge_state') }} and router is {{ states('binary_sensor.zigbee2mqtt_router_1') }}
+
+        The following rooms are occupied: {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_room_status', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}
+
+        There are {{ dict(states|selectattr('entity_id', 'in', state_attr('group.my_lights', 'entity_id')|list)|groupby('state'))['on']|length }} lights on, {{ dict(states|selectattr('entity_id', 'in', state_attr('group.my_exterior_doors', 'entity_id')|list)|groupby('state'))['on']|length }} doors open, {{ dict(states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id')|list)|groupby('state'))['on']|length }} windows open downstairs, and {{ dict(states|selectattr('entity_id', 'in', state_attr('group.my_upstairs_windows', 'entity_id')|list)|groupby('state'))['on']|length }} windows open upstairs
+
+        {% if is_state('device_tracker.person3_mobile','not_home') -%}
           person3 has been at {{ state_attr('sensor.person3s_time_to_home','origin_name') }}, {{ states('input_text.person_person3') }}, for {{ relative_time(states.device_tracker.person3_mobile.last_changed) }}
         {%- elif is_state('input_boolean.person3_in_bed','on') -%}
           person3 has been in bed for {{ relative_time(states.input_boolean.person3_in_bed.last_changed) }}
