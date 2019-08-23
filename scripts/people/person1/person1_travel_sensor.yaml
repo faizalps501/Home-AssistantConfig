@@ -14,6 +14,8 @@ sequence:
           {{ state_attr('sensor.person1s_time_to_home', 'duration')|round(0) }} {{ state_attr('sensor.person1s_time_to_home_by_bus', 'unit_of_measurement') }} to home by car
         {% elif states('proximity.person1_home')|int > 1500 %}
           {{ state_attr('sensor.person1s_time_to_home_by_bus', 'duration')|round(0) }} {{ state_attr('sensor.person1s_time_to_home_by_bus', 'unit_of_measurement') }} to home by bus
-        {% else %}
+        {% elif states('proximity.person1_home')|int > 50 %}
           {{ state_attr('sensor.person1s_time_to_home_by_foot', 'duration')|round(0) }} {{ state_attr('sensor.person1s_time_to_home_by_foot', 'unit_of_measurement') }} to home on foot
+        {% else %}
+          Near home ({{ states('proximity.person1_home')|int}} meters away)
         {% endif %}

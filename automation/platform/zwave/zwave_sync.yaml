@@ -17,6 +17,14 @@ trigger:
       - switch.hall_downstairs_switch
       - switch.front_bedroom_switch
 action:
+  - delay:
+      milliseconds: 500
+  - condition: template
+    value_template: >-
+      {% set entity = trigger.entity_id.split('.')[1] %}
+      {% set switch = "switch" %}
+      {% set sensor = "binary_sensor" %}
+      {{ states[switch][entity].state != states[sensor][entity].state }}
   - service: mqtt.publish
     data_template:
       topic: "homeassistant/switch/{{ trigger.entity_id.split('.')[1] }}/command"
