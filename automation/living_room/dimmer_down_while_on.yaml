@@ -11,5 +11,4 @@ condition:
     entity_id: light.living_room_table
     state: 'on'
 action:
-  # Make it brighter
   - service: script.living_room_table_dim_step
