@@ -1,4 +1,4 @@
-person1_home:
+person1_work:
   zone: work
   devices:
     - device_tracker.person1_mobile

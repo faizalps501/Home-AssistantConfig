@@ -1,7 +1,10 @@
 name: Office
 options:
-  - Away
+  - 'Auto'
+  - 'Away'
+  - 'Dim'
+  - 'Bedtime'
+  - 'Day on'
+  - 'Night on'
+  - 'On'
   - 'Off'
-  - Day on
-  - Night on
-  - Dim
