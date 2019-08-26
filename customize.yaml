@@ -194,3 +194,7 @@ input_text.person_person2:
   entity_picture: /local/person2Thumb.jpg
 light.living_room_table:
   friendly_name: Living room table light
+binary_sensor.first_floor_front:
+  device_class: connectivity
+binary_sensor.first_floor_rear:
+  device_class: connectivity

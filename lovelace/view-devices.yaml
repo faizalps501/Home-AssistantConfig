@@ -17,6 +17,15 @@ cards:
     name: Living room TV
   - entity: switch.table_light_switch
     name: Table light switch
+- type: glance
+  title: Monitor
+  show_header_toggle: false
+  columns: 2
+  entities:
+  - entity: binary_sensor.first_floor_front
+    name: Front
+  - entity: binary_sensor.first_floor_rear
+    name: Rear
 - type: entities
   title: Zigbee
   show_header_toggle: false

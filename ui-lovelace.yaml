@@ -15,7 +15,6 @@ views:
   - !include lovelace/view-information.yaml
   - !include lovelace/view-devices.yaml
   - !include lovelace/view-inputs.yaml
-  - !include lovelace/view-zigbee.yaml
   - !include lovelace/view-zwave.yaml
   - !include lovelace/view-spacer.yaml
   - !include lovelace/view-automations.yaml
