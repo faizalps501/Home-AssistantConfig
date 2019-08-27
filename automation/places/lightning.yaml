@@ -1,0 +1,13 @@
+initial_state: 'on'
+alias: 'Lightning'
+trigger:
+  - platform: geo_location
+    source: wwlln
+    zone: zone.lightning
+    event: enter
+action:
+  - service: notify.person2_telegram
+    data_template:
+      message: "{{ trigger.to_state.name }} - {{ trigger.to_state.attributes.status }}"
+      title: "Lightning Alert"
+

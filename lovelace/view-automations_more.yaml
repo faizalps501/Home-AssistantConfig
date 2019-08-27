@@ -18,6 +18,7 @@ cards:
   - automation.weather_notification
   - automation.bin_notification
   - automation.printer_low
+  - automation.lightning
 - type: entities
   title: Car related automations
   show_header_toggle: false

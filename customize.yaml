@@ -198,3 +198,4 @@ binary_sensor.first_floor_front:
   device_class: connectivity
 binary_sensor.first_floor_rear:
   device_class: connectivity
+zone.lightning: {}
