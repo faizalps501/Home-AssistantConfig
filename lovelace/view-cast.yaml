@@ -6,17 +6,23 @@ cards:
 
   - type: entity-button
     title: Living room
-    entity: group.living_room_lights
+    entity: light.living_room
     icon: mdi:lightbulb
+    tap_action:
+      action: toggle
 
   - type: entity-button
     title: Living room socket
     entity: switch.livingroom_socket_switch
     icon: mdi:power-socket-uk
+    tap_action:
+      action: toggle
 
   - type: entity-button
     title: Hall
     entity: light.hall
+    tap_action:
+      action: toggle
 
   - type: entity-filter
     entities:
@@ -117,23 +123,8 @@ cards:
         name: Family room
         tap_action: 
           action: toggle
-      - entity: light.hall
-        name: Hall
       - entity: switch.hall_downstairs_switch
         name: Hall socket
-        tap_action: 
-          action: toggle
-      - entity: light.living_room_table
-        name: Table
-      - entity: switch.tv_light_switch
-        tap_action: 
-          action: toggle
-      - entity: switch.cabinet_light_switch
-        name: "Corner"
-        tap_action: 
-          action: toggle
-      - entity: switch.livingroom_socket_switch
-        name: "Cabinet"
         tap_action: 
           action: toggle
     show_empty: false
