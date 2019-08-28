@@ -1,0 +1,23 @@
+alias: 'Start camera stream'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: input_boolean.test_mode
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'on'
+action:
+  - service: camera.play_stream
+    data_template:
+      entity_id: "camera.front_camera"
+      format: "hls"
+      media_player: >- 
+        {%- if is_state('input_boolean.office_occupied','on') -%}
+          media_player.office_display
+        {%- elif is_state('input_boolean.living_room_occupied','on') -%}
+          media_player.living_room_smart_displa
+        {%- else -%}
+          media_player.family_room_display
+        {%- endif -%}

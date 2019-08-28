@@ -8,6 +8,12 @@ person_dor:
   entities:
   - device_tracker.00_1d_29_a5_49_ae
   - device_tracker.person4_mobile
+person_person4:
+  name: person4
+  entities:
+  - device_tracker.00_1d_29_a5_49_ae
+  - device_tracker.person4_bt_front_mobile
+  - device_tracker.person4_bt_mobile
 person_person2:
   name: person2
   entities:

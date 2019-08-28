@@ -18,7 +18,7 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home.last_changed)|float)|float > 600 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('script.person3_traveltime','last_triggered'))|float)|float > 600 }}"
       - condition: numeric_state
         entity_id: proximity.person3_home
         above: 10
@@ -27,7 +27,7 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home.last_changed)|float)|float > 900 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('script.person3_traveltime','last_triggered'))|float)|float > 900 }}"
       - condition: numeric_state
         entity_id: proximity.person3_home
         above: 1999  
@@ -36,7 +36,7 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home.last_changed)|float)|float > 3600 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('script.person3_traveltime','last_triggered'))|float)|float > 3600 }}"
       - condition: numeric_state
         entity_id: proximity.person3_home
         above: 10000

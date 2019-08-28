@@ -4,12 +4,14 @@ trigger:
   - platform: state
     entity_id:
     - device_tracker.001d29a549ae
-    - device_tracker.person4_mobile
+    - device_tracker.person4_bt_front_mobile
+    - device_tracker.person4_bt_mobile
     to: 'not_home'
   - platform: state
     entity_id:
     - device_tracker.001d29a549ae
-    - device_tracker.person4_mobile
+    - device_tracker.person4_bt_front_mobile
+    - device_tracker.person4_bt_mobile
     to: 'not_home'
     for:
       minutes: 5
@@ -23,7 +25,7 @@ condition:
   - condition: template
     value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.front_door_sensor.last_updated)) | int < 600 }}"
   - condition: state
-    entity_id: group.person_dor
+    entity_id: group.person_person4
     state: 'not_home'
 action:
   - service: script.person4_away

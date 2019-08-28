@@ -3,25 +3,15 @@ alias: 'person4 home'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.001d29a549ae
-    - device_tracker.person4_mobile
+    - device_tracker.00_1d_29_a5_49_ae
+    - device_tracker.person4_bt_front_mobile
+    - device_tracker.person4_bt_mobile
     to: 'home'
   - platform: homeassistant
     event: start
 condition:
   - condition: state
-    entity_id: input_boolean.person3_home
+    entity_id: input_boolean.person4_home
     state: 'off'
-  - condition: or
-    conditions:
-    # WiFi and BT are our truth data, as soon as one of them shows us as home we're home
-    - condition: state
-      entity_id: device_tracker.person4_mobile
-      state: 'home'
-    # But any two win too
-    - condition: numeric_state
-      entity_id: group.person_dor
-      above: 1
-      value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: script.person4_home
