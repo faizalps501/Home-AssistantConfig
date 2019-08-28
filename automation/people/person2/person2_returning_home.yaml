@@ -1,4 +1,5 @@
 alias: 'person2 returning home'
+initial_state: 'on'
 trigger:
   - platform: event
     event_type: tasker_webhook
