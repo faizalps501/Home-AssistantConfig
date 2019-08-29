@@ -16,6 +16,8 @@ trigger:
       - input_boolean.person2_tablet_charging
       - input_boolean.person2_phone_charging
     to: 'on'
+  - platform: time
+    at: '22:05:00'
 condition:
   # I'm home, and the mobile is charging
   - condition: state
