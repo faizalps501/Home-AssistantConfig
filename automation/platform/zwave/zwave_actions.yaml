@@ -23,3 +23,6 @@ action:
       domain: "switch"
       action: "turn_{{ trigger.to_state.state }}"
       entity: "switch.{{ trigger.entity_id.split('.')[1] }}"
+  - service: notify.logfile
+    data_template:
+      message: "Called the script to turn {{ trigger.to_state.state }} the switch.{{ trigger.entity_id.split('.')[1] }}"

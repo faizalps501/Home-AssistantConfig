@@ -117,3 +117,6 @@ action:
     data_template:
       topic: "homeassistant/switch/{{ trigger.entity_id.split('.')[1] }}/command"
       payload: "{{ trigger.to_state.state }}"
+  - service: notify.logfile
+    data_template:
+      message: "Published MQTT to sync {{ trigger.to_state.state }} the switch.{{ trigger.entity_id.split('.')[1] }}"
