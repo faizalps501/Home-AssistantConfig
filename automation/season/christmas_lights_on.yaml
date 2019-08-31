@@ -5,10 +5,6 @@ trigger:
     entity_id: input_boolean.bedtime
     to: 'off'
   - platform: state
-    entity_id: input_boolean.adults_away
-    from: 'on'
-    to: 'off'
-  - platform: state
     entity_id: input_boolean.home_occupied
     to: 'on'
   - platform: state
