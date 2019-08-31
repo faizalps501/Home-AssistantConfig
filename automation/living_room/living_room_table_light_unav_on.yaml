@@ -1,8 +1,9 @@
-initial_state: 'off'
-alias: 'Living room table light'
+initial_state: 'on'
+alias: 'Living room table light unavailable on'
 trigger:
   - platform: state
     entity_id: light.living_room_table
+    from: 'unavailable'
     to: 'on'
 condition:
   - condition: or

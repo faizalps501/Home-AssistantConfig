@@ -1,0 +1,13 @@
+name: Hall
+options:
+  # Auto mode - follows the mode of the house
+  - 'Auto'
+  - 'Holiday'
+  - 'Away'
+  - 'Dim'
+  - 'Wake'
+  - 'Bedtime'
+  - 'Day on'
+  - 'Night on'
+  - 'On'
+  - 'Off'
