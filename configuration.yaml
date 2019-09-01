@@ -42,6 +42,9 @@ influxdb: !include influxdb.yaml
 tts:
   - platform: google_translate
     service_name: google_say
+  - platform: google_cloud
+    key_file: secrets/google_cloud.json
+    voice: en-GB-Standard-C
 
 group: !include groups.yaml
 
