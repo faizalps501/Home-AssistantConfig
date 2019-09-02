@@ -17,6 +17,9 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
 action:
+  - service: notify.logfile
+    data:
+      message: "Turning off the living room table light"
   - service: light.turn_off
     data:
       entity_id: light.living_room_table

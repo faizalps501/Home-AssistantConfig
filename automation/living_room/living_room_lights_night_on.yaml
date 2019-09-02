@@ -13,6 +13,9 @@ condition:
 action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto
+  - service: notify.logfile
+    data:
+      message: "Turning on the living room table light"
   - service: light.turn_on
     data:
       entity_id: light.living_room_table
