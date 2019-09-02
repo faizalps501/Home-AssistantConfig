@@ -13,4 +13,4 @@ action:
     data_template:
       message: >-
         {{ states('sensor.dark_sky_temperature')|round(0) }}C outside and {{ states('sensor.dark_sky_minutely_summary')|lower }} {{ states('sensor.dark_sky_hourly_summary') }}
-        {% if not is_state('sensor.dark_sky_alerts','0') %}. There are weather alerts {% endif %}
+        {% if (not is_state('sensor.dark_sky_alerts','0')) and (states('sensor.dark_sky_alerts') != "unknown") %}. There are weather alerts {% endif %}
