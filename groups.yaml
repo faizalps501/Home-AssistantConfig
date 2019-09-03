@@ -31,7 +31,7 @@ person_person2_laptop:
   name: person2's laptop
   icon: mdi:laptop-windows
   entities:
-  - device_tracker.9c_30_5b_3c_6c_87
+  - device_tracker.a4_c3_f0_88_fa_2c
   - device_tracker.person2_bt_laptop
   - device_tracker.person2_bt_front_laptop
 person_person2_work:
