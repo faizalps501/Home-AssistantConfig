@@ -44,7 +44,7 @@ action:
         {% else %}
           media_player.cast_master_bedroom_display
         {% endif %}
-  - service: tts.google_say
+  - service: tts.google_cloud_say
     data_template:
       entity_id: >-
         {% if as_timestamp(states.input_boolean.person2_is_awake.last_updated) > as_timestamp(states.input_boolean.person3_is_awake.last_updated) %}

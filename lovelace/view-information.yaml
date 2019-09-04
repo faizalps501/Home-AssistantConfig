@@ -24,8 +24,6 @@ cards:
   - type: divider
   - input_select.garage
   - input_boolean.garage_occupied
-  - type: divider
-  - input_select.vestibule
 - type: entities
   title: Upstairs rooms
   show_header_toggle: false
@@ -57,6 +55,9 @@ cards:
   entities:
   - input_select.house
   - input_boolean.home_occupied
+  - type: divider
+  - input_select.hall
+  - input_select.vestibule
 - type: entities
   title: Sensors
   show_header_toggle: false

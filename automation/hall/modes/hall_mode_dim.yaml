@@ -1,0 +1,67 @@
+initial_state: 'on'
+alias: 'Hall mode dim'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_downstairs_occupancy
+    to: 'on'
+  - platform: numeric_state
+    entity_id: sensor.sun_elevation
+    below: 5
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 15
+    for:
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.hall_downstairs_illuminance
+    below: 10
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
+  - platform: state
+    entity_id:
+      - input_boolean.living_room_occupied
+      - input_boolean.family_room_occupied
+    to: 'on'
+  - platform: state
+    to: 'Just Arrived'
+    entity_id: 
+      - input_select.person2_status_dropdown
+      - input_select.person3_status_dropdown
+      - input_select.person1_status_dropdown
+      - input_select.person4_status_dropdown
+condition:
+  - condition: and
+    conditions:
+    # We're awake
+    - condition: state
+      entity_id: input_boolean.bedtime
+      state: 'off'
+    - condition: or
+      conditions:
+      # Dark in the living room
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        below: 15
+      # or here
+      - condition: numeric_state
+        entity_id: sensor.hall_downstairs_illuminance
+        below: 10
+      # Or sun below 5 degrees
+      - condition: numeric_state
+        entity_id: sensor.sun_elevation
+        below: 5
+    - condition: or
+      conditions:
+    # We're not away
+      - condition: state
+        entity_id: input_boolean.home_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'on'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.hall
+      option: 'Dim'

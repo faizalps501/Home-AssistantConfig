@@ -24,7 +24,7 @@ sequence:
       transition: 30
       color_temp: 394
       brightness_pct: 100
-  - service: tts.google_say
+  - service: tts.google_cloud_say
     entity_id: media_player.cast_second_bedroom_speaker
     data:
       message: "Time to get up"
@@ -41,7 +41,7 @@ sequence:
       media_content_id: https://myhost.dynamic.dom:18443/local/sounds/sub_alert.mp3
       media_content_type: music
   - delay: 00:00:03
-  - service: tts.google_say
+  - service: tts.google_cloud_say
     entity_id: media_player.cast_second_bedroom_speaker
     data:
       message: "Time to get up"
