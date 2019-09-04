@@ -330,6 +330,12 @@ cards:
         - entity: sensor.person1s_time_to_home
           name: Car home
           icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home_by_bus
+          name: Bus home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home_by_foot
+          name: Walking home
+          icon: mdi:map-marker-distance
         - entity: proximity.person1_home
           name: To home
       - type: glance
