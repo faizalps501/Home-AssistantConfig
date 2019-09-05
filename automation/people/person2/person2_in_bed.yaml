@@ -51,3 +51,8 @@ condition:
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person2_in_bed
+  - condition: state
+    entity_id: input_boolean.person2_driving
+    state: 'on'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person2_driving

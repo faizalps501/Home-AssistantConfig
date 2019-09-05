@@ -9,3 +9,8 @@ trigger:
 action:
   - service: homeassistant.turn_on
     entity_id: automation.person2_returning_home
+  - condition: state
+    entity_id: input_boolean.person2_driving
+    state: 'on'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person2_driving

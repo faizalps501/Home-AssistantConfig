@@ -14,3 +14,8 @@ sequence:
     - input_boolean.person2_travelling
     - automation.return_train_watcher
   - service: script.person2_traveltime
+  - condition: state
+    entity_id: input_boolean.person2_driving
+    state: 'on'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person2_driving
