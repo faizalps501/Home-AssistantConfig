@@ -30,6 +30,9 @@ trigger:
       - input_select.person3_status_dropdown
       - input_select.person1_status_dropdown
       - input_select.person4_status_dropdown
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor
+    to: 'on'
 condition:
   - condition: and
     conditions:

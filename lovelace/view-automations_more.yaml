@@ -44,6 +44,8 @@ cards:
   entities:
   - automation.stream_to_living_room
   - automation.stop_stream_to_living_room
+  - automation.start_camera_stream
+  - automation.stop_camera_stream
 - type: entities
   title: Core HA automations
   show_header_toggle: false

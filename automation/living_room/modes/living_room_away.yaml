@@ -14,7 +14,7 @@ trigger:
     to: 'off'
 condition:
   - condition: state
-    entity_id: input_boolean.living_room_occupied
+    entity_id: input_boolean.home_occupied
     state: 'off'
 action:
   - service: input_select.select_option

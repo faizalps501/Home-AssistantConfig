@@ -1,0 +1,34 @@
+initial_state: 'on'
+alias: 'Hall lights to away'
+trigger:
+  - platform: state
+    entity_id: input_select.hall
+    to: 'Away'
+  - platform: state
+    entity_id: input_select.house
+    to: 'Away'
+condition:
+  - condition: state
+    entity_id: input_boolean.lighting_automations
+    state: 'on'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.hall
+      state: 'Away'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.hall
+        state: 'Auto'
+      - condition: state
+        entity_id: input_select.house
+        state: 'Away'
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+  - service: switch.turn_off
+    entity_id: 
+      - switch.hall_downstairs_switch
+      - switch.vestibule_switch
