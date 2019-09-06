@@ -11,6 +11,9 @@ trigger:
   # When it gets bright in the living room
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
+    above: 40
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
     above: 25
     for:
       minutes: 5
