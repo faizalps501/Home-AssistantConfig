@@ -27,6 +27,9 @@ condition:
       - condition: state
         entity_id: input_select.living_room
         state: 'Off'
+      - condition: state
+        entity_id: input_select.living_room
+        state: 'Bedtime'
 action:
   - service: homeassistant.turn_on
     entity_id: input_boolean.livingroom_lights_auto

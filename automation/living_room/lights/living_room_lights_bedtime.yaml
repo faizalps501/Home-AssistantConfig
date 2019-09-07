@@ -1,0 +1,37 @@
+initial_state: 'on'
+alias: 'Living room lights bedtime'
+trigger:
+  - platform: state
+    entity_id: input_select.living_room
+    to: 'Bedtime'
+  - platform: state
+    entity_id: input_select.house
+    to: 'Bedtime'
+condition:
+  # Lighting automations must be enabled
+  - condition: state
+    entity_id: input_boolean.lighting_automations
+    state: 'on'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.living_room
+      state: 'Bedtime'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.living_room
+        state: 'Auto'
+      - condition: state
+        entity_id: input_select.house
+        state: 'Bedtime'
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.living_room_table
+      transition: 15
+  - service: switch.turn_off
+    entity_id: 
+      - switch.tv_light_switch
+      - switch.cabinet_light_switch
+      - switch.livingroom_socket_switch

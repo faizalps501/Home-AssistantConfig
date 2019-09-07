@@ -3,14 +3,28 @@ alias: 'Living room lights day on'
 trigger:
   - platform: state
     entity_id: input_select.living_room
-    to: Day on
+    to: 'Day on'
+  - platform: state
+    entity_id: input_select.house
+    to: 'Day on'
 condition:
-  condition: and
-  conditions:
-    # Lighting automations are enabled
+  # Lighting automations must be enabled
+  - condition: state
+    entity_id: input_boolean.lighting_automations
+    state: 'on'
+  - condition: or
+    conditions:
     - condition: state
-      entity_id: input_boolean.lighting_automations
-      state: 'on'
+      entity_id: input_select.living_room
+      state: 'Day on'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.living_room
+        state: 'Auto'
+      - condition: state
+        entity_id: input_select.house
+        state: 'Day on'
 action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto

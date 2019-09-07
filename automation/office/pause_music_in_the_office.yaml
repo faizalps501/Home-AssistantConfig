@@ -24,7 +24,7 @@ condition:
       for:
         minutes: 10
     - condition: state
-      entity_id: input_boolean.office_occupiet
+      entity_id: input_boolean.office_occupied
       state: 'off'
 action:
   - service: media_player.media_pause
