@@ -206,3 +206,4 @@ switch.family_room_socket_switch:
   icon: mdi:power-socket-uk
 switch.vestibule_socket_switch:
   icon: mdi:power-socket-uk
+sensor.dark_sky_pressure: {}
