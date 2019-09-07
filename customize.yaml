@@ -199,3 +199,10 @@ binary_sensor.first_floor_front:
 binary_sensor.first_floor_rear:
   device_class: connectivity
 zone.lightning: {}
+switch.living_room_table:
+  icon: mdi:power-socket-uk
+binary_sensor.vestibule_socket_switch: {}
+switch.family_room_socket_switch:
+  icon: mdi:power-socket-uk
+switch.vestibule_socket_switch:
+  icon: mdi:power-socket-uk

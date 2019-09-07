@@ -10,6 +10,8 @@ condition:
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
+    - condition: template
+      value_template: "{{ not (is_state('input_select.hall','Off') or is_state('input_select.hall','Away') or is_state('input_select.hall','Holiday')) }}"
     - condition: or
       conditions:
       - condition: and

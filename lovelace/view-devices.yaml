@@ -38,6 +38,11 @@ cards:
   - entity: binary_sensor.zigbee2mqtt_router_1
     name: Router
 - type: glance
+  title: Power consumption
+  show_header_toggle: false
+  entities:
+    - entity: sensor.living_room_table_switch_power
+- type: glance
   title: Zigbee battery devices
   show_header_toggle: false
   columns: 5
