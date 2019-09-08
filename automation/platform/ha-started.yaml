@@ -8,6 +8,3 @@ action:
   - service: script.notify_person2
     data:
       message: "Home Assistant has started on Vision"
-  - service: frontend.set_theme
-    data:
-      name: 'midnight'

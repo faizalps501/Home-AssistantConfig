@@ -1,0 +1,6 @@
+platform: onvif
+name: 'Front camera'
+host: 192.168.0.222
+username: !secret front_camera_user
+password: !secret front_camera_pass
+port: 80
