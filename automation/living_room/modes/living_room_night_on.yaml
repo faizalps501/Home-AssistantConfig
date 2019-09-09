@@ -41,7 +41,7 @@ condition:
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.living_room_multi_luminance
-          below: 13
+          below: 15
       - condition: and
         conditions:
         - condition: state

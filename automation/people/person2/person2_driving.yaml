@@ -9,7 +9,7 @@ condition:
   # In the car
   - condition: template
     value_template: >-
-      {{ 'BT Car' in trigger.event.data.what }}
+      {{ ',Car,' in trigger.event.data.what }}
   # Not driving
   - condition: state
     entity_id: input_boolean.person2_driving
