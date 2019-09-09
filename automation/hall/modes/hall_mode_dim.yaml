@@ -36,6 +36,8 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: template
+      value_template: "{{ not is_state('input_select.hall','Dim') }}"
     # We're awake
     - condition: state
       entity_id: input_boolean.bedtime

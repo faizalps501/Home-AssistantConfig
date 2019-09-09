@@ -28,6 +28,8 @@ trigger:
     for:
       minutes: 5
 condition:
+  - condition: template
+    value_template: "{{ not is_state('input_select.hall','Off') }}"
   - condition: state
     entity_id: input_boolean.home_occupied
     state: 'on'

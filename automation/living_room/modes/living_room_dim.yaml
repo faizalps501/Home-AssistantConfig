@@ -12,6 +12,8 @@ condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied
     state: 'off'
+  - condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.input_boolean.living_room_occupied.last_updated)) | int > 600 }}"
   - condition: state
     entity_id: input_boolean.home_occupied
     state: 'on'
