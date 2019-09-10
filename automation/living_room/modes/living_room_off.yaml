@@ -15,42 +15,34 @@ trigger:
     for:
       minutes: 10
   - platform: state
-    entity_id: input_boolean.bedtime
-    to: 'on'
-  - platform: state
     entity_id: input_boolean.living_room_occupied
-    to: 'on'
 condition:
-  # Either it's bright, or the room is empty
-  - condition: and
+  # Home occupied
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'on'
+  # Not currently Off
+  - condition: template
+    value_template: "{{ not is_state('input_select.living_room','Off') }}"
+  # Either not in use, or bright
+  - condition: or
     conditions:
     - condition: state
-      entity_id: input_boolean.home_occupied
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.living_room_occupied
-      state: 'on'
-    - condition: template
-      value_template: "{{ not is_state('input_select.living_room','Off') }}"
-    - condition: or
+      state: 'off'
+      # Bright, or...
+    - condition: numeric_state
+      entity_id: sensor.living_room_multi_luminance
+      above: 50
+    - condition: and
       conditions:
-        # The room is currently away
+      # Sun is rising and not so bright
       - condition: state
-        entity_id: input_select.living_room
-        state: 'Away'
-        # Bright, or...
+        entity_id: binary_sensor.trend_sun_elevation
+        state: 'on'
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        above: 50
-      - condition: and
-        conditions:
-          # Sun is rising and not so bright
-        - condition: state
-          entity_id: binary_sensor.trend_sun_elevation
-          state: 'on'
-        - condition: numeric_state
-          entity_id: sensor.living_room_multi_luminance
-          above: 25
+        above: 25
 action:
   - service: notify.logfile
     data_template:

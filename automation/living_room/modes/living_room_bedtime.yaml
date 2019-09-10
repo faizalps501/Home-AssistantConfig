@@ -4,12 +4,18 @@ trigger:
   - platform: state
     entity_id: input_boolean.bedtime
     to: 'on'
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
 condition:
   - condition: and
     conditions:
     - condition: state
       entity_id: input_boolean.home_occupied
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'off'
 action:
   - service: input_select.select_option
     data:

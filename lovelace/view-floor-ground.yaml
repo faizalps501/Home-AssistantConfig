@@ -15,7 +15,7 @@ cards:
         action: toggle
     - entity: light.living_room_table
       name: "Table"
-    - entity: switch.living_room_table
+    - entity: switch.livingroom_socket_switch
       name: "Socket"
       tap_action: 
         action: toggle 

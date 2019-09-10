@@ -68,9 +68,3 @@ action:
     value_template: "{{ not is_state('input_select.season', 'Christmas') }}"
   - service: switch.turn_off
     entity_id: switch.livingroom_socket_switch
-  - service: switch.turn_off
-    data:
-      area_id: 'Living Room'
-  - service: light.turn_off
-    data:
-      area_id: 'Living Room'

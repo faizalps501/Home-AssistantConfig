@@ -33,6 +33,10 @@ condition:
   - condition: state
     entity_id: input_boolean.home_occupied
     state: 'on'
+  # Sun above 5 degrees
+  - condition: numeric_state
+    entity_id: sensor.sun_elevation
+    above: 5
   - condition: or
     conditions:
     # Bright in the living room
@@ -43,10 +47,6 @@ condition:
     - condition: numeric_state
       entity_id: sensor.hall_downstairs_illuminance
       above: 15
-    # Or sun above 5 degrees
-    - condition: numeric_state
-      entity_id: sensor.sun_elevation
-      above: 5
 action:
   - service: input_select.select_option
     data:

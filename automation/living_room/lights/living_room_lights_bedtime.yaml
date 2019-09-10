@@ -26,9 +26,12 @@ condition:
         entity_id: input_select.house
         state: 'Bedtime'
 action:
-  - service: switch.turn_off
-    data:
-      area_id: 'Living Room'
   - service: light.turn_off
     data:
-      area_id: 'Living Room'
+      entity_id: 
+      - light.living_room_table
+      - light.living_room_corner
+      - light.living_room_tv
+  - service: switch.turn_off
+    entity_id:
+      - switch.livingroom_socket_switch 
