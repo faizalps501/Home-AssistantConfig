@@ -3,6 +3,10 @@ id: cast
 path: cast
 icon: mdi:cast
 cards:
+  - type: entities
+    entities:
+    - type: cast
+      view: /lovelace/cast
 
   - type: entity-button
     title: Living room
