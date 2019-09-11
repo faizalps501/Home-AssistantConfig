@@ -24,12 +24,12 @@ condition:
   # Not currently Off
   - condition: template
     value_template: "{{ not is_state('input_select.living_room','Off') }}"
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    state: 'off'
   # Either not in use, or bright
   - condition: or
     conditions:
-    - condition: state
-      entity_id: input_boolean.living_room_occupied
-      state: 'off'
       # Bright, or...
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance

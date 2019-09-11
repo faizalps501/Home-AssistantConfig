@@ -4,7 +4,7 @@ trigger:
   - platform: state
     entity_id: input_select.living_room
     to: 'Dim'
-    for: '00:15:00'
+    for: '00:30:00'
 condition:
   condition: and
   conditions:
