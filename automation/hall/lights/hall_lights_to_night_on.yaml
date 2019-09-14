@@ -1,12 +1,12 @@
 initial_state: 'on'
-alias: 'Hall lights to dim'
+alias: 'Hall lights to Night on'
 trigger:
   - platform: state
     entity_id: input_select.hall
-    to: 'Dim'
+    to: 'Night on'
   - platform: state
     entity_id: input_select.house
-    to: 'Dim'
+    to: 'Night on'
 condition:
   - condition: state
     entity_id: input_boolean.lighting_automations
@@ -15,7 +15,7 @@ condition:
     conditions:
     - condition: state
       entity_id: input_select.hall
-      state: 'Dim'
+      state: 'Night on'
     - condition: and
       conditions:
       - condition: state
@@ -23,11 +23,11 @@ condition:
         state: 'Auto'
       - condition: state
         entity_id: input_select.house
-        state: 'Dim'
+        state: 'Night on'
 action:
   - service_template: >-
       {% if is_state('input_select.season', 'Christmas') %}
         script.hall_string_on
       {% else %}
-        script.hall_strip_dim
+        script.hall_strip_on
       {% endif %}
