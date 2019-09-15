@@ -28,6 +28,38 @@ trigger:
   - platform: state
     entity_id: input_boolean.guest_mode
     to: 'on'
+condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person3_home
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'on'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.person1_home
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.person1_tablet_home
+        state: 'on'
+    - condition: state
+      entity_id: input_boolean.person4_home
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.family_room_occupied
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.office_occupied
+      state: 'on'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.home_occupied
