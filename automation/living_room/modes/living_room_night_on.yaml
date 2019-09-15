@@ -31,7 +31,7 @@ condition:
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'on'
-    # cabinet light off, and dull, or cabinet light on and brighter
+    # Bear light off, and dull, or bear light on and brighter
     - condition: or
       conditions:
       - condition: and

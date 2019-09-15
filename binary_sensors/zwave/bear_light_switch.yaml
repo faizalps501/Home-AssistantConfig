@@ -1,5 +1,5 @@
 - platform: mqtt
-  name: "cabinet light switch"
+  name: "Bear light switch"
   state_topic: 'homeassistant/switch/cabinet_light_switch/command'
   payload_on: 'on'
   payload_off: 'off'

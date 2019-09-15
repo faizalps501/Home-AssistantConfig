@@ -1,4 +1,4 @@
-alias: "Remote zwave cabinet light switch"
+alias: "Remote zwave bear light switch"
 sequence:
   - service: notify.logfile
     data_template:

@@ -58,7 +58,7 @@ calendar.person2_family_tripit:
 calendar.person2_work:
   icon: mdi:calendar-multiple
 switch.cabinet_light_switch:
-  friendly_name: cabinet light
+  friendly_name: Bear light
   icon: mdi:lamp
 switch.tv_light_switch:
   friendly_name: TV light

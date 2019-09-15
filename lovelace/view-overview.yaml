@@ -173,7 +173,7 @@ cards:
     entity_sun: sun.sun
     entity_visibility: sensor.dark_sky_visibility
     entity_daytime_high: sensor.dark_sky_daytime_high_temperature_0d
-    entity_wind_cabineting: sensor.dark_sky_wind_cabineting
+    entity_wind_bearing: sensor.dark_sky_wind_bearing
     entity_wind_speed: sensor.dark_sky_wind_speed
     entity_humidity: sensor.dark_sky_humidity
     entity_pressure: sensor.dark_sky_pressure
