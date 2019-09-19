@@ -11,6 +11,6 @@ condition:
 action:
   - service: camera.play_stream
     data:
-      entity_id: "camera.front_camera"
+      entity_id: "camera.front"
       media_player: "media_player.living_room_smart_displa"
       format: "hls"

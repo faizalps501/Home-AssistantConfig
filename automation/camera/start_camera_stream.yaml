@@ -11,7 +11,7 @@ condition:
 action:
   - service: camera.play_stream
     data_template:
-      entity_id: "camera.front_camera"
+      entity_id: "camera.front"
       format: "hls"
       media_player: >- 
         {%- if is_state('input_boolean.office_occupied','on') -%}
