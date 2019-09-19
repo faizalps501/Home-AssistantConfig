@@ -1,0 +1,22 @@
+initial_state: 'on'
+alias: 'Zwave unsynced'
+trigger:
+  - platform: template
+    value_template: >-
+      {{ (states('switch.cabinet_light_switch') != states('binary_sensor.cabinet_light_switch'))
+        or (states('switch.family_room_socket_switch') != states('binary_sensor.family_room_socket_switch'))
+        or (states('switch.front_bedroom_switch') != states('binary_sensor.front_bedroom_switch'))
+        or (states('switch.garden_lights_switch') != states('binary_sensor.garden_lights_switch'))
+        or (states('switch.hall_downstairs_switch') != states('binary_sensor.hall_downstairs_switch'))
+        or (states('switch.livingroom_socket_switch') != states('binary_sensor.livingroom_socket_switch'))
+        or (states('switch.master_bedroom_socket_switch') != states('binary_sensor.master_bedroom_socket_switch'))
+        or (states('switch.number_sign_switch') != states('binary_sensor.number_sign_switch'))
+        or (states('switch.second_bedroom_switch') != states('binary_sensor.second_bedroom_switch'))
+        or (states('switch.spare_socket_switch') != states('binary_sensor.spare_socket_switch'))
+        or (states('switch.table_light_switch') != states('binary_sensor.table_light_switch'))
+        or (states('switch.tv_light_switch') != states('binary_sensor.tv_light_switch'))
+        or (states('switch.vestibule_socket_switch') != states('binary_sensor.vestibule_socket_switch'))
+      }}
+    for: '00:01:00'
+action:
+  - service: script.resync_all

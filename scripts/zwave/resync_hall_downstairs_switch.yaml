@@ -1,0 +1,14 @@
+alias: "Resync hall_downstairs_switch"
+sequence:
+  - condition: template
+    value_template: >-
+      {{ states('switch.hall_downstairs_switch') != states('binary_sensor.hall_downstairs_switch') }}
+  - service: notify.logfile
+    data_template:
+      message: "Resyncing hall_downstairs_switch to be {{ states('binary_sensor.hall_downstairs_switch') }}"
+  - service: rest_command.pi3_zwave
+    data_template:
+      domain: "switch"
+      action: "turn_{{ states('binary_sensor.hall_downstairs_switch') }}"
+      entity: "switch.hall_downstairs_switch"
+

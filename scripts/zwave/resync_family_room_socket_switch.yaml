@@ -1,0 +1,14 @@
+alias: "Resync family_room_socket_switch"
+sequence:
+  - condition: template
+    value_template: >-
+      {{ states('switch.family_room_socket_switch') != states('binary_sensor.family_room_socket_switch') }}
+  - service: notify.logfile
+    data_template:
+      message: "Resyncing family_room_socket_switch to be {{ states('binary_sensor.family_room_socket_switch') }}"
+  - service: rest_command.pi3_zwave
+    data_template:
+      domain: "switch"
+      action: "turn_{{ states('binary_sensor.family_room_socket_switch') }}"
+      entity: "switch.family_room_socket_switch"
+
