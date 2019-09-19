@@ -99,7 +99,3 @@ circadian_lighting:
 
 telegram_bot: !include telegram.yaml
 
-zoneminder:
-  - host: 192.168.0.22
-    username: !secret front_camera_user
-    password: !secret front_camera_pass
