@@ -5,7 +5,7 @@ icon: mdi:cctv
 panel: true
 cards:
   - type: picture-entity
-    entity: camera.front
+    entity: camera.front_camera
     camera_view: live
     #    - type: custom:surveillance-card
     #thumb_interval: 10
