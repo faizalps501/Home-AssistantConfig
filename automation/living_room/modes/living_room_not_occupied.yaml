@@ -19,7 +19,7 @@ trigger:
   - platform: state
     entity_id: binary_sensor.living_room_motion
     to: 'off'
-    for: '00:03:00'
+    for: '00:01:00'
 condition:
   - condition: and
     conditions:
@@ -27,7 +27,7 @@ condition:
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'on'
-    # Requires all the media devices to be off
+    # Requires all the media devices to be off, paused, unavailable, etc
     - condition: state
       entity_id: media_player.samsung_tv_remote
       state: 'off'
@@ -40,10 +40,10 @@ condition:
     - condition: state
       entity_id: media_player.living_room
       state: 'paused'
+    # And no motion
     - condition: state
       entity_id: binary_sensor.living_room_motion
       state: 'off'
-      for: '00:02:00'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.living_room_occupied
