@@ -207,3 +207,39 @@ switch.family_room_socket_switch:
 switch.vestibule_socket_switch:
   icon: mdi:power-socket-uk
 sensor.dark_sky_pressure: {}
+device_tracker.person2_bt_front_laptop:
+  source_type: bluetooth
+device_tracker.person2_bt_front_mobile:
+  source_type: bluetooth
+device_tracker.person2_bt_front_tablet:
+  source_type: bluetooth
+device_tracker.person2_bt_front_work:
+  source_type: bluetooth
+device_tracker.person2_bt_laptop:
+  source_type: bluetooth
+device_tracker.person2_bt_mobile:
+  source_type: bluetooth
+device_tracker.person2_bt_tablet:
+  source_type: bluetooth
+device_tracker.person2_bt_work:
+  source_type: bluetooth
+device_tracker.person1_bt_front_mobile:
+  source_type: bluetooth
+device_tracker.person1_bt_front_tablet:
+  source_type: bluetooth
+device_tracker.person1_bt_mobile:
+  source_type: bluetooth
+device_tracker.person1_bt_tablet:
+  source_type: bluetooth
+device_tracker.car_front:
+  source_type: bluetooth
+device_tracker.car_rear:
+  source_type: bluetooth
+device_tracker.person4_bt_front_mobile:
+  source_type: bluetooth
+device_tracker.person4_bt_mobile:
+  source_type: bluetooth
+device_tracker.person3_bt_front_mobile:
+  source_type: bluetooth
+device_tracker.person3_bt_mobile:
+  source_type: bluetooth
