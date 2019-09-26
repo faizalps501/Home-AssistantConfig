@@ -1,0 +1,16 @@
+- platform: template
+  sensors: 
+    train_count_from_work:
+      friendly_name: Train count from work
+      value_template: >-
+        {%- macro getTrainStatus() -%}
+        
+        {%- for train in state_attr('sensor.next_train_to_abc', 'next_trains') -%}
+        {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%}
+          X
+        {%- endif -%}
+        {%- endfor -%}
+        {%- endmacro -%}
+        
+        {{ getTrainStatus()|length }}
+        

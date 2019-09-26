@@ -4,7 +4,6 @@ trigger:
   - platform: state
     entity_id: group.guests
     to: 'off'
-    for: '01:00:00'
   - platform: homeassistant
     event: start
 condition:
@@ -17,3 +16,7 @@ condition:
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.guest_mode
+  - condition: state
+    entity_id: light.hall
+    state: 'on'
+  - service: script.hall_strip_on

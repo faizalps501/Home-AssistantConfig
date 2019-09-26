@@ -92,6 +92,12 @@ cards:
       - entity: device_tracker.00_1d_29_a5_49_ae
         name: WiFi
         icon: mdi:wifi
+      - entity: device_tracker.person4_bt_front_mobile
+        name: Front
+        icon: mdi:bluetooth
+      - entity: device_tracker.person4_bt_mobile
+        name: Rear
+        icon: mdi:bluetooth
       - entity: sensor.battery_person4_mobile
         name: Battery
       - entity: sensor.person4s_time_to_home
