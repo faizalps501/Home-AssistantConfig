@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Motion hook'
 trigger:
   - platform: webhook
-    webhook_id: !secret plex_token
+    webhook_id: !secret lametric_secret
 action:
   - service: notify.logfile
     data_template:
