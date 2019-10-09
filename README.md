@@ -16,13 +16,14 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [Floorplan](https://github.com/pkozul/ha-floorplan) for a high level overview
   * ![Screenshot of floorplan](https://i.imgur.com/8oe0uTQ.png)
   * Showing: 
-    * The blue bin is being collected tomorrow (yellow outline), and the brown bin in 2 or more days (green outline). The grey bin isn't currently scheduled for collection. 
-    * The background lighting in the lounge is on, as is the light by the house number. 
-    * The utility door is open, and the garden lights are on. Other exterior doors are closed.
-    * The TV and Chromecast are off, as are the Sonos speakers.
-    * The TV and X-Box in the family room are on. 
-    * All the mobiles are home, as is the tablet. 
-    * Oh, and the printer isn't yet low on consumables.
+    * No bins are due for collection otherwise they'd have a yellow outline (collected tomorrow) or red outline (collected today)
+    * The living room and family room are occupied
+    * The front door is open, motion has been detected in the downstairs hall, and two windows upstairs is open
+    * The TV is on in the living room
+    * The TV in the family room is on
+    * All the mobiles are home, as is the tablet, and the car
+    * The office is a bit warm (red temperature), and the humidity in the bathroom and master en-suite is a little high (amber)
+    * Oh, and the printer isn't a little low on consumables.
   * The floorplan was created in [Inkscape](https://inkscape.org/), by importing the image of the house's floorplan from the purchase paperwork, then drawing over it. If you look [at it](www/custom_ui/floorplan/floorplan.svg) you'll see that I built it up in layers, one for the foundation (ground), one for the structure, and one for the sensors. I don't really use those currently, other than to ensure that the right things are on top (sensors).
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
 * [Mosquitto](https://mosquitto.org/) for the MQTT broker
@@ -47,6 +48,8 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * Xiaomi Aqara [motion and light sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-human-body-sensor/)
   * Xiaomi Aqara [temperature and humidity sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/) in the bathrooms
   * Gledopto [GL-C-008 RGB+CCT](https://www.aliexpress.com/item/32858603964.html) LED controller (along with some RGB-CCT LED tape)
+  * A Hive [active smart plug](https://smile.amazon.co.uk/gp/product/B01N7L53TB/)
+  * A Salus [SP600 smart plug](https://smile.amazon.co.uk/gp/product/B0743CTGJ6/)
 * Lighting
   * [Yeelight](https://home-assistant.io/components/light.yeelight/) component and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
   * Outdoor mains [240V LED strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
@@ -58,7 +61,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * [Sonos](https://www.sonos.com/) speakers and [component](https://home-assistant.io/components/media_player.sonos/)
   * [Squeezebox Radio](http://support.logitech.com/en_us/product/squeezebox-radio-black) as a smart alarm clock, and [associated component](https://home-assistant.io/components/media_player.squeezebox/)
 * Notifications:
-  * [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and I'm looking at replacing it with the [REST notifier](https://www.home-assistant.io/components/notify.rest/) and [Discord](https://discordapp.com/)
+  * [Telegram](https://telegram.org) for my notifications, supported by Hangouts Chat using a command line notifier, and the [REST notifier](https://www.home-assistant.io/components/notify.rest/) for [Discord](https://discordapp.com/) (system status notifications)
   * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/components/notify.lametric/) "in person", and it's a clock the rest of the time
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
 * Presence detection:
@@ -84,6 +87,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups of the Pis
 * [rclone](https://rclone.org/) for offsite backups
 * [rsnapshot](https://rsnapshot.org/) runs on another system, and pulls backups 
+* [MotionEye](https://github.com/ccrisan/motioneye/) for motion detection
 
 ## Presence detection
 
