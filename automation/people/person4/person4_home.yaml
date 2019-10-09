@@ -13,5 +13,8 @@ condition:
   - condition: state
     entity_id: input_boolean.person4_home
     state: 'off'
+  - condition: state
+    entity_id: group.person_dor
+    state: 'home'
 action:
   - service: script.person4_home
