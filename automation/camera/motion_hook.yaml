@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Motion hook'
 trigger:
   - platform: webhook
-    webhook_id: !secret lametric_secret
+    webhook_id: !secret slack_pi3
 action:
   - service: notify.logfile
     data_template:
