@@ -1,4 +1,4 @@
 - name: garage
   platform: group
   services:
-    - service: hangouts_webhook
+    - service: logfile
