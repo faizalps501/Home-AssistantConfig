@@ -7,5 +7,5 @@ action:
   - service: notify.logfile
     data_template:
       message: >
-        Triggered by {{ trigger.webhook_id }}  
+        Motion detection by {{ trigger.webhook_id }}  
         Full data: {{ trigger.json }}

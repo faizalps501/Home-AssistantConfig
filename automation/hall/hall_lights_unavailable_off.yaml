@@ -3,6 +3,7 @@ alias: 'Hall lights unavailable off'
 trigger:
   - platform: state
     entity_id: light.hall
+    from: 'unavailable'
     to: 'on'
 condition:
   - condition: and
