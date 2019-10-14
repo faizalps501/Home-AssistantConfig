@@ -2,15 +2,19 @@ alias: 'person1 away'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.person_person1
+    entity_id: 
+      - device_tracker.e4_a7_c5_8d_3b_e4
+      - device_tracker.person1_bt_tablet
+      - device_tracker.person1_bt_front_tablet
     to: 'not_home'
   - platform: homeassistant
     event: start
 condition:
-  # Both BT and WiFi are away
-  - condition: state
+  # As long as at least two trackers mark as away, they're away
+  - condition: numeric_state
     entity_id: group.person_person1
-    state: 'not_home'
+    above: 1
+    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['not_home']|count }}"
   # An exit door recently opened or closed
   - condition: template
     value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.front_door_sensor.last_updated)) | int < 600 }}"
