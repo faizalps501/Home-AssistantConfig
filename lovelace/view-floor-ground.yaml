@@ -35,7 +35,7 @@ cards:
       name: TV
     - entity: media_player.cast_living_room_tv
       name: Chromecast
-    - entity: media_player.living_room_smart_displa
+    - entity: media_player.living_room_display
       name: "Home Hub"
     - entity: media_player.living_room
       name: "Sonos"

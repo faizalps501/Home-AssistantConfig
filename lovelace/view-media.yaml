@@ -16,7 +16,7 @@ cards:
         show_source: true
         show_tts: google
         power_color: true
-      - entity: media_player.living_room_smart_displa
+      - entity: media_player.living_room_display
         type: custom:mini-media-player
         group: true
         show_tts: google

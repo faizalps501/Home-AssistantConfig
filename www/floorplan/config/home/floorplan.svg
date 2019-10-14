@@ -18,7 +18,7 @@
    height="576.36609"
    viewBox="0 0 1197.4606 576.36609"
    sodipodi:docname="floorplan.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    inkscape:label="Sensors">
   <title
      id="title5339">Floorplan</title>
@@ -904,17 +904,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1057"
+     inkscape:window-width="3840"
+     inkscape:window-height="2115"
      id="namedview3682"
      showgrid="false"
-     inkscape:zoom="6.8782053"
-     inkscape:cx="539.82271"
-     inkscape:cy="95.237605"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="55.025642"
+     inkscape:cx="65.456256"
+     inkscape:cy="449.024"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer14"
+     inkscape:current-layer="layer2"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -8608,7 +8608,7 @@
     <g
        transform="matrix(0.38864602,-0.16486059,0.16486059,0.38864602,9.7358639,148.87861)"
        style="display:inline"
-       id="media_player.lenovosmartdisplay109233_2"
+       id="media_player.living_room_display_2"
        inkscape:label="#g8760-5">
       <g
          transform="matrix(0.32082645,0,0,0.32082645,115.60528,-28.079013)"
@@ -8620,7 +8620,7 @@
              x="93.807655"
              height="53.211555"
              width="83.452003"
-             id="media_player.living_room_smart_displa"
+             id="media_player.living_room_display"
              style="fill:#515151;fill-opacity:1"
              inkscape:label="#rect8739-9-4-0" />
         </g>

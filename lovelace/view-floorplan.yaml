@@ -144,7 +144,7 @@ cards:
           propagate: true
 
         - entities:
-            - media_player.living_room_smart_displa
+            - media_player.living_room_display
             - media_player.family_room_display
             - media_player.office_display
           states:
