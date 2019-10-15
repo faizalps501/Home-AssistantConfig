@@ -42,8 +42,6 @@ cards:
   title: Camera related
   show_header_toggle: false
   entities:
-  - automation.stream_to_living_room
-  - automation.stop_stream_to_living_room
   - automation.start_camera_stream
   - automation.stop_camera_stream
 - type: entities
@@ -75,6 +73,7 @@ cards:
   - automation.zwave_actions
   - automation.zwave_resync
   - automation.zwave_sync
+  - automation.zwave_unsynced
 - type: entities
   show_header_toggle: false
   title: Alarm automations

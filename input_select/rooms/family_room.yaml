@@ -6,5 +6,6 @@ options:
   - 'Day on'
   - 'Night on'
   - 'Bedtime'
+  - 'Wake'
   - 'On'
   - 'Off'
