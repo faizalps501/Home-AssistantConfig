@@ -2,12 +2,18 @@ initial_state: 'on'
 alias: 'person3 home'
 trigger:
   - platform: state
-    entity_id: group.person_person3
+    entity_id:
+      - device_tracker.person3_mobile
+      - device_tracker.person3_bt_mobile
+      - device_tracker.person3_bt_front_mobile
     to: 'home'
     for:
       minutes: 5
   - platform: state
-    entity_id: group.person_person3
+    entity_id:
+      - device_tracker.person3_mobile
+      - device_tracker.person3_bt_mobile
+      - device_tracker.person3_bt_front_mobile
     to: 'home'
   - platform: homeassistant
     event: start
