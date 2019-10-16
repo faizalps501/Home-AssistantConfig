@@ -90,6 +90,7 @@ mqtt: !include mqtt.yaml
 
 hacs:
   token: !secret hacs
+  theme: true
 
 circadian_lighting:
   interval: 300
