@@ -2,24 +2,20 @@ alias: 'person4 away'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.person_person4
+    entity_id:
+      - device_tracker.00_1d_29_a5_49_ae
+      - device_tracker.person4_bt_front_mobile
+      - device_tracker.person4_bt_mobile
     to: 'not_home'
-  - platform: state
-    entity_id: group.person_person4
-    to: 'not_home'
-    for:
-      minutes: 5
   - platform: homeassistant
     event: start
 condition:
-  - condition: state
-    entity_id: input_boolean.person4_home
-    state: 'on'
   # An exit door recently opened or closed
   - condition: template
     value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.front_door_sensor.last_updated)) | int < 900 }}"
-  - condition: state
+  - condition: numeric_state
     entity_id: group.person_person4
-    state: 'not_home'
+    below: 2
+    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person4', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: script.person4_away
