@@ -51,33 +51,33 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * A Hive [active smart plug](https://smile.amazon.co.uk/gp/product/B01N7L53TB/)
   * A Salus [SP600 smart plug](https://smile.amazon.co.uk/gp/product/B0743CTGJ6/)
 * Lighting
-  * [Yeelight](https://home-assistant.io/components/light.yeelight/) component and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
+  * [Yeelight](https://home-assistant.io/integrations/yeelight/) integration and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
   * Outdoor mains [240V LED strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
-  * A [Flux LED](https://www.home-assistant.io/components/light.flux_led/) compatible [RGBW controller](https://smile.amazon.co.uk/gp/product/B07BFPWZNJ/), a roll of RGB-CCT LED tape, and a 24V power supply.
-* [Nabu Casa cloud](https://www.nabucasa.com/config/), which is a paid service, instead of the previous [Google Assistant](https://home-assistant.io/components/google_assistant/) component. 
+  * A [Flux LED](https://www.home-assistant.io/integrations/flux_led/) compatible [RGBW controller](https://smile.amazon.co.uk/gp/product/B07BFPWZNJ/), a roll of RGB-CCT LED tape, and a 24V power supply.
+* [Nabu Casa cloud](https://www.nabucasa.com/config/), which is a paid service, instead of the previous [Google Assistant](https://home-assistant.io/integrations/google_assistant/) integration. 
   I use this with a bunch of [Google Home Minis](https://store.google.com/product/google_home_mini), a couple of [Google Home Hubs](https://store.google.com/product/google_home_hub), 
   and a [Lenovo Smart Display](https://www.lenovo.com/gb/en/consumer-tablet-and-smart-device/lenovo-smart-device/smart-core-device/Smart-Display-10/p/ZA3N0006GB)
 * Media
-  * [Sonos](https://www.sonos.com/) speakers and [component](https://home-assistant.io/components/media_player.sonos/)
-  * [Squeezebox Radio](http://support.logitech.com/en_us/product/squeezebox-radio-black) as a smart alarm clock, and [associated component](https://home-assistant.io/components/media_player.squeezebox/)
+  * [Sonos](https://www.sonos.com/) speakers and [integration](https://home-assistant.io/integrations/sonos/)
+  * [Squeezebox Radio](http://support.logitech.com/en_us/product/squeezebox-radio-black) as a smart alarm clock, and [associated integration](https://home-assistant.io/integrations/squeezebox/)
 * Notifications:
-  * [Telegram](https://telegram.org) for my notifications, supported by Hangouts Chat using a command line notifier, and the [REST notifier](https://www.home-assistant.io/components/notify.rest/) for [Discord](https://discordapp.com/) (system status notifications)
-  * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/components/notify.lametric/) "in person", and it's a clock the rest of the time
-  * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
+  * [Telegram](https://telegram.org) for my notifications, supported by Hangouts Chat using a command line notifier, and the [REST notifier](https://www.home-assistant.io/integrations/notify.rest/) for [Discord](https://discordapp.com/) (system status notifications)
+  * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/integrations/lametric/) "in person", and it's a clock the rest of the time
+  * [TTS](https://home-assistant.io/integrations/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
 * Presence detection:
-  * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) when I upgraded my router, the router ran out of memory
+  * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/integrations/nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/integrations/fritz/) when I upgraded my router, the router ran out of memory
   * [Monitor](https://github.com/andrewjfreyer/monitor) on another Pi3, and a Pi Zero W. This has completely replaced the use of the built in Bluetooth device tracker, and more than halved the startup time of HA.
     * This works with our mobile phones, tablets, and beacons
-  * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for remote device tracking
-    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only did it have an [annoying bug](https://github.com/owntracks/android/issues/508) that caused it to randomly disable reporting, but it had been abandoned by the developer. Version 2.0 of the app solved both of those, but I've seen no reason to go back.
-* [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/components/sensor.uk_transport/) component
-* [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint), along with the [associated](https://home-assistant.io/components/sensor.darksky/) sensor [components](https://home-assistant.io/components/sensor.metoffice/)
+  * [GPS Logger](https://home-assistant.io/integrations/gpslogger/) for remote device tracking
+    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/integrations/owntracks_http/), but not only did it have an [annoying bug](https://github.com/owntracks/android/issues/508) that caused it to randomly disable reporting, but it had been abandoned by the developer. Version 2.0 of the app solved both of those, but I've seen no reason to go back.
+* [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/integrations/uk_transport/) integration
+* [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint), along with the [associated](https://home-assistant.io/integrations/darksky/) sensor [integration](https://home-assistant.io/integrations/metoffice/)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles. I don't currently use [the component](https://home-assistant.io/components/media_player.plex/)
-* [Xbox Live sensor](https://home-assistant.io/components/sensor.xbox_live/) which uses the [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
-* [Google Travel Time component](https://home-assistant.io/components/sensor.google_travel_time/) which uses the Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
+* [Xbox Live sensor](https://home-assistant.io/integrations/xbox_live/) which uses the [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
+* [Google Travel Time integration](https://home-assistant.io/integrations/google_travel_time/) which uses the Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
-  * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
-* A HiWatch IPC-T140 dome camera, using the generic camera component. It's a 4K camera, and the Pi3 can't keep up when I use the FFMPEG component. I use the camera's built in motion detection, writing to a 200 GB SMB share (there's a firmware issue apparently, if the share is above that the camera gets confused and won't write).
+  * I gave up on the the [IMAP email content](https://home-assistant.io/integrations/imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
+* A HiWatch IPC-T140 dome camera, using the generic camera integrationere's a firmware issue apparently, if the share is above that the camera gets confused and won't write).
 
 ### Custom integrations
 
@@ -99,7 +99,7 @@ Historically I didn't make much use of custom components/integrations, however t
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html), and semi-finally [a fourth](https://blog.ceard.tech/2019/03/presence-detection-are-we-nearly-there.html). Short version - I don't merge the trackers (that's going away anyway), but I do use groups again.  I've experimented with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor, but compared to what I can do with the automations, it's not flexible enough for me.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html), and semi-finally [a fourth](https://blog.ceard.tech/2019/03/presence-detection-are-we-nearly-there.html). Short version - I don't merge the trackers (that's going away anyway), but I do use groups again.  I've experimented with the [Bayesian](https://www.home-assistant.io/integrations/bayesian) sensor, but compared to what I can do with the automations, it's not flexible enough for me.
 * When I said semi-finally, that's because I've a few tweaks to write up, and some other thoughts. I'll eventually get around to summarising these.
 
 ## Notes
@@ -137,7 +137,7 @@ A large amount of this will require a rewire of the lighting circuits, so that a
 
 # Useful links
 
-* [Home Assistant documentation](https://home-assistant.io/docs/) and [component list](https://home-assistant.io/components/)
+* [Home Assistant documentation](https://home-assistant.io/docs/) and [integration list](https://home-assistant.io/integrations/)
 * Problems with Z-Wave delays and inconsistencies? Try [this script](https://hastebin.com/igujenogud.coffeescript) in the dev-states section and you'll see if you've problem devices - shown by an RTT value of 1,000 or more, and retries significantly more than other devices
 * [My blog](https://ceard.tech/) on home automation and other things
 

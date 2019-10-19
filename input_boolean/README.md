@@ -14,7 +14,7 @@ Now I'm using the manual alarm control panel, I don't need this any more.
 
 ## All 
 
-A simple toggle for when we're all away. This is mostly for things like lighting control, for now.
+A simple toggle for when we're all away. This is mostly for things like lighting control, for now. It will be replaced by `input_boolean.home_occupied`
 
 ## Bedtime
 
@@ -32,9 +32,10 @@ If we're all away then some automations we'll simply not want running (and other
 
 Just in case we ever want to disable the lighting automations, this will control that.
 
-## Living room
+## Rooms
 
-A toggle to indicate that the lights were turned on automatically
+* There's a toggle to indicate that the living room lights were turned on automatically
+* Each room has one to indicate whether it's occupied 
 
 ## Notifications
 
@@ -48,16 +49,13 @@ Various people related booleans
 
 ### Awake
 
-These are the indicators of whether people are (probably) asleep or awake. These feed in to various automations.
+These are the indicators of whether people are (probably) asleep or awake, or in bed. These feed in to various automations.
 
 ### Home
 
-Simple binary home/away indicators for people.
+Simple binary home/away indicators for people, plus one for the house as a whole.
 
 ### Travelling
 
 These are used to indicate whether people are on an extended trip. These feed in to the Holiday mode, and will eventually feed in to things like chosing which notifiers get used, and other things.
 
-## Z-Wave
-
-To indicate whether or not to update the mesh diagram, not used currently.
