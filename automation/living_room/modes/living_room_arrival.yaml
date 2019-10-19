@@ -15,14 +15,14 @@ condition:
     entity_id: input_boolean.living_room_occupied
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     below: 5
 action:
   - service: notify.logfile
     data_template:
       message: >
         Arrival triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
-          Light level is {{ states('sensor.living_room_multi_luminance') }}
+          Light level is {{ states('sensor.pi3_living_room_multi_luminance') }}
   - service: input_select.select_option
     data:
       entity_id: input_select.living_room

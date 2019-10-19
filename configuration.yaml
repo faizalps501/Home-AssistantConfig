@@ -112,3 +112,5 @@ remote_homeassistant:
     - zwave.network_ready
     - zwave.node_event
     - zwave.scene_activated
+    - state_changed
+    - service_registered

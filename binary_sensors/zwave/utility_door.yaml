@@ -1,7 +1,0 @@
-- platform: mqtt
-  name: "Utility door"
-  state_topic: 'homeassistant/binary_sensor/utility_door_exterior_sensor/state'
-  payload_on: 'on'
-  payload_off: 'off'
-  device_class: 'door'
-  unique_id: 'zwave-utility_door_exterior_sensor'

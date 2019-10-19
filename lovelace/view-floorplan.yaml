@@ -229,8 +229,8 @@ cards:
 
         # Indoors should be moderate
         - entities:
-            - sensor.living_room_multi_temperature
-            - sensor.office_multi_temperature
+            - sensor.pi3_living_room_multi_temperature
+            - sensor.pi3_office_multi_temperature
             - sensor.master_ensuite_temperature
             - sensor.bathroom_temperature
             - sensor.second_bedroom_ensuite_temperature
@@ -296,7 +296,7 @@ cards:
 
         - entities:
             - sensor.dark_sky_humidity
-            - sensor.office_multi_relative_humidity
+            - sensor.pi3_office_multi_relative_humidity
           text_template: '${entity.state ? entity.state : "unknown"} %'
           class_template: '
             var humid = parseFloat(entity.state.replace("%", ""));
@@ -314,8 +314,8 @@ cards:
           propagate: true
 
         - entities:
-            - sensor.living_room_multi_luminance
-            - sensor.office_multi_luminance
+            - sensor.pi3_living_room_multi_luminance
+            - sensor.pi3_office_multi_luminance
             - sensor.hall_downstairs_illuminance
           text_template: '${entity.state ? entity.state : "unknown"} lux'
           class_template: '
@@ -342,7 +342,7 @@ cards:
           propagate: true
 
         - entities:
-            - switch.number_sign_switch
+            - switch.pi3_number_sign_switch
           states:
             - state: 'on'
               class: 'indicator-on'
@@ -351,9 +351,9 @@ cards:
           propagate: true
 
         - entities:
-            - switch.cabinet_light_switch
-            - switch.tv_light_switch
-            - switch.livingroom_socket_switch
+            - switch.pi3_cabinet_light_switch
+            - switch.pi3_tv_light_switch
+            - switch.pi3_livingroom_socket_switch
             - light.living_room_table
           states:
             - state: 'on'
@@ -365,7 +365,7 @@ cards:
           propagate: true
 
         - entities:
-            - switch.garden_lights_switch
+            - switch.pi3_garden_lights_switch
             - light.master_bedroom_bedhead
             - light.person1_bedroom_bedside
             - light.hall
@@ -379,13 +379,13 @@ cards:
           propagate: true
 
         - entities:
-            - switch.spare_socket_switch
-            - switch.master_bedroom_socket_switch
-            - switch.second_bedroom_switch
-            - switch.front_bedroom_switch
-            - switch.family_room_socket_switch
-            - switch.hall_downstairs_switch
-            - switch.vestibule_switch
+            - switch.pi3_spare_socket_switch
+            - switch.pi3_master_bedroom_socket_switch
+            - switch.pi3_second_bedroom_switch
+            - switch.pi3_front_bedroom_switch
+            - switch.pi3_family_room_socket_switch
+            - switch.pi3_hall_downstairs_switch
+            - switch.pi3_vestibule_switch
           states:
             - state: 'on'
               class: 'doorbell-on'
@@ -394,8 +394,8 @@ cards:
           propagate: true
 
         - entities:
-            - binary_sensor.living_room_motion
-            - binary_sensor.office_multi_sensor
+            - binary_sensor.pi3_living_room_motion
+            - binary_sensor.pi3_office_multi_sensor
             - binary_sensor.hall_downstairs_occupancy
           states:
             - state: 'off'
@@ -405,11 +405,11 @@ cards:
           propagate: true
 
         - entities:
-            - binary_sensor.utility_door_exterior_sensor
-            - binary_sensor.patio_door_left_sensor
+            - binary_sensor.pi3_utility_door_exterior_sensor
+            - binary_sensor.pi3_patio_door_left_sensor
             - binary_sensor.patio_window_left
             - binary_sensor.patio_window_right
-            - binary_sensor.front_door_sensor
+            - binary_sensor.pi3_front_door_sensor
             - binary_sensor.vestibule_window_front
             - binary_sensor.vestibule_window_side
             - binary_sensor.family_window_right
@@ -434,8 +434,8 @@ cards:
           propagate: true
 
         - entities:
-            - binary_sensor.garage_closed_bike_sensor
-            - binary_sensor.garage_closed_car_sensor
+            - binary_sensor.pi3_garage_closed_bike_sensor
+            - binary_sensor.pi3_garage_closed_car_sensor
           states:
             - state: 'off'
               class: 'closed-background'

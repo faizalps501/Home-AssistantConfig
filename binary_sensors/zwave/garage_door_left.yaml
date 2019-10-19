@@ -1,7 +1,0 @@
-- platform: mqtt
-  name: "Garage door bike"
-  state_topic: 'homeassistant/binary_sensor/garage_closed_bike_sensor/state'
-  payload_on: 'on'
-  payload_off: 'off'
-  device_class: 'garage_door'
-  unique_id: 'zwave-garage_closed_bike_sensor'

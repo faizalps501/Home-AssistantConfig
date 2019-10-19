@@ -1,6 +1,0 @@
-- platform: mqtt
-  name: "Office humidity"
-  state_topic: 'homeassistant/sensor/office_multi_relative_humidity/state'
-  device_class: 'humidity'
-  unit_of_measurement: '%'
-  unique_id: 'zwave-office_multi_relative_humidity'

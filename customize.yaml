@@ -57,16 +57,16 @@ calendar.person2_family_tripit:
   icon: mdi:calendar-clock
 calendar.person2_work:
   icon: mdi:calendar-multiple
-switch.cabinet_light_switch:
+switch.pi3_cabinet_light_switch:
   friendly_name: Bear light
   icon: mdi:lamp
-switch.tv_light_switch:
+switch.pi3_tv_light_switch:
   friendly_name: TV light
   icon: mdi:television
-switch.number_sign_switch:
+switch.pi3_number_sign_switch:
   friendly_name: House number
   icon: mdi:home-variant
-switch.garden_lights_switch:
+switch.pi3_garden_lights_switch:
   friendly_name: Garden lights
   icon: mdi:flower
 device_tracker.tv_living_room:
@@ -199,12 +199,12 @@ binary_sensor.first_floor_front:
 binary_sensor.first_floor_rear:
   device_class: connectivity
 zone.lightning: {}
-switch.living_room_table:
+switch.pi3_living_room_table:
   icon: mdi:power-socket-uk
 binary_sensor.vestibule_socket_switch: {}
-switch.family_room_socket_switch:
+switch.pi3_family_room_socket_switch:
   icon: mdi:power-socket-uk
-switch.vestibule_socket_switch:
+switch.pi3_vestibule_switch:
   icon: mdi:power-socket-uk
 sensor.dark_sky_pressure: {}
 device_tracker.person2_bt_front_laptop:

@@ -10,10 +10,10 @@ trigger:
     above: 15
   # When it gets bright in the living room
   - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     above: 40
   - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     above: 25
     for:
       minutes: 5
@@ -41,7 +41,7 @@ condition:
     conditions:
     # Bright in the living room
     - condition: numeric_state
-      entity_id: sensor.living_room_multi_luminance
+      entity_id: sensor.pi3_living_room_multi_luminance
       above: 25
     # or here
     - condition: numeric_state

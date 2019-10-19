@@ -40,4 +40,4 @@ action:
   - delay: '00:00:02'
   - service: switch.turn_off
     entity_id:
-      - switch.livingroom_socket_switch 
+      - switch.pi3_livingroom_socket_switch 

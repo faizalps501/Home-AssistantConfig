@@ -2,7 +2,7 @@ initial_state: 'off'
 alias: 'Nighttime garden off'
 trigger:
   platform: state
-  entity_id: switch.garden_lights_switch
+  entity_id: switch.pi3_garden_lights_switch
   to: 'on'
   for:
     minutes: 15
@@ -15,4 +15,4 @@ condition:
       before: '06:00:00'
 action:
   service: switch.turn_off
-  entity_id: switch.garden_lights_switch
+  entity_id: switch.pi3_garden_lights_switch

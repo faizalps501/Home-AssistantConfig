@@ -1,7 +1,0 @@
-- platform: mqtt
-  name: "Bear light switch"
-  state_topic: 'homeassistant/switch/cabinet_light_switch/state'
-  command_topic: 'homeassistant/switch/cabinet_light_switch/command'
-  payload_on: 'on'
-  payload_off: 'off'
-  unique_id: 'zwave-cabinet_light_switch'

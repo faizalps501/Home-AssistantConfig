@@ -5,17 +5,17 @@ trigger:
     entity_id: input_boolean.living_room_occupied
     to: 'on'
   - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     below: 18
     for:
       minutes: 5
   - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     below: 16
     for:
       minutes: 1
   - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
+    entity_id: sensor.pi3_living_room_multi_luminance
     above: 11
     for:
       minutes: 10
@@ -26,7 +26,7 @@ condition:
       value_template: "{{ not is_state('input_select.living_room','Day on') and not is_state('input_select.living_room','Night on')}}"
     # Room is dark, but not too dark
     - condition: numeric_state
-      entity_id: sensor.living_room_multi_luminance
+      entity_id: sensor.pi3_living_room_multi_luminance
       below: 25
       above: 11
     - condition: state
@@ -34,13 +34,13 @@ condition:
       state: 'on'
     # Didn't just turn the lights off
     - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.switch.cabinet_light_switch.last_updated)) | int > 120 }}"
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.switch.pi3_cabinet_light_switch.last_updated)) | int > 120 }}"
 action:
   - service: notify.logfile
     data_template:
       message: >
         Day on triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
-          Light level is {{ states('sensor.living_room_multi_luminance') }}
+          Light level is {{ states('sensor.pi3_living_room_multi_luminance') }}
   - service: input_select.select_option
     data:
       entity_id: input_select.living_room

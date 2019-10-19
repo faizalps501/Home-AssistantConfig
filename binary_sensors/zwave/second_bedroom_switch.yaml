@@ -1,6 +1,0 @@
-- platform: mqtt
-  name: "Second bedroom switch"
-  state_topic: 'homeassistant/switch/second_bedroom_switch/command'
-  payload_on: 'on'
-  payload_off: 'off'
-  unique_id: 'zwave-sensor-second_bedroom_switch'

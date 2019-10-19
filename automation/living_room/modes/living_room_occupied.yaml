@@ -46,7 +46,7 @@ trigger:
     entity_id: media_player.living_room
     to: 'playing'
   - platform: state
-    entity_id: binary_sensor.living_room_motion
+    entity_id: binary_sensor.pi3_living_room_motion
     to: 'on'
 condition:
   condition: and
@@ -71,7 +71,7 @@ condition:
           minutes: 5
       # There's been motion in the last 3 minutes
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.binary_sensor.living_room_motion.last_updated) ) < 180 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.binary_sensor.pi3_living_room_motion.last_updated) ) < 180 }}"
     - condition: or
       conditions:
       # TV

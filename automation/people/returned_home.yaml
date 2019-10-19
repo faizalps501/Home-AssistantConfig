@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Returned home'
 trigger:
   - platform: state
-    entity_id: binary_sensor.front_door_sensor
+    entity_id: binary_sensor.pi3_front_door_sensor
     to: 'on'
   # People nearly home
   - platform: numeric_state
@@ -35,13 +35,13 @@ condition:
       state: 'on'
     # It's getting dark
     - condition: numeric_state
-      entity_id: sensor.living_room_multi_luminance
+      entity_id: sensor.pi3_living_room_multi_luminance
       below: 15
     # Hall lights are off
     - condition: or
       conditions:
       - condition: state
-        entity_id: switch.hall_downstairs_switch
+        entity_id: switch.pi3_hall_downstairs_switch
         state: 'off'
       - condition: state
         entity_id: light.hall
@@ -53,7 +53,7 @@ condition:
       - condition: and
         conditions:
         - condition: state
-          entity_id: binary_sensor.front_door_sensor
+          entity_id: binary_sensor.pi3_front_door_sensor
           state: 'on'
         - condition: or
           conditions:

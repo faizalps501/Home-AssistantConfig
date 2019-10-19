@@ -908,13 +908,13 @@
      inkscape:window-height="2115"
      id="namedview3682"
      showgrid="false"
-     inkscape:zoom="55.025642"
-     inkscape:cx="65.456256"
-     inkscape:cy="449.024"
+     inkscape:zoom="19.454502"
+     inkscape:cx="708.1167"
+     inkscape:cy="468.15991"
      inkscape:window-x="-13"
      inkscape:window-y="-13"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer6"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -3654,7 +3654,7 @@
        transform="matrix(-0.01065478,0.99994324,0.99993746,0.01118384,0,0)" />
     <path
        style="opacity:0.95999995;fill:#4d4d3e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="switch.bear_light_switch"
+       id="switch.jarvis_bear_light_switch"
        sodipodi:type="arc"
        sodipodi:cx="269.11325"
        sodipodi:cy="131.17464"
@@ -3667,7 +3667,7 @@
        inkscape:label="#path1030" />
     <path
        style="display:inline;opacity:0.95999995;fill:#4d4d3e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="switch.tv_light_switch"
+       id="switch.jarvis_tv_light_switch"
        sodipodi:type="arc"
        sodipodi:cx="65.324272"
        sodipodi:cy="126.18803"
@@ -4408,7 +4408,7 @@
        inkscape:label="#rect3782-2-4-5-9-5-1-2-0-8-0-4-9" />
     <rect
        style="fill:#81c9a7;fill-opacity:1;stroke-width:0.99500614"
-       id="binary_sensor.patio_door_right_sensor"
+       id="binary_sensor.jarvis_patio_door_right_sensor"
        width="2.3158894"
        height="37.28907"
        x="100.77585"
@@ -4515,7 +4515,7 @@
        transform="matrix(-0.01065478,0.99994324,0.99993746,0.01118384,0,0)" />
     <rect
        style="fill:#81c9a7;fill-opacity:1;stroke-width:1.06769979"
-       id="binary_sensor.utility_door_exterior_sensor"
+       id="binary_sensor.jarvis_utility_door_exterior_sensor"
        width="2.3158894"
        height="42.936665"
        x="33.442532"
@@ -4731,7 +4731,7 @@
        inkscape:label="#rect3782-2-4-5" />
     <rect
        style="fill:#81c9a7;fill-opacity:1;stroke-width:1.11217785"
-       id="binary_sensor.front_door_sensor"
+       id="binary_sensor.jarvis_front_door_sensor"
        width="2.3158894"
        height="46.588486"
        x="511.05399"
@@ -4784,7 +4784,7 @@
        ry="0" />
     <rect
        style="fill:#81c9a7;fill-opacity:1;stroke-width:1.67672491"
-       id="binary_sensor.garage_closed_bike_sensor"
+       id="binary_sensor.jarvis_garage_closed_bike_sensor"
        width="2.3158894"
        height="105.88969"
        x="522.08966"
@@ -4801,7 +4801,7 @@
        ry="0" />
     <rect
        style="fill:#81c9a7;fill-opacity:1;stroke-width:1.67461812"
-       id="binary_sensor.garage_closed_car_sensor"
+       id="binary_sensor.jarvis_garage_closed_car_sensor"
        width="2.3158894"
        height="105.62374"
        x="522.08966"
@@ -6634,7 +6634,7 @@
       </g>
       <g
          style="display:inline"
-         id="sensor.living_room_multi_luminance"
+         id="sensor.jarvis_living_room_multi_luminance"
          inkscape:label="#g5823"
          transform="matrix(1.2493993,0,0,1.2493993,-77.449432,-40.827404)">
         <g
@@ -6658,8 +6658,8 @@
         <text
            style="font-size:13.90053082px;fill:#d4d4d4;fill-opacity:1;stroke-width:0.15125379;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1;"
            transform="scale(0.86327637,1.1583776)"
-           inkscape:label="sensor.living_room_multi_luminance"
-           id="sensor.living_room_multi_luminance-text"
+           inkscape:label="sensor.jarvis_living_room_multi_luminance"
+           id="sensor.jarvis_living_room_multi_luminance-text"
            y="62.671162"
            x="205.22295"
            xml:space="preserve"><tspan
@@ -6671,7 +6671,7 @@
       </g>
       <g
          style="display:inline"
-         id="sensor.office_multi_relative_humidity"
+         id="sensor.jarvis_office_multi_relative_humidity"
          inkscape:label="#g5809"
          transform="matrix(1.2490193,0,0,1.2490193,-243.20929,16.024138)">
         <g
@@ -6695,8 +6695,8 @@
         <text
            style="font-size:13.90842247px;fill:#d4d4d4;fill-opacity:1;stroke-width:0.15129981;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
            transform="scale(0.86327637,1.1583776)"
-           inkscape:label="sensor.office_multi_relative_humidity"
-           id="sensor.office_multi_relative_humidity-text"
+           inkscape:label="sensor.jarvis_office_multi_relative_humidity"
+           id="sensor.jarvis_office_multi_relative_humidity-text"
            y="55.797852"
            x="837.97711"
            xml:space="preserve"><tspan
@@ -6708,7 +6708,7 @@
       </g>
       <g
          style="display:inline"
-         id="sensor.office_multi_luminance"
+         id="sensor.jarvis_office_multi_luminance"
          inkscape:label="#g5816"
          transform="matrix(1.2493993,0,0,1.2493993,-189.5526,-40.247851)">
         <g
@@ -6732,8 +6732,8 @@
         <text
            style="font-size:13.90053082px;fill:#d4d4d4;fill-opacity:1;stroke-width:0.15125379;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
            transform="scale(0.86327637,1.1583776)"
-           inkscape:label="sensor.office_multi_luminance"
-           id="sensor.office_multi_luminance-text"
+           inkscape:label="sensor.jarvis_office_multi_luminance"
+           id="sensor.jarvis_office_multi_luminance-text"
            y="74.492638"
            x="837.47174"
            xml:space="preserve"><tspan
@@ -6787,7 +6787,7 @@
       <path
          transform="translate(0,-67.333313)"
          style="display:inline;opacity:0.95999995;fill:#81c9a7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26462698;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="binary_sensor.living_room_motion"
+         id="binary_sensor.jarvis_living_room_motion"
          sodipodi:type="arc"
          sodipodi:cx="288.55447"
          sodipodi:cy="115.48263"
@@ -7052,7 +7052,8 @@
          aria-label="39"
          transform="matrix(0.81024049,0,0,0.83472348,-58.756779,86.045783)"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;display:inline;fill:#4d4d3e;fill-opacity:1;stroke:none;stroke-width:0.44557896;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="switch.number_sign_switch">
+         id="switch.jarvis_number_sign_switch"
+         inkscape:label="#switch.number_sign_switch">
         <path
            d="m 441.58594,519.23596 q 0.38281,0.32812 0.60937,0.76562 0.22656,0.4375 0.22656,1.16406 0,0.82032 -0.32812,1.53125 -0.32031,0.71094 -0.99219,1.21875 -0.65625,0.49219 -1.54687,0.75782 -0.88282,0.25781 -2.14844,0.25781 -1.44531,0 -2.48438,-0.22656 -1.03125,-0.22657 -1.67968,-0.50782 v -2.55468 h 0.30468 q 0.67188,0.40625 1.60157,0.70312 0.9375,0.29688 1.71093,0.29688 0.45313,0 0.98438,-0.0703 0.53125,-0.0781 0.89844,-0.32812 0.28906,-0.19531 0.46093,-0.46875 0.17188,-0.28125 0.17188,-0.80469 0,-0.50781 -0.23438,-0.78125 -0.23437,-0.28125 -0.61718,-0.39844 -0.38282,-0.125 -0.92188,-0.13281 -0.53906,-0.0156 -1,-0.0156 h -0.64062 v -2.07813 h 0.66406 q 0.60937,0 1.07812,-0.0391 0.46875,-0.0391 0.79688,-0.17969 0.34375,-0.14844 0.51562,-0.39062 0.17188,-0.25 0.17188,-0.72657 0,-0.35156 -0.17969,-0.5625 -0.17969,-0.21875 -0.45312,-0.34375 -0.30469,-0.14062 -0.71875,-0.1875 -0.41407,-0.0469 -0.71094,-0.0469 -0.73438,0 -1.59375,0.25781 -0.85938,0.25 -1.66406,0.72656 h -0.28907 v -2.52343 q 0.64063,-0.25782 1.74219,-0.49219 1.10156,-0.24219 2.23438,-0.24219 1.10156,0 1.92968,0.19531 0.82813,0.1875 1.36719,0.50782 0.64063,0.38281 0.95313,0.92968 0.3125,0.54688 0.3125,1.28125 0,0.96875 -0.60157,1.73438 -0.60156,0.75781 -1.58593,0.96875 v 0.10937 q 0.39843,0.0547 0.84375,0.21875 0.44531,0.16407 0.8125,0.47657 z"
            style="fill:#4d4d3e;fill-opacity:1;stroke:none;stroke-width:0.44557896;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7301,14 +7302,14 @@
          d="m 909.28789,330.36478 v -8.68594 c 0,-0.75756 -0.61333,-1.37119 -1.37134,-1.37119 -0.75652,0 -1.37014,0.61363 -1.37014,1.37119 v 8.68579 c -0.7513,0.46119 -1.25217,1.2899 -1.25217,2.2354 0,1.4492 1.17401,2.62306 2.62216,2.62306 1.44875,0 2.62306,-1.17386 2.62306,-2.62306 1.5e-4,-0.94535 -0.50087,-1.77406 -1.25157,-2.23525 z m -1.37134,4.46409 c -1.22844,0 -2.22779,-0.99979 -2.22779,-2.22869 0,-0.78053 0.39735,-1.49021 1.06423,-1.89905 l 0.18793,-0.11545 v -8.90684 c 0,-0.53875 0.43763,-0.97682 0.97563,-0.97682 0.5386,0 0.97682,0.43807 0.97682,0.97682 v 8.90669 l 0.18794,0.115 c 0.66598,0.40929 1.06393,1.11957 1.06393,1.8995 0,1.22905 -0.99979,2.22884 -2.22869,2.22884 z m -1.90114,-9.51525 h -1.20876 v 0.39452 h 1.20876 z m 0,-3.83196 h -1.20876 v 0.39436 h 1.20876 z m 0,2.31027 v -0.39437 h -0.82066 v 0.39437 z m 0,5.35425 h -1.20876 v 0.39452 h 1.20876 z m 0,-1.52169 v -0.39437 h -0.82066 v 0.39437 z"
          inkscape:connector-curvature="0" />
       <g
-         id="sensor.office_multi_temperature"
+         id="sensor.jarvis_office_multi_temperature"
          inkscape:label="#g3422">
         <text
            xml:space="preserve"
            x="826.76343"
            y="83.695442"
            id="sensor.living_room_multi_temperature-8"
-           inkscape:label="sensor.living_room_multi_temperature"
+           inkscape:label="sensor.jarvis_office_multi_temperature"
            transform="scale(0.86327636,1.1583776)"
            style="font-size:17.37188721px;display:inline;fill:#d4d4d4;fill-opacity:1;stroke:#000000;stroke-width:0.18897638;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
              sodipodi:role="line"
@@ -7329,14 +7330,14 @@
          d="m 709.05093,95.808558 v -8.68594 c 0,-0.75756 -0.61333,-1.37119 -1.37134,-1.37119 -0.75652,0 -1.37014,0.61363 -1.37014,1.37119 v 8.68579 c -0.7513,0.46119 -1.25217,1.2899 -1.25217,2.2354 0,1.449212 1.17401,2.623092 2.62216,2.623092 1.44875,0 2.62306,-1.17388 2.62306,-2.623092 1.5e-4,-0.94535 -0.50087,-1.77406 -1.25157,-2.23525 z m -1.37134,4.464122 c -1.22844,0 -2.22779,-0.99982 -2.22779,-2.228722 0,-0.78053 0.39735,-1.49021 1.06423,-1.89905 l 0.18793,-0.11545 v -8.90684 c 0,-0.53875 0.43763,-0.97682 0.97563,-0.97682 0.5386,0 0.97682,0.43807 0.97682,0.97682 v 8.90669 l 0.18794,0.115 c 0.66598,0.40929 1.06393,1.11957 1.06393,1.8995 0,1.229052 -0.99979,2.228872 -2.22869,2.228872 z m -1.90114,-9.515282 h -1.20876 v 0.39452 h 1.20876 z m 0,-3.83196 h -1.20876 v 0.39436 h 1.20876 z m 0,2.31027 v -0.39437 h -0.82066 v 0.39437 z m 0,5.35425 h -1.20876 v 0.39452 h 1.20876 z m 0,-1.52169 v -0.39437 h -0.82066 v 0.39437 z"
          inkscape:connector-curvature="0" />
       <g
-         id="sensor.living_room_multi_temperature"
+         id="sensor.jarvis_living_room_multi_temperature"
          inkscape:label="#g3457">
         <text
            xml:space="preserve"
            x="166.40155"
            y="61.776096"
-           id="sensor.living_room_multi_temperature-text"
-           inkscape:label="sensor.living_room_multi_temperature"
+           id="sensor.jarvis_living_room_multi_temperature-text"
+           inkscape:label="sensor.jarvis_living_room_multi_temperature"
            transform="scale(0.86327637,1.1583776)"
            style="font-size:17.37188911px;display:inline;fill:#d4d4d4;fill-opacity:1;stroke:#000000;stroke-width:0.18897638;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
              sodipodi:role="line"
@@ -7612,7 +7613,7 @@
          y="261.29565" />
       <path
          inkscape:label="#path5573"
-         id="switch.family_room_socket_switch"
+         id="switch.jarvis_family_room_socket_switch"
          d="m 557.33866,260.29107 h -8.75555 c -0.34445,0 -0.62222,0.27777 -0.62222,0.62222 v 8.75555 c 0,0.34445 0.27777,0.62223 0.62222,0.62223 h 8.75555 c 0.34445,0 0.62223,-0.27778 0.62223,-0.62223 v -8.75555 c 0,-0.34445 -0.27778,-0.62222 -0.62223,-0.62222 z m -5.76666,7.51111 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -1.07778 c -0.0556,0 -0.11111,-0.0444 -0.11111,-0.11111 v -0.57778 c 0,-0.0556 0.0444,-0.11111 0.11111,-0.11111 h 1.07778 c 0.0556,0 0.11111,0.0444 0.11111,0.11111 z m 1.83333,-3.67778 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -0.68889 c -0.0556,0 -0.11111,-0.0444 -0.11111,-0.11111 v -1.34445 c 0,-0.0555 0.0444,-0.11111 0.11111,-0.11111 h 0.68889 c 0.0556,0 0.11111,0.0445 0.11111,0.11111 z m 2.23333,3.67778 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -1.07778 c -0.0555,0 -0.11111,-0.0444 -0.11111,-0.11111 v -0.57778 c 0,-0.0556 0.0444,-0.11111 0.11111,-0.11111 h 1.07778 c 0.0556,0 0.11111,0.0444 0.11111,0.11111 z"
          inkscape:connector-curvature="0"
          style="display:inline;fill:#b381c9;fill-opacity:1;stroke-width:0.11111111" />
@@ -8089,7 +8090,7 @@
        style="display:inline;fill:#b381c9;fill-opacity:1;stroke-width:0.11111111"
        inkscape:connector-curvature="0"
        d="m 341.13819,417.10416 h -8.75555 c -0.34445,0 -0.62222,0.27777 -0.62222,0.62222 v 8.75555 c 0,0.34445 0.27777,0.62223 0.62222,0.62223 h 8.75555 c 0.34445,0 0.62223,-0.27778 0.62223,-0.62223 v -8.75555 c 0,-0.34445 -0.27778,-0.62222 -0.62223,-0.62222 z m -5.76666,7.51111 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -1.07778 c -0.0556,0 -0.11111,-0.0444 -0.11111,-0.11111 v -0.57778 c 0,-0.0556 0.0444,-0.11111 0.11111,-0.11111 h 1.07778 c 0.0556,0 0.11111,0.0444 0.11111,0.11111 z m 1.83333,-3.67778 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -0.68889 c -0.0556,0 -0.11111,-0.0444 -0.11111,-0.11111 v -1.34445 c 0,-0.0555 0.0444,-0.11111 0.11111,-0.11111 h 0.68889 c 0.0556,0 0.11111,0.0445 0.11111,0.11111 z m 2.23333,3.67778 c 0,0.0556 -0.0444,0.11111 -0.11111,0.11111 h -1.07778 c -0.0555,0 -0.11111,-0.0444 -0.11111,-0.11111 v -0.57778 c 0,-0.0556 0.0444,-0.11111 0.11111,-0.11111 h 1.07778 c 0.0556,0 0.11111,0.0444 0.11111,0.11111 z"
-       id="switch.vestibule_switch"
+       id="switch.jarvis_vestibule_switch"
        inkscape:label="#path5573" />
     <g
        id="g6582">
@@ -8179,7 +8180,7 @@
        id="rect5592-34-2-3"
        style="display:inline;opacity:1;fill:#010201;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <g
-       id="switch.hall_downstairs_switch"
+       id="switch.jarvis_hall_downstairs_switch"
        inkscape:label="#g3033">
       <g
          transform="translate(0.07710297,1.6962654)"
@@ -8692,7 +8693,7 @@
     </g>
     <path
        style="display:inline;opacity:0.95999995;fill:#4d4d3e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="switch.livingroom_socket_switch"
+       id="switch.jarvis_livingroom_socket_switch"
        sodipodi:type="arc"
        sodipodi:cx="277.37158"
        sodipodi:cy="175.67332"

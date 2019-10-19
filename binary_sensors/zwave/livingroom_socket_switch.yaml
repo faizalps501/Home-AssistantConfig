@@ -1,6 +1,0 @@
-- platform: mqtt
-  name: "Livingroom socket switch"
-  state_topic: 'homeassistant/switch/livingroom_socket_switch/command'
-  payload_on: 'on'
-  payload_off: 'off'
-  unique_id: 'zwave-sensor-livingroom_socket_switch'
