@@ -77,7 +77,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [Google Travel Time integration](https://home-assistant.io/integrations/google_travel_time/) which uses the Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
   * I gave up on the the [IMAP email content](https://home-assistant.io/integrations/imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
-* A HiWatch IPC-T140 dome camera, using the generic camera integrationere's a firmware issue apparently, if the share is above that the camera gets confused and won't write).
+* A HiWatch IPC-T140 dome camera, using the generic camera integration.
 
 ### Custom integrations
 
