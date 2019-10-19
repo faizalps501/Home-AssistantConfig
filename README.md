@@ -79,6 +79,14 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
 * A HiWatch IPC-T140 dome camera, using the generic camera component. It's a 4K camera, and the Pi3 can't keep up when I use the FFMPEG component. I use the camera's built in motion detection, writing to a 200 GB SMB share (there's a firmware issue apparently, if the share is above that the camera gets confused and won't write).
 
+### Custom integrations
+
+Historically I didn't make much use of custom components/integrations, however that's changed. Here are the ones I use, and why:
+
+* [HACS](https://hacs.netlify.com) for intalling, updating, and finding new custom integrations. All other custom integrations are installed using this.
+* [Circadian lighting](https://github.com/claytonjn/hass-circadian_lighting/) since the built in [flux integration](https://www.home-assistant.io/integrations/flux) isn't as good.
+* [Home Assistant Remote](https://github.com/lukas-hetzenecker/home-assistant-remote) for linking my Z-Wave and primary instances. This is more effective than my ugly MQTT hack.
+
 ### Other software
 
 * [PiVPN](http://www.pivpn.io/) for remote access to my network

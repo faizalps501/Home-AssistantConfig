@@ -243,3 +243,5 @@ device_tracker.person3_bt_front_mobile:
   source_type: bluetooth
 device_tracker.person3_bt_mobile:
   source_type: bluetooth
+zwave.pi3_zwaveme_razberry_controller_2016_zwave:
+  icon: mdi:raspberry-pi

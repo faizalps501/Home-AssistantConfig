@@ -67,14 +67,6 @@ cards:
   - automation.living_room_table_on
   - automation.living_room_table_off
 - type: entities
-  title: Z-Wave automations
-  show_header_toggle: false
-  entities:
-  - automation.zwave_actions
-  - automation.zwave_resync
-  - automation.zwave_sync
-  - automation.zwave_unsynced
-- type: entities
   show_header_toggle: false
   title: Alarm automations
   entities:
