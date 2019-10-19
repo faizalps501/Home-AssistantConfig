@@ -58,6 +58,7 @@ cards:
   - automation.clear_states
   - automation.plex_hook
   - automation.device_unavailable
+  - automation.remote_ping
 - type: entities
   title: Zigbee mesh automations
   show_header_toggle: false

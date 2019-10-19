@@ -1,0 +1,17 @@
+initial_state: 'on'
+alias: 'Remote ping'
+trigger:
+  - platform: state
+    entity_id: sensor.time
+action:
+  - service: input_text.set_value
+    data_template:
+      entity_id: input_text.pi3_last_motion
+      value: "{{ states('sensor.time') }}"
+  - delay: '00:00:30'
+  - condition: template
+    value_template: "{{ states('sensor.time') != states('input_text.pi3_last_motion') }}"
+  - service: notify.logfile
+    data:
+      message: "SENDME Looks like the remote link has failed"
+
