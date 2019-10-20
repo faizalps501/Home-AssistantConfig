@@ -1,0 +1,28 @@
+alias: 'Nearly Home'
+initial_state: 'on'
+trigger:
+  - platform: numeric_state
+    entity_id: proximity.person2_home
+    below: 1000
+  - platform: numeric_state
+    entity_id: proximity.person3_home
+    below: 1000
+  - platform: numeric_state
+    entity_id: proximity.person1_home
+    below: 1000
+condition:
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'off'
+    for: '00:30:00'
+  - condition: numeric_state
+    entity_id: sensor.pi3_living_room_multi_luminance
+    below: 25
+  - condition: numeric_state
+    entity_id: sensor.sun_elevation
+    below: 15
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.hall
+      option: 'Night on'
