@@ -99,9 +99,9 @@ cards:
     - entity: media_player.family_room
       name: Sonos
     - entity: media_player.cast_kitchen_speaker
-      name: Home Mini
+      name: Mini
     - entity: media_player.family_room_display
-      name: Home Hub
+      name: Hub
 - type: glance
   title: Utility room & back
   columns: 2

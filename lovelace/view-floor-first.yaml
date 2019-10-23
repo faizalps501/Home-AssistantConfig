@@ -13,6 +13,8 @@ cards:
       name: Squeezebox
     - entity: media_player.cast_master_bedroom_speaker
       name: Home Mini
+    - entity: media_player.master_bedroom_display
+      name: "Home Hub"
     - entity: switch.radio_person2
       icon: mdi:alarm
       tap_action: 
@@ -114,7 +116,7 @@ cards:
       name: Window
     - entity: media_player.office
       name: Sonos
-    - entity: media_player.office_display
+    - entity: media_player.office_smart_display
       name: "Home Hub"
 - type: glance
   title: Spare bedroom
