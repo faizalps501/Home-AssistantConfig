@@ -62,4 +62,6 @@ action:
   - service: input_select.select_option
     data:
       entity_id: input_select.living_room
-      option: Night on
+      option: 'Night on'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.livingroom_lights_auto

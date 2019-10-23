@@ -26,12 +26,8 @@ condition:
         entity_id: input_select.house
         state: 'Dim'
 action:
-  - service: homeassistant.turn_off
-    entity_id: input_boolean.livingroom_lights_auto
   - service: light.turn_on
     data:
       entity_id: light.living_room_table
       brightness_pct: 5
       transition: 15
-  - service: switch.turn_on
-    entity_id: switch.pi3_livingroom_socket_switch
