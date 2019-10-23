@@ -8,10 +8,12 @@ action:
   - service: media_player.turn_off
     data_template:
       entity_id: >- 
-        {% if is_state('input_boolean.office_occupied','on') %}
-          media_player.office_display
-        {% elif is_state('input_boolean.living_room_occupied','on') %}
+        {%- if is_state('input_boolean.office_occupied','on') -%}
+          media_player.office_smart_display
+        {%- elif is_state('input_boolean.living_room_occupied','on') -%}
           media_player.living_room_display
+        {%- elif is_state('input_boolean.master_bedroom_occupied','on') -%}
+          media_player.master_bedroom_display
         {% else %}
           media_player.family_room_display
         {% endif %}
