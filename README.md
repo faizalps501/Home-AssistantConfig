@@ -96,6 +96,7 @@ Historically I didn't make much use of custom components/integrations, however t
 * [rclone](https://rclone.org/) for offsite backups
 * [rsnapshot](https://rsnapshot.org/) runs on another system, and pulls backups 
 * [MotionEye](https://github.com/ccrisan/motioneye/) for motion detection
+* [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
 
 ## Presence detection
 
