@@ -1,1 +1,14 @@
-[]
+- id: '1572606895884'
+  alias: New Automation
+  description: ''
+  trigger:
+  - device_id: 2baf7abb4347484aa0517a66fa6d4adb
+    domain: binary_sensor
+    entity_id: binary_sensor.guest_bedroom_window_right
+    platform: device
+    type: opened
+  condition: []
+  action:
+  - data:
+      message: This is a test
+    service: notify.person2_telegram
