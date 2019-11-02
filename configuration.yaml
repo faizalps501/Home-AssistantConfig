@@ -137,4 +137,3 @@ remote_homeassistant:
       - proximity
       - script
       - zone
-
