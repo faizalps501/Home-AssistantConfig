@@ -116,3 +116,25 @@ remote_homeassistant:
     - zwave.scene_activated
     - state_changed
     - service_registered
+    exclude:
+      domains:
+      - alarm
+      - alert
+      - automation
+      - calendar
+      - camera
+      - device_tracker
+      - group
+      - input_boolean
+      - input_datetime
+      - input_number
+      - input_select
+      - input_text
+      - light
+      - media_player
+      - persistent_notification
+      - person
+      - proximity
+      - script
+      - zone
+
