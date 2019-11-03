@@ -102,38 +102,4 @@ circadian_lighting:
 
 telegram_bot: !include telegram.yaml
 
-remote_homeassistant:
-  instances:
-  - host: 192.168.0.10
-    port: 8123
-    secure: false
-    verify_ssl: false
-    access_token: !secret pi3
-    entity_prefix: "pi3_"
-    subscribe_events:
-    - zwave.network_ready
-    - zwave.node_event
-    - zwave.scene_activated
-    - state_changed
-    - service_registered
-    exclude:
-      domains:
-      - alarm
-      - alert
-      - automation
-      - calendar
-      - camera
-      - device_tracker
-      - group
-      - input_boolean
-      - input_datetime
-      - input_number
-      - input_select
-      - input_text
-      - light
-      - media_player
-      - persistent_notification
-      - person
-      - proximity
-      - script
-      - zone
+remote_homeassistant: !include remote_ha.yaml
