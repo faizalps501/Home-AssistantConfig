@@ -38,4 +38,24 @@ action:
     data_template:
       message: >
         Turned off person2 in bed because the {{ trigger.to_state.name }} was {{ trigger.to_state.state }} at {{ now() }}
-
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person2_work_home
+      state: 'off'
+    - condition: state
+      entity_id: calendar.person2_holiday
+      state: 'off'
+  - service: tts.google_cloud_say
+    data_template:
+      entity_id: media_player.master_bedroom
+      message: >-
+        {%- macro getTrainStatus() -%}
+        {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
+        {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+        {%- endfor -%}
+        {%- endmacro -%}
+        {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_xyz', 'next_trains')|length }} trains to work are on time. {% if(getTrainStatus()|length) != (state_attr('sensor.next_train_to_xyz','next_trains')|length) %}{%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') %}The {{ train.scheduled }} is {{ train.status }} at {{ train.estimated }}. {% endfor -%}{%- endif -%}
