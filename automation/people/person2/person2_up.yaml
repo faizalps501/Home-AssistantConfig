@@ -40,15 +40,24 @@ action:
         Turned off person2 in bed because the {{ trigger.to_state.name }} was {{ trigger.to_state.state }} at {{ now() }}
   - condition: and
     conditions:
+    # Working, but not from home, and the alarm got me up
     - condition: state
-      entity_id: binary_sensor.workday
-      state: 'on'
+      entity_id: calendar.person2_holiday
+      state: 'off'
     - condition: state
       entity_id: input_boolean.person2_work_home
       state: 'off'
     - condition: state
-      entity_id: calendar.person2_holiday
-      state: 'off'
+      entity_id: media_player.person2
+      state: 'playing'
+  # Update the trains
+  - service: homeassistant.update_entity
+    entity_id: sensor.next_train_to_xyz
+  # Wait for that to happen
+  - wait_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.next_train_to_xyz.last_updated))|int > 5 }}"
+  # And wait for the radio to be turned off (that is, I'm actually awake)
+  - wait_template: "{{ is_state('media_player.person2','off') or is_state('media_player.person2','paused') }}"
+  # Now tell me about it
   - service: tts.google_cloud_say
     data_template:
       entity_id: media_player.master_bedroom
