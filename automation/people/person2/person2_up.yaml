@@ -60,15 +60,15 @@ action:
     data_template:
       message: "Waiting up to 30 seconds for the train information to update"
   # Wait for that to happen
-  - wait_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.next_train_to_xyz.last_updated))|int > 5 }}"
-    timeout: '00:30:00'
+  - wait_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.next_train_to_xyz.last_updated))|int < 90 }}"
+    timeout: '00:00:30'
     continue_on_timeout: 'true'
   - service: notify.logfile
     data_template:
       message: "Waiting up to 30 seconds for the radio to turn off"
   # And wait for the radio to be turned off (that is, I'm actually awake)
   - wait_template: "{{ is_state('media_player.person2','off') or is_state('media_player.person2','paused') }}"
-    timeout: '00:30:00'
+    timeout: '00:00:30'
     continue_on_timeout: 'true'
   - service: notify.logfile
     data_template:
