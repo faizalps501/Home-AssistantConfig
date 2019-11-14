@@ -68,7 +68,7 @@ action:
       message: "Waiting up to 30 seconds for the radio to turn off"
   # And wait for the radio to be turned off (that is, I'm actually awake)
   - wait_template: "{{ is_state('media_player.person2','off') or is_state('media_player.person2','paused') }}"
-    timeout: '00:00:30'
+    timeout: '00:02:00'
     continue_on_timeout: 'true'
   - service: notify.logfile
     data_template:
@@ -76,7 +76,7 @@ action:
   # Now tell me about it
   - service: tts.google_cloud_say
     data_template:
-      entity_id: media_player.master_bedroom
+      entity_id: media_player.cast_master_bedroom_speaker
       message: >-
         {%- macro getTrainStatus() -%}
         {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
