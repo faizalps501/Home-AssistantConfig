@@ -11,6 +11,19 @@ cards:
   - automation.startup_person1_up
   - automation.startup_person2_up
 - type: entities
+  title: Battery level automations
+  show_header_toggle: false
+  entities:
+  - automation.battery_garage_door_closed_car
+  - automation.battery_garage_door_closed_bike
+  - automation.battery_livingroom_multi
+  - automation.battery_utility_door
+  - automation.battery_utility_light_switch
+  - automation.battery_front_door
+  - automation.battery_patio_door_left
+  - automation.battery_remote
+  - automation.battery_green_remote
+- type: entities
   title: Misc automations
   show_header_toggle: false
   entities:
@@ -82,3 +95,11 @@ cards:
   - automation.alarm_triggered_away
   - automation.alarm_triggered_home
   - automation.alarm_disarm_hall
+- type: entities
+  show_header_toggle: false
+  title: Other bits
+  entities:
+  - automation.bt_front_offline
+  - automation.bt_rear_offline
+  - automation.motion_hook
+  - automation.nearly_home

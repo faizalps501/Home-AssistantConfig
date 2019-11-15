@@ -18,14 +18,16 @@ cards:
   - entity: switch.pi3_table_light_switch
     name: Table light switch
 - type: glance
-  title: Monitor
+  title: Things
   show_header_toggle: false
-  columns: 2
+  show_state: false
+  columns: 3
   entities:
   - entity: binary_sensor.first_floor_front
-    name: Front
+    name: BT Front
   - entity: binary_sensor.first_floor_rear
-    name: Rear
+    name: BT Rear
+  - binary_sensor.remote_ui
 - type: entities
   title: Zigbee
   show_header_toggle: false

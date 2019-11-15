@@ -107,6 +107,7 @@ cards:
   - automation.utility_door_open_after_sunset_turn_off
   - automation.nighttime_garden_off
   - automation.garden_lights_left_on
+  - automation.utility_door_left_open
   - binary_sensor.garden_lights_left_on
 - type: entities
   title: Automations for the office
