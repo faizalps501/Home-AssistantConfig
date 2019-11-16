@@ -1,8 +1,8 @@
 alias: 'Extractor notification'
 trigger:
-  - platform: numeric_state
-    entity_id: sensor.master_ensuite_humidity
-    above: 80
+  - platform: template
+    value_template: >-
+      {{ states('sensor.master_ensuite_humidity')|int > (((states('sensor.bathroom_humidity')|int + states('sensor.pi3_office_multi_relative_humidity')|int + states('sensor.second_bedroom_ensuite_humidity')|int)/3)+20) }}
     for: '00:01:00'
 condition:
   - condition: state
@@ -10,7 +10,8 @@ condition:
     state: 'on'
 action:
   # Wait for it to go back down, or an hour to pass
-  - wait_template: "{{ (states('sensor.master_ensuite_humidity')|int) < 60 }}"
+  - wait_template: >-
+      {{ states('sensor.master_ensuite_humidity')|int < (((states('sensor.bathroom_humidity')|int + states('sensor.pi3_office_multi_relative_humidity')|int + states('sensor.second_bedroom_ensuite_humidity')|int)/3)+10) }}
     timeout: '01:00:00'
     continue_on_timeout: 'false'
   - service: notify.logfile

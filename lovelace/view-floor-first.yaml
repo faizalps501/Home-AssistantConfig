@@ -141,6 +141,8 @@ cards:
       name: Second bedroom ensuite
     - entity: sensor.bathroom_humidity
       name: Bathroom
+    - entity: sensor.upstairs_humidity
+      name: Upstairs average
 - type: history-graph
   title: Temperature
   hours_to_show: 12
@@ -153,6 +155,8 @@ cards:
       name: Second bedroom ensuite
     - entity: sensor.bathroom_temperature
       name: Bathroom
+    - entity: sensor.upstairs_temperature
+      name: Upstairs average
 - type: history-graph
   title: Pressure
   hours_to_show: 12
