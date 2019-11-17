@@ -42,11 +42,11 @@ influxdb: !include influxdb.yaml
 tts:
   - platform: google_translate
     service_name: google_say
-    base_url: !secret local_base
+    #base_url: !secret local_base
   - platform: google_cloud
     key_file: secrets/google_cloud.json
     voice: en-GB-Standard-C
-    base_url: !secret local_base
+    #base_url: !secret local_base
 
 group: !include groups.yaml
 
