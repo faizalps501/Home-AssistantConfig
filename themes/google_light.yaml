@@ -1,6 +1,6 @@
 google_light:
   ### Fonts ###
-  primary-font-family: "'Open Sans','Rubik',person2oto,sans-serif"
+  primary-font-family: "'Open Sans','Rubik',Roboto,sans-serif"
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
   paper-font-common-code_-_font-family: "var(--primary-font-family)"
   paper-font-body_-_font-family: "var(--primary-font-family)"

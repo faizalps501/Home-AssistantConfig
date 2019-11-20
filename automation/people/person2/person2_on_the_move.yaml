@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'person2 on the move'
+alias: 'Rob on the move'
 trigger:
   # I've moved
   - platform: state

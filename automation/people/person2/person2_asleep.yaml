@@ -1,4 +1,4 @@
-alias: 'person2 asleep'
+alias: 'Rob asleep'
 initial_state: 'on'
 trigger:
   - platform: state

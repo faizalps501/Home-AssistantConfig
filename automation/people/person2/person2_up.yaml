@@ -1,4 +1,4 @@
-alias: 'person2 up'
+alias: 'Rob up'
 initial_state: 'on'
 trigger:
   # Music is playing
