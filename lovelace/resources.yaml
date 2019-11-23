@@ -9,13 +9,10 @@
   # https://github.com/pkozul/lovelace-floorplan
 - type: module
   url: /local/floorplan/floorplan-card.js?v=1.1.8.3.1
-  # https://github.com/thomasloven/lovelace-card-tools
-- url: /local/thomasloven/card-tools.js?v=1
-  type: js
-  # https://github.com/thomasloven/lovelace-layout-card
-- url: /local/thomasloven/layout-card.js?v=1
-  type: js
-  # https://github.com/thomasloven/lovelace-popup-card
+- url: /community_plugin/lovelace-card-tools/card-tools.js
+  type: module
+- url: /community_plugin/lovelace-layout-card/layout-card.js
+  type: module
 - url: /local/dist/google-calendar-card.js?v=1
   type: module
 - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
