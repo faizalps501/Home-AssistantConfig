@@ -1,0 +1,17 @@
+alias: Notify about HACS updates
+trigger:
+  - platform: state
+    entity_id: sensor.hacs
+condition:
+  - condition: template
+    value_template: "{{ states(trigger.entity_id) != 'unknown'}}"
+  - condition: template
+    value_template: "{{ (states(trigger.entity_id) | float) != 0}}"
+action:
+  service: notify.person2_telegram
+  data_template:
+    title: Updates pending in HACS
+    message: >-
+      {% for repo in state_attr(trigger.entity_id, 'repositories') %}
+        **{{ repo.display_name }}** _{{ repo["installed version"] }}_ -> _{{ repo["available version"] }}_
+      {% endfor %}
