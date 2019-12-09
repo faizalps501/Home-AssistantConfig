@@ -74,14 +74,29 @@ cards:
   - automation.hall_lights_to_away
   - automation.hall_lights_to_bedtime
   - automation.hall_lights_to_dim
+  - automation.hall_lights_to_night_on
   - automation.hall_lights_to_off
   - type: divider
   - automation.hall_mode_away
   - automation.hall_mode_bedtime
   - automation.hall_mode_dim
+  - automation.hall_mode_night_on
   - automation.hall_mode_off
   - type: divider
   - automation.hall_lights_unavailable_off
+- type: entities
+  title: Vestibule
+  show_header_toggle: false
+  entities:
+  - automation.vestibule_lights_to_away
+  - automation.vestibule_lights_to_bedtime
+  - automation.vestibule_lights_to_off
+  - automation.vestibule_lights_to_on
+  - type: divider
+  - automation.vestibule_mode_away
+  - automation.vestibule_mode_bedtime
+  - automation.vestibule_mode_off
+  - automation.vestibule_mode_on
 - type: entities
   title: Front of the house
   show_header_toggle: false

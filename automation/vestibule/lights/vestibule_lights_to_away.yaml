@@ -1,8 +1,8 @@
 initial_state: 'on'
-alias: 'Hall lights to away'
+alias: 'Vestibule lights to away'
 trigger:
   - platform: state
-    entity_id: input_select.hall
+    entity_id: input_select.vestibule
     to: 'Away'
   - platform: state
     entity_id: input_select.house
@@ -14,19 +14,19 @@ condition:
   - condition: or
     conditions:
     - condition: state
-      entity_id: input_select.hall
+      entity_id: input_select.vestibule
       state: 'Away'
     - condition: and
       conditions:
       - condition: state
-        entity_id: input_select.hall
+        entity_id: input_select.vestibule
         state: 'Auto'
       - condition: state
         entity_id: input_select.house
         state: 'Away'
+  - condition: state
+    entity_id: switch.pi3_vestibule_switch
+    state: 'on'
 action:
-  - service: light.turn_off
-    data:
-      entity_id: light.hall
   - service: switch.turn_off
-    entity_id: switch.pi3_hall_downstairs_switch
+    entity_id: switch.pi3_vestibule_switch
