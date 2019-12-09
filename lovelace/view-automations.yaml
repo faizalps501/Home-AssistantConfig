@@ -86,11 +86,13 @@ cards:
   - automation.vestibule_lights_to_bedtime
   - automation.vestibule_lights_to_off
   - automation.vestibule_lights_to_on
+  - automation.vestibule_lights_to_night_on
   - type: divider
   - automation.vestibule_mode_away
   - automation.vestibule_mode_bedtime
   - automation.vestibule_mode_off
   - automation.vestibule_mode_on
+  - automation.vestibule_mode_night_on
 - type: entities
   title: Family room
   show_header_toggle: false

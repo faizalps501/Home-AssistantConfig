@@ -1,4 +1,3 @@
-initial_state: 'on'
 alias: 'Vestibule mode Night on'
 trigger:
   - platform: state
@@ -6,7 +5,7 @@ trigger:
     to: 'on'
   - platform: numeric_state
     entity_id: sensor.sun_elevation
-    below: 5
+    below: 2.5
   - platform: numeric_state
     entity_id: sensor.pi3_living_room_multi_luminance
     below: 15
