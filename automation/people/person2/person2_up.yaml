@@ -74,16 +74,26 @@ action:
     data_template:
       message: "Announcing state of the trains"
   # Now tell me about it
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.cast_master_bedroom_speaker
+  - service: media_player.volume_set
+    data_template:
+      volume_level: 0.3
+      entity_id: media_player.cast_master_bedroom_speaker
+  - delay: '00:00:01'
   - service: tts.google_cloud_say
     data_template:
       entity_id: media_player.cast_master_bedroom_speaker
       message: >-
         {%- macro getTrainStatus() -%}
         {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
-        {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+        {% if not loop.first %}
+          {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
+        {% endif %}
         {%- endfor -%}
         {%- endmacro -%}
-        Good morning, {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_xyz', 'next_trains')|length }} trains to work are on time. {% if(getTrainStatus()|length) != (state_attr('sensor.next_train_to_xyz','next_trains')|length) %}{%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') %}The {{ train.scheduled }} is {{ train.status }} at {{ train.estimated }}. {% endfor -%}{%- endif -%}
+        Good morning, {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_xyz', 'next_trains')|length }} trains to work are on time. {% if(getTrainStatus()|length) != (state_attr('sensor.next_train_to_xyz','next_trains')|length) %}{%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') %}{% if not loop.first %}The {{ train.scheduled }} is {{ train.status }} {% if ( train.status != "ON TIME" and train.status != "EARLY" and train.status != "CANCELLED" ) %} at {{ train.estimated }}{%- endif %}.{% endif %} {% endfor -%}{%- endif -%}
   - delay: '00:00:05'
   - wait_template: "{{ is_state('media_player.cast_master_bedroom_speaker','idle') }}"
   - service: media_player.turn_off
