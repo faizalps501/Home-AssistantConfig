@@ -29,6 +29,9 @@ trigger:
     entity_id: input_boolean.guest_mode
     to: 'on'
 condition:
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'off'
   - condition: or
     conditions:
     - condition: state

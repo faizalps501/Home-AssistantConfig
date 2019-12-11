@@ -6,12 +6,20 @@ trigger:
     to: 'off'
     for: '00:01:00'
   - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'off'
+    for: '00:05:00'
+  - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'not_home'
     for: '00:01:00'
   - platform: state
     entity_id: media_player.cast_living_room_tv
     to: 'unavailable'
+  - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'unavailable'
+    for: '00:05:00'
   - platform: state
     entity_id: media_player.living_room
     to: 'paused'
