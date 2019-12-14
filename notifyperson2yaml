@@ -1,4 +1,0 @@
-- name: rob
-  platform: pushover
-  api_key: !secretperson2pushover_api_key
-  user_key: !secretperson2pushover_user_key
