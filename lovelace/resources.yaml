@@ -1,6 +1,6 @@
   # https://maykar.github.io/compact-custom-header/
-- url: /community_plugin/compact-custom-header/compact-custom-header.js?v=1.3.5
-  type: module 
+- url: /community_plugin/custom-header/custom-header.js
+  type: module
 - url: /community_plugin/weather-card/weather-card.js?v=1.3.2
   type: module 
   # https://github.com/kalkih/mini-media-player
