@@ -1,12 +1,15 @@
 alias: Notify about HACS updates
 trigger:
-  - platform: state
-    entity_id: sensor.hacs
+  - platform: time
+    at: '19:00:00'
 condition:
   - condition: template
-    value_template: "{{ states(trigger.entity_id) != 'unknown'}}"
+    value_template: "{{ states('sensor.hacs') != 'unknown'}}"
   - condition: template
-    value_template: "{{ (states(trigger.entity_id) | float) != 0}}"
+    value_template: "{{ (states('sensor.hacs') | float) != 0}}"
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'on'
 action:
   service: notify.person2_telegram
   data_template:
