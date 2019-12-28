@@ -15,6 +15,6 @@ action:
   data_template:
     title: Updates pending in HACS
     message: >-
-      {% for repo in state_attr(trigger.entity_id, 'repositories') %}
+      {% for repo in state_attr('sensor.hacs', 'repositories') %}
         **{{ repo.display_name }}** _{{ repo["installed version"] }}_ -> _{{ repo["available version"] }}_
       {% endfor %}
