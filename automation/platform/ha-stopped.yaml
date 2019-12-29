@@ -6,5 +6,5 @@ trigger:
   event: shutdown
 action:
   - service: script.notify_person2
-    data:
-      message: "Home Assistant has shut down on Vision"
+    data_template:
+      message: "Home Assistant has shut down on Vision ({{ utcnow() }})"
