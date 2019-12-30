@@ -208,3 +208,18 @@ cards:
   - zwave.pi3_livingroom_socket
   - zwave.pi3_vestibule
   - zwave.pi3_front_bedroom
+- type: custom:html-template-card
+  title: 'Link status times'
+  ignore_line_breaks: true
+  content: |-
+    {% for state in states.sensor -%}
+      {%- if state.attributes.linkquality %}
+        {%- if "linkquality" in state.name %}
+          {{ relative_time(state.last_updated) }} ago for {{ state.name | lower }}<BR>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor %}
+    {% for state in states.zwave -%}
+       {{ relative_time(state.last_updated) }} ago for {{ state.name | lower }}<BR>
+    {%- endfor %}
+    

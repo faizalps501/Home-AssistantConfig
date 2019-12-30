@@ -20,3 +20,5 @@
   # https://github.com/iammexx/home-assistant-config/tree/master/ui/darksky
 - url: /local/custom_ui/dark-sky-weather-card.js?v=2
   type: js
+- url: /community_plugin/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
+  type: js
