@@ -2,6 +2,8 @@ title: Zigbee
 id: zigbee
 path: zigbee
 icon: mdi:zigbee
+visible:
+  - user: 2e93f54c62e549c8aeperson2748de6bed9d
 panel: true
 cards:
   - type: picture-entity

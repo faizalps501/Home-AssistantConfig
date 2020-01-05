@@ -2,6 +2,8 @@ title: Inputs
 id: inputs
 path: inputs
 icon: mdi:toggle-switch
+visible:
+  - user: 2e93f54c62e549c8aeperson2748de6bed9d
 cards:
 - type: entities
   title: Toggles for automations
