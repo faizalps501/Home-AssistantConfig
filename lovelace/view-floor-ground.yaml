@@ -111,17 +111,25 @@ cards:
     - entity: switch.pi3_garden_lights_switch
       tap_action: 
         action: toggle
-- type: history-graph
+- type: custom:mini-graph-card
   title: Light level
+  points_per_hour: 6
+  hours_to_show: 12
+  line_width: 3
   hours_to_show: 12
   entities:
     - entity: sensor.pi3_living_room_multi_luminance
       name: Living room
-- type: history-graph
+      color: darkgoldenrod
+- type: custom:mini-graph-card
   title: Temperature
-  hours_to_show: 12
+  points_per_hour: 6
+  hours_to_show: 24
+  line_width: 3
   entities:
     - entity: sensor.pi3_living_room_multi_temperature
       name: Living room
+      color: darkgoldenrod
     - entity: sensor.dark_sky_temperature
       name: Outside
+      color: 'silver'

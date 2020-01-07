@@ -22,3 +22,5 @@
   type: js
 - url: /community_plugin/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
   type: js
+- url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  type: module 
