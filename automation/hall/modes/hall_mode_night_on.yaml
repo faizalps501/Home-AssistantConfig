@@ -36,12 +36,14 @@ trigger:
 condition:
   - condition: and
     conditions:
-    - condition: template
-      value_template: "{{ not is_state('input_select.hall','Dim') }}"
-    # We're awake
-    - condition: state
-      entity_id: input_boolean.bedtime
-      state: 'off'
+    - condition: or
+      conditions:
+      - condition: template
+        value_template: "{{ not is_state('input_select.hall','Dim') }}"
+      # We're awake
+      - condition: state
+        entity_id: input_boolean.bedtime
+        state: 'off'
     # Dark in the living room
     - condition: numeric_state
       entity_id: sensor.pi3_living_room_multi_luminance
