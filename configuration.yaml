@@ -76,6 +76,8 @@ input_text: !include_dir_named input_text/
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
 
+media_player: !include_dir_merge_list media_player/
+
 rest_command: !include_dir_named rest_command/
 
 alarm_control_panel: !include_dir_list alarm/

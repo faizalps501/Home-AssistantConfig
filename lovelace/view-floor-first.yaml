@@ -133,15 +133,14 @@ cards:
   title: Humidity
   hours_to_show: 12
   points_per_hour: 6
-  line_width: 3
+  line_width: 2
   show:
     extrema: true
     average: true
     fill: false
+    labels: true
+  hour24: true
   entities:
-    - entity: sensor.pi3_office_multi_relative_humidity
-      name: Office
-      color: "#4285F4"
     - entity: sensor.master_ensuite_humidity
       name: Master ensuite
       color: "#9E69AF"
@@ -151,19 +150,21 @@ cards:
     - entity: sensor.bathroom_humidity
       name: Bathroom
       color: "#E4C441"
+    - entity: sensor.pi3_office_multi_relative_humidity
+      name: Office
+      color: "#4285F4"
 - type: custom:mini-graph-card
   title: Temperature
   hours_to_show: 12
   points_per_hour: 6
-  line_width: 3
+  line_width: 2
+  hour24: true
   show:
     extrema: true
     average: true
+    labels: true
     fill: false
   entities:
-    - entity: sensor.pi3_office_multi_temperature
-      name: Office
-      color: "#4285F4"
     - entity: sensor.master_ensuite_temperature
       name: Master ensuite
       color: "#9E69AF"
@@ -173,15 +174,20 @@ cards:
     - entity: sensor.bathroom_temperature
       name: Bathroom
       color: "#E4C441"
+    - entity: sensor.pi3_office_multi_temperature
+      name: Office
+      color: "#4285F4"
 - type: custom:mini-graph-card
   title: Pressure
-  points_per_hour: 6
+  points_per_hour: 3
   hours_to_show: 12
-  line_width: 3
+  line_width: 2
+  hour24: true
   show:
     extrema: true
     average: true
     fill: false
+    labels: true
   entities:
     - entity: sensor.master_ensuite_pressure
       name: Master ensuite
