@@ -14,15 +14,6 @@ trigger:
     entity_id: input_boolean.person4_home
     to: 'on'
   - platform: state
-    entity_id: input_boolean.family_room_occupied
-    to: 'on'
-  - platform: state
-    entity_id: input_boolean.living_room_occupied
-    to: 'on'
-  - platform: state
-    entity_id: input_boolean.office_occupied
-    to: 'on'
-  - platform: state
     entity_id: input_boolean.person1_tablet_home
     to: 'on'
   - platform: state
@@ -34,9 +25,6 @@ condition:
     state: 'off'
   - condition: or
     conditions:
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'on'
     - condition: state
       entity_id: input_boolean.person3_home
       state: 'on'
@@ -55,13 +43,7 @@ condition:
       entity_id: input_boolean.person4_home
       state: 'on'
     - condition: state
-      entity_id: input_boolean.family_room_occupied
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.living_room_occupied
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.office_occupied
+      entity_id: input_boolean.guest_mode
       state: 'on'
 action:
   - service: input_boolean.turn_on

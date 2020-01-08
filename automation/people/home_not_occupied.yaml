@@ -17,15 +17,6 @@ trigger:
     entity_id: input_boolean.person4_home
     to: 'off'
   - platform: state
-    entity_id: input_boolean.family_room_occupied
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.living_room_occupied
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.office_occupied
-    to: 'off'
-  - platform: state
     entity_id: input_boolean.guest_mode
     to: 'off'
 condition:
@@ -40,25 +31,15 @@ condition:
       state: 'off'
     - condition: or
       conditions:
-      # Either the phone or tablet are away, or the family room isn't occupied
+      # Either the phone or tablet are away
       - condition: state
         entity_id: input_boolean.person1_tablet_home
         state: 'off'
       - condition: state
         entity_id: input_boolean.person1_home
         state: 'off'
-      - condition: state
-        entity_id: input_boolean.family_room_occupied
-        state: 'off'
-    # Rooms not occupied
     - condition: state
-      entity_id: input_boolean.family_room_occupied
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.living_room_occupied
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.office_occupied
+      entity_id: input_boolean.person4_home
       state: 'off'
     - condition: state
       entity_id: input_boolean.guest_mode
