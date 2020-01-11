@@ -39,7 +39,7 @@ condition:
     - condition: or
       conditions:
       - condition: template
-        value_template: "{{ not is_state('input_select.hall','Dim') }}"
+        value_template: "{{ states('input_select.hall') in ('Away','Off','Auto') }}"
       # We're awake
       - condition: state
         entity_id: input_boolean.bedtime
@@ -72,6 +72,9 @@ condition:
         entity_id: input_boolean.guest_mode
         state: 'on'
 action:
+  - service: notify.logfile
+    data_template:
+      message: "Turned the hall light to Night On because of {{ trigger.to_state.entity_id }}, was {{ states('input_select.hall') }}"
   - service: input_select.select_option
     data:
       entity_id: input_select.hall

@@ -74,6 +74,7 @@ cards:
   - automation.plex_hook
   - automation.device_unavailable
   - automation.remote_ping
+  - automation.notify_about_hacs_updates
 - type: entities
   title: Zigbee mesh automations
   show_header_toggle: false
@@ -102,6 +103,7 @@ cards:
   title: Other bits
   entities:
   - automation.bt_front_offline
+  - automation.bt_front_offline_too_long
   - automation.bt_rear_offline
   - automation.motion_hook
   - automation.nearly_home
