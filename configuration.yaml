@@ -72,6 +72,7 @@ input_boolean: !include_dir_named input_boolean/
 input_select: !include_dir_named input_select/
 input_datetime: !include_dir_named input_datetime/
 input_text: !include_dir_named input_text/
+timer: !include_dir_named timers/
 
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
