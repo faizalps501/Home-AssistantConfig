@@ -54,6 +54,7 @@ action:
           media_player.office_smart_display
         {%- endif -%}
       message: "The {{ trigger.to_state.name }} has been left open and it is {{ states('sensor.dark_sky_apparent_temperature') }} {{ state_attr('sensor.dark_sky_apparent_temperature','unit_of_measurement') }} outside"
+  - delay: '00:00:10'
   - service: media_player.turn_off
     data_template:
       entity_id: >-
