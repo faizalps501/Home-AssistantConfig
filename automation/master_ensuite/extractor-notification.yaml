@@ -4,14 +4,21 @@ trigger:
     value_template: >-
       {{ states('sensor.master_ensuite_humidity')|int > (((states('sensor.bathroom_humidity')|int + states('sensor.pi3_office_multi_relative_humidity')|int + states('sensor.second_bedroom_ensuite_humidity')|int)/3)+20) }}
     for: '00:01:00'
+  - platform: numeric_state
+    entity_id: sensor.master_ensuite_humidity_stats
+    value_template: '{{ state.attributes.change_rate }}'
+    above: 5
 condition:
   - condition: state
     entity_id: input_boolean.office_occupied
     state: 'on'
 action:
+  - service: notify.logfile
+    data_template:
+      message: "En-suite humidity changing at a rate of {{ state_attr('sensor.master_ensuite_humidity_stats','change_rate') }}"
   # Wait for it to go back down, or an hour to pass
   - wait_template: >-
-      {{ states('sensor.master_ensuite_humidity')|int < (((states('sensor.bathroom_humidity')|int + states('sensor.pi3_office_multi_relative_humidity')|int + states('sensor.second_bedroom_ensuite_humidity')|int)/3)+10) }}
+      {{ state_attr('sensor.master_ensuite_humidity_stats','change_rate')|abs < 1 }}
     timeout: '01:00:00'
     continue_on_timeout: 'false'
   - service: notify.logfile
