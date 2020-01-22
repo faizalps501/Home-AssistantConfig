@@ -1,0 +1,4 @@
+- platform: statistics
+  name: Master ensuite humidity stats
+  entity_id: sensor.master_ensuite_humidity
+  precision: 1
