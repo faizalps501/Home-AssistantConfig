@@ -117,6 +117,7 @@ cards:
   hours_to_show: 12
   line_width: 2
   hour24: true
+  animate: true
   show:
     extrema: true
     average: true
@@ -133,6 +134,7 @@ cards:
   hours_to_show: 12
   line_width: 2
   hour24: true
+  animate: true
   show:
     extrema: true
     average: true

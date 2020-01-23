@@ -140,6 +140,7 @@ cards:
     fill: false
     labels: true
   hour24: true
+  animate: true
   entities:
     - entity: sensor.master_ensuite_humidity
       name: Master ensuite
@@ -159,6 +160,7 @@ cards:
   points_per_hour: 6
   line_width: 2
   hour24: true
+  animate: true
   show:
     extrema: true
     average: true
@@ -183,6 +185,7 @@ cards:
   hours_to_show: 12
   line_width: 2
   hour24: true
+  animate: true
   show:
     extrema: true
     average: true
