@@ -1,4 +1,5 @@
 alias: 'Extractor notification'
+initial_state: 'on'
 trigger:
   - platform: template
     value_template: >-
@@ -6,8 +7,8 @@ trigger:
     for: '00:01:00'
   - platform: numeric_state
     entity_id: sensor.master_ensuite_humidity_stats
-    value_template: '{{ state.attributes.change_rate }}'
-    above: 5
+    value_template: '{{ state.attributes.change }}'
+    above: 20
 condition:
   - condition: state
     entity_id: input_boolean.office_occupied
@@ -18,7 +19,7 @@ action:
       message: "En-suite humidity changing at a rate of {{ state_attr('sensor.master_ensuite_humidity_stats','change_rate') }}"
   # Wait for it to go back down, or an hour to pass
   - wait_template: >-
-      {{ state_attr('sensor.master_ensuite_humidity_stats','change_rate')|abs < 1 }}
+      {{ (state_attr('sensor.master_ensuite_humidity_stats','change_rate')|abs < 1) and (state_attr('sensor.master_ensuite_humidity_stats','change')|abs < 1)}}
     timeout: '01:00:00'
     continue_on_timeout: 'false'
   - service: notify.logfile
