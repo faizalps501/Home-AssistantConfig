@@ -189,7 +189,7 @@ cards:
         - entities:
             - device_tracker.family_tv
             - device_tracker.livingroom_chromecast
-            - media_player.samsung_tv_remote_2
+            - media_player.samsung_tv_remote
             - sensor.person1
           states:
             - state: 'on'

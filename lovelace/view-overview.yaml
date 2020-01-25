@@ -57,7 +57,7 @@ cards:
         name: Living room hub
       - entity: media_player.cast_living_room_tv
         name: Living room
-      - entity: media_player.samsung_tv_remote_2
+      - entity: media_player.samsung_tv_remote
         name: Living room
       - entity: media_player.family_room
         name: Family room

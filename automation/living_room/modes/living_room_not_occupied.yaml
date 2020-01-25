@@ -37,7 +37,7 @@ condition:
       state: 'on'
     # Requires all the media devices to be off, paused, unavailable, etc
     - condition: state
-      entity_id: media_player.samsung_tv_remote_2
+      entity_id: media_player.samsung_tv_remote
       state: 'off'
     - condition: state
       entity_id: device_tracker.livingroom_chromecast

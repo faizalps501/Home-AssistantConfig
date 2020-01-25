@@ -7,7 +7,7 @@ trigger:
   to: 'paused'
 condition:
   condition: state
-  entity_id: media_player.samsung_tv_remote_2
+  entity_id: media_player.samsung_tv_remote
   state: 'on'
 action:
   service: media_player.volume_mute

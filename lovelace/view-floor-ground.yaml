@@ -31,7 +31,7 @@ cards:
       name: "Temperature"
     - entity: sensor.pi3_living_room_multi_luminance
       name: "Light level"
-    - entity: media_player.samsung_tv_remote_2
+    - entity: media_player.samsung_tv_remote
       name: TV
     - entity: media_player.cast_living_room_tv
       name: Chromecast

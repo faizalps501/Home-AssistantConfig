@@ -15,7 +15,7 @@ cards:
     name: Living room chromecast
   - entity: media_player.cast_living_room_tv
     name: Living room chromecast
-  - entity: media_player.samsung_tv_remote_2
+  - entity: media_player.samsung_tv_remote
     name: Living room TV
   - entity: switch.pi3_table_light_switch
     name: Table light switch

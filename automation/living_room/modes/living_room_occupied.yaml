@@ -76,7 +76,7 @@ condition:
         conditions:
         # TV
         - condition: state
-          entity_id: media_player.samsung_tv_remote_2
+          entity_id: media_player.samsung_tv_remote
           state: 'on'
         # Chromecast
         - condition: or
