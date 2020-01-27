@@ -18,3 +18,5 @@ action:
       {% for repo in state_attr('sensor.hacs', 'repositories') %}
         **{{ repo.display_name }}** _{{ repo["installed version"] }}_ -> _{{ repo["available version"] }}_
       {% endfor %}
+    data: 
+      disable_notification: true
