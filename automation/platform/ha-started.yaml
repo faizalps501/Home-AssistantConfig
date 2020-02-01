@@ -7,4 +7,4 @@ trigger:
 action:
   - service: script.notify_person2
     data_template:
-      message: "Home Assistant has started on Vision ({{ utcnow() }}) - it was down for {{ (as_timestamp(now()) - state_attr('input_datetime.ha_shutdown','timestamp'))|round(0) }} seconds"
+      message: "Home Assistant has started on Vision ({{ utcnow() }})"
