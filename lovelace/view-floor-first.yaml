@@ -201,3 +201,35 @@ cards:
     - entity: sensor.bathroom_pressure
       name: Bathroom
       color: "#E4C441"
+- type: custom:mini-graph-card
+  title: Master en-suite change
+  points_per_hour: 60
+  hours_to_show: 2
+  line_width: 2
+  hour24: true
+  animate: true
+  show:
+    extrema: true
+    average: true
+    fill: false
+    labels: true
+  entities:
+    - entity: sensor.master_ensuite_change
+      name: Change
+      color: "#9E69AF"
+- type: custom:mini-graph-card
+  title: Master en-suite change rate
+  points_per_hour: 60
+  hours_to_show: 2
+  line_width: 2
+  hour24: true
+  animate: true
+  show:
+    extrema: true
+    average: true
+    fill: false
+    labels: true
+  entities:
+    - entity: sensor.master_ensuite_change_rate
+      name: Change rate
+      color: "#33B679"
