@@ -77,7 +77,9 @@ timer: !include_dir_named timers/
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
 
-media_player: !include_dir_merge_list media_player/
+samsungtv:
+  host: 192.168.0.226
+  name: Samsung TV
 
 rest_command: !include_dir_named rest_command/
 

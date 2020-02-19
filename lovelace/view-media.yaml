@@ -31,7 +31,7 @@ cards:
         group: true
         icon: mdi:google-chrome
         power_color: true
-      - entity: media_player.samsung_tv_remote
+      - entity: media_player.samsung_tv
         name: Samsung TV
         type: custom:mini-media-player
         group: true
