@@ -42,6 +42,8 @@ cards:
   - automation.person2_changing_zones
   - automation.person2_driving
   - automation.person2_not_driving
+  - automation.person2_overseas
+  - automation.person2_not_overseas
   - automation.person2_gpslogger_tracker
 - type: entities
   title: Automations for alarms - person2
