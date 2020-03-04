@@ -6,8 +6,8 @@ trigger:
     event_data:
       command: '/trains'
 action:
-  - service: script.telegram_trains
+  - service: script.train_message
   - service: telegram_bot.send_message
     data_template:
       inline_keyboard: [[[ "Recheck", "/trains" ]]]
-      message: "{{ states('input_text.telegram_message') }}"
+      message: "{{ states('input_text.train_message') }}"

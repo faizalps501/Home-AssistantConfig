@@ -54,15 +54,7 @@ action:
     data_template:
       message: "Not on holiday, not working from home, alarm is playing..."
   # Update the trains
-  - service: homeassistant.update_entity
-    entity_id: sensor.next_train_to_xyz
-  - service: notify.logfile
-    data_template:
-      message: "Waiting up to 30 seconds for the train information to update"
-  # Wait for that to happen
-  - wait_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.next_train_to_xyz.last_updated))|int < 90 }}"
-    timeout: '00:00:30'
-    continue_on_timeout: 'true'
+  - service: script.train_message
   - service: notify.logfile
     data_template:
       message: "Waiting up to 30 seconds for the radio to turn off"
@@ -85,15 +77,7 @@ action:
   - service: tts.google_cloud_say
     data_template:
       entity_id: media_player.cast_master_bedroom_speaker
-      message: >-
-        {%- macro getTrainStatus() -%}
-        {%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') -%}
-        {% if not loop.first %}
-          {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
-        {% endif %}
-        {%- endfor -%}
-        {%- endmacro -%}
-        Good morning, {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_xyz', 'next_trains')|length }} trains to work are on time. {% if(getTrainStatus()|length) != (state_attr('sensor.next_train_to_xyz','next_trains')|length) %}{%- for train in state_attr('sensor.next_train_to_xyz', 'next_trains') %}{% if not loop.first %}The {{ train.scheduled }} is {{ train.status }} {% if ( train.status != "ON TIME" and train.status != "EARLY" and train.status != "CANCELLED" ) %} at {{ train.estimated }}{%- endif %}.{% endif %} {% endfor -%}{%- endif -%}
+      message: "{{ states('input_text.train_message') }}"
   - delay: '00:00:05'
   - wait_template: "{{ is_state('media_player.cast_master_bedroom_speaker','idle') }}"
   - service: media_player.turn_off

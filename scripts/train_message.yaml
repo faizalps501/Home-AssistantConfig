@@ -36,7 +36,7 @@ sequence:
     continue_on_timeout: 'true'
   - service: input_text.set_value
     data_template:
-      entity_id: input_text.telegram_message
+      entity_id: input_text.train_message
       value: >-
         {%- if states('proximity.person2_home')|int < 2000 -%}
           {%- if "other" in states('calendar.person2_work') -%}
@@ -61,7 +61,7 @@ sequence:
           {%- endfor -%}
           {%- endmacro -%}
           {{ getTrainStatus()|length }} of {{ state_attr('sensor.next_train_to_abc', 'next_trains')|length }} trains home are on time. {% if (getTrainStatus()|length) != (state_attr('sensor.next_train_to_abc','next_trains')|length) %}{%- for train in state_attr('sensor.next_train_to_abc', 'next_trains') %}The {{ train.scheduled }} is {{ train.status }}. {% endfor -%}{%- endif -%}
-        {%- elif states('proximity_person2_work_2')|int < 5 -%}
+        {%- elif states('proximity.person2_work_2')|int < 5 -%}
           {%- macro getTrainStatus() -%}
           {%- for train in state_attr('sensor.next_train_to_def', 'next_trains') -%}
           {%- if ( train.status == "ON TIME" or train.status == "EARLY" ) -%} X {%- endif -%}
