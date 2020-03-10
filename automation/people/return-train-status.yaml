@@ -16,7 +16,6 @@ condition:
       entity_id: proximity.person2_work_2
       below: 5
 action:
-  - service: script.train_message
   - service: notify.logfile
     data_template: 
       message: "SENDME {{ states('input_text.train_message') }}"
