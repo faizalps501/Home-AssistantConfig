@@ -51,6 +51,14 @@ cards:
 
   - type: entity-filter
     entities:
+      - entity: device_tracker.family_tv
+        name: Family room
+      - entity: media_player.family_room
+        name: Family room
+      - entity: media_player.cast_kitchen_speaker
+        name: Kitchen
+      - entity: media_player.family_room_display
+        name: Family room hub
       - entity: media_player.living_room
         name: Living room Sonos
       - entity: media_player.living_room_display
@@ -59,12 +67,6 @@ cards:
         name: Living room
       - entity: media_player.samsung_tv
         name: Living room
-      - entity: media_player.family_room
-        name: Family room
-      - entity: media_player.cast_kitchen_speaker
-        name: Kitchen
-      - entity: media_player.family_room_display
-        name: Family room hub
       - entity: media_player.office
         name: Office
       - entity: media_player.office_display
@@ -84,6 +86,7 @@ cards:
       - 'on'
       - 'playing'
       - 'idle'
+      - 'home'
     card:
       type: glance
       title: Media players
