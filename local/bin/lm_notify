@@ -5,7 +5,7 @@ CYCLES=1
 ICON=i620
 SOUND="notification"
 
-case "${MESSAGE}" in
+case "${MESSAGE:l}" in
 	*train* )
 		case ${MESSAGE} in
 			Good* ) ICON=i59
@@ -22,7 +22,7 @@ case "${MESSAGE}" in
 				;;
 		esac
 		;;
-	Garage* )
+	garage* )
 		TIME=$(echo ${MESSAGE} | sed "s/.*open for //" | awk '{ print $1 }')
 
 		if [ ${TIME} -lt 15 ]; then
@@ -43,7 +43,7 @@ case "${MESSAGE}" in
 				;;
 		esac
 		;;
-	Tomorrow* )
+	*collected* )
 		WHICH=$(echo ${MESSAGE} | sed "s/.* the \(.*\) bin .*/\1/")
 		case ${WHICH} in
 			brown ) ICON=i12442
@@ -58,7 +58,7 @@ case "${MESSAGE}" in
 		CYCLES=2
 		unset SOUND
 		;;
-	Lightning* )
+	lightning* )
 		ICON=i95
 		;;
 	* ) 	# Might be weather? i2151 for snow, i2441 for hail, i11428 for lightning/thunder, i72 for rain, i2440 for wind, i2283 for cloudy
@@ -66,15 +66,18 @@ case "${MESSAGE}" in
 			# i962 for moon, i2155 for sunny
 			# i676 for fog, i2221 for ice
 		case ${MESSAGE:l} in
+			*alert* ) ICON=i1237 ;;
 			*thunder*|*lightning* ) ICON=i11428 ;;
 			*rain*|*drizzle* ) ICON=i72 ;;
 			*hail* ) ICON=i2441 ;;
 			*snow* ) ICON=i2151 ;;
-			*partly* ) ICON=i2286 ;;
+			*sleet* ) ICON=i12198 ;;
+			*partly*|*overcast* ) ICON=i2286 ;;
 			*cloudy* ) ICON=i2283 ;;
 			*wind* ) ICON=i2440 ;;
 			*breeze* ) ICON=i19514 ;;
-			*fog* ) ICON=i676;
+			*fog* ) ICON=i676;;
+			* ) ICON=i73;;
 		esac
 		unset SOUND
 		;;
