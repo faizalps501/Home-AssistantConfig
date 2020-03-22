@@ -25,6 +25,7 @@ condition:
         entity_id: input_select.house
         state: 'Off'
 action:
+  - wait_template: "{{ is_state('light.hall','on') or is_state('light.hall','off') }}"
   - service: light.turn_off
     data:
       entity_id: light.hall
