@@ -3,7 +3,6 @@ alias: 'person3 up'
 trigger:
   - platform: state
     entity_id: input_boolean.person3_phone_charging
-    to: 'off'
 condition:
   - condition: state
     entity_id: input_boolean.person3_in_bed
