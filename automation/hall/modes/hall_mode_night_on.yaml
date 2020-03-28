@@ -36,14 +36,6 @@ trigger:
 condition:
   - condition: and
     conditions:
-    - condition: or
-      conditions:
-      - condition: template
-        value_template: "{{ states('input_select.hall') in ('Away','Off','Auto') }}"
-      # We're awake
-      - condition: state
-        entity_id: input_boolean.bedtime
-        state: 'off'
     # Dark in the living room
     - condition: numeric_state
       entity_id: sensor.pi3_living_room_multi_luminance
@@ -52,16 +44,10 @@ condition:
     - condition: numeric_state
       entity_id: sensor.sun_elevation
       below: 15
-    - condition: or
-      conditions:
-      # Dark in the hall
-      - condition: numeric_state
-        entity_id: sensor.hall_downstairs_illuminance
-        below: 5
-      # Or sun below 5 degrees
-      - condition: numeric_state
-        entity_id: sensor.sun_elevation
-        below: 5
+    # Dark in the hall
+    - condition: numeric_state
+      entity_id: sensor.hall_downstairs_illuminance
+      below: 10
     - condition: or
       conditions:
     # We're not away
@@ -71,6 +57,14 @@ condition:
       - condition: state
         entity_id: input_boolean.guest_mode
         state: 'on'
+    - condition: or
+      conditions:
+      - condition: template
+        value_template: "{{ states('input_select.hall') in ('Away','Off','Auto') }}"
+      # We're awake
+      - condition: state
+        entity_id: input_boolean.bedtime
+        state: 'off'
 action:
   - service: notify.logfile
     data_template:
