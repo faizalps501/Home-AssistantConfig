@@ -25,6 +25,9 @@ cards:
   - automation.home_occupied
   - automation.home_not_occupied
   - type: divider
+  - automation.adults_away
+  - automation.adults_returned
+  - type: divider
   - automation.mark_person_as_just_arrived
   - automation.mark_person_as_away
   - automation.mark_person_as_home

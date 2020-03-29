@@ -11,6 +11,10 @@ trigger:
     for: '00:03:00'
   - platform: state
     entity_id: media_player.family_room
+    to: 'idle'
+    for: '00:03:00'
+  - platform: state
+    entity_id: media_player.family_room
     to: 'off'
     for: '00:03:00'
   - platform: state
@@ -57,6 +61,9 @@ condition:
         - condition: state
           entity_id: media_player.family_room
           state: 'paused'
+        - condition: state
+          entity_id: media_player.family_room
+          state: 'idle'
         - condition: state
           entity_id: media_player.family_room
           state: 'off'

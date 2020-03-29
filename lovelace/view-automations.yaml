@@ -12,6 +12,9 @@ cards:
   - automation.living_room_occupied
   - automation.living_room_not_occupied
   - type: divider
+  - automation.living_room_mode_motion
+  - automation.living_room_mode_motion_off
+  - type: divider
   - automation.living_room_arrival
   - automation.living_room_away
   - automation.living_room_bedtime
@@ -21,6 +24,8 @@ cards:
   - automation.living_room_night_on
   - automation.living_room_off
   - automation.living_room_off_empty
+  - type: divider
+  - automation.living_room_movement
 - type: entities
   title: Automations for the living room lights
   show_header_toggle: false
@@ -28,6 +33,7 @@ cards:
   - automation.living_room_lights_bedtime
   - automation.living_room_lights_day_on
   - automation.living_room_lights_dim_on
+  - automation.living_room_lights_motion
   - automation.living_room_lights_night_on
   - automation.living_room_lights_off
   - type: divider

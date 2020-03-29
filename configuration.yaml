@@ -27,10 +27,11 @@ frontend: !include frontend.yaml
 map:
 lovelace:
   mode: yaml
+  resources: !include lovelace/resources.yaml
 
 http: !include http.yaml
 
-discovery: !include discovery.yaml
+discovery: 
 
 history:
 logbook:

@@ -129,6 +129,8 @@ cards:
               class: 'squeezebox-on'
             - state: 'paused'
               class: 'squeezebox-off'
+            - state: 'idle'
+              class: 'squeezebox-off'
           propagate: true
 
         - entities:
