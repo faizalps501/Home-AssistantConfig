@@ -15,7 +15,7 @@ condition:
       state: 'on'
     - condition: numeric_state
       entity_id: sensor.sun_elevation
-      below: -5
+      below: -4
     - condition: state
       entity_id: switch.pi3_garden_lights_switch
       state: 'on'
