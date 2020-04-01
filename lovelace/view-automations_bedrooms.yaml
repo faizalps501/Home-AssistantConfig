@@ -26,12 +26,24 @@ cards:
   - automation.late_disable_fluxer
   - automation.alarm_monitor_person2
 - type: entities
+  title: Remote automations for the bedhead light
+  show_header_toggle: false
+  entities:
+  - automation.bedhead_turn_on
+  - automation.bedhead_turn_off
+  - automation.bedhead_turn_on_min
+  - automation.bedhead_turn_on_max
+  - automation.bedhead_turn_on_cool
+  - automation.bedhead_turn_on_warm
+  - automation.bedhead_turn_white
+  - automation.bedhead_turn_white_max
+  - automation.bedhead_turn_on_red
+  - automation.bedhead_turn_red
+- type: entities
   title: Master en-suite
   show_header_toggle: false
   entities:
   - automation.extractor_notification
-  - automation.extractor_on
-  - automation.extractor_off
 - type: entities
   title: 2nd bedroom light
   show_header_toggle: false
@@ -39,6 +51,16 @@ cards:
   - automation.person1_up_bedhead_light_on
   - automation.person1_up_bedhead_light_off
   - automation.person1_bedside_left_on
+  - automation.person1_bedside_turn_on
+  - automation.person1_bedside_turn_off
+  - automation.person1_bedside_turn_on_min
+  - automation.person1_bedside_turn_on_max
+  - automation.person1_bedside_turn_on_cool
+  - automation.person1_bedside_turn_on_warm
+  - automation.person1_bedside_turn_white
+  - automation.person1_bedside_turn_white_max
+  - automation.person1_bedside_turn_on_red
+  - automation.person1_bedside_turn_red
 - type: entities
   title: Second bedroom
   show_header_toggle: false
@@ -51,3 +73,4 @@ cards:
   - automation.person1_radio_off
   - automation.person1_radio_off_late
   - automation.alarm_monitor_person1
+  - automation.person1_alarm_playing

@@ -16,7 +16,11 @@ condition:
 action:
   # Wait for it to go back down, or an hour to pass
   - wait_template: >-
-      {{ (state_attr('sensor.master_ensuite_humidity_stats','change_rate')|abs < 0.5) and (state_attr('sensor.master_ensuite_humidity_stats','change')|abs < 0.5)}}
+      {{ (state_attr('sensor.master_ensuite_humidity_stats','change_rate')|abs < 0.5) and (state_attr('sensor.master_ensuite_humidity_stats','change')|abs < 0.5)
+        and
+         states('sensor.master_ensuite_humidity')|int < (((states('sensor.bathroom_humidity')|int + states('sensor.pi3_office_multi_relative_humidity')|int + states('sensor.second_bedroom_ensuite_humidity')|int)/3)+10) }}
+    timeout: '01:00:00'
+    continue_on_timeout: 'false'
   - service: notify.logfile
     data:
       message: "SENDME You can turn the extractor fan off now"
