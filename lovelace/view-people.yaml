@@ -327,12 +327,14 @@ cards:
           name: Battery
         - entity: input_boolean.person1_phone_charging
           name: Phone charging
-        - entity: calendar.person1_holiday
-          name: Holiday
+        - entity: input_boolean.person1_alarm_sounded
+          name: Alarm sounded
         - entity: input_boolean.person1_is_awake
           name: Awake
         - entity: input_boolean.person1_in_bed
           name: In bed
+        - entity: calendar.person1_holiday
+          name: Holiday
         - entity: sensor.person1s_time_to_home
           name: Car home
           icon: mdi:map-marker-distance

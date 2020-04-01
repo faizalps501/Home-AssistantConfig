@@ -1,18 +1,6 @@
 alias: 'person1 Up'
 initial_state: 'on'
 trigger:
-  - platform: state
-    entity_id: media_player.person1
-    to: 'playing'
-  - platform: state
-    entity_id: media_player.person1
-    to: 'idle'
-  - platform: state
-    entity_id: media_player.cast_second_bedroom_speaker
-    to: 'playing'
-  - platform: state
-    entity_id: media_player.cast_second_bedroom_speaker
-    to: 'idle'
   # Something gets unplugged
   - platform: state
     entity_id: input_boolean.person1_phone_charging
@@ -20,9 +8,6 @@ trigger:
   - platform: state
     entity_id: input_boolean.person1_tablet_charging
     to: 'off'
-  - platform: state
-    entity_id: light.person1_bedroom_bedside
-    to: 'on'
 condition:
   - condition: and
     conditions:
@@ -34,10 +19,12 @@ condition:
       state: 'on'
     - condition: time
       after: '04:00:00'
-      before: '22:00:00'
+      before: '21:00:00'
 action:
   - service: input_boolean.turn_off
-    entity_id: input_boolean.person1_in_bed
+    entity_id: 
+      - input_boolean.person1_in_bed
+      - input_boolean.person1_alarm_sounded
   - service: notify.logfile
     data_template:
       message: >
