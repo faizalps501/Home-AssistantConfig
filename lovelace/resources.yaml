@@ -18,9 +18,9 @@
 - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
   type: css
   # https://github.com/iammexx/home-assistant-config/tree/master/ui/darksky
-- url: /local/custom_ui/dark-sky-weather-card.js?v=2
-  type: module
 - url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
   type: module
 - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+  type: module 
+- url: /hacsfiles/simple-weather-card/simple-weather-card-bundle.js
   type: module 

@@ -3,6 +3,18 @@ id: overview
 path: home
 icon: mdi:home
 cards:
+  - type: custom:simple-weather-card
+    entity: weather.openweathermap
+    name: in current location
+    backdrop: 
+      fade: true
+    primary_info:
+      - extrema
+      - precipitation
+      - precipitation_probability
+    secondary_info:
+      - wind_speed
+      - wind_bearing
   - type: entity-filter
     entities:
       - entity: alert.garage_door_l
@@ -224,6 +236,11 @@ cards:
 
   - type: custom:weather-card
     entity: weather.dark_sky
+    current: true
+    details: true
+    forecast: true
+  - type: custom:weather-card
+    entity: weather.openweathermap
     current: true
     details: true
     forecast: true
