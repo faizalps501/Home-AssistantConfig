@@ -5,7 +5,6 @@ Components:
 * [Dark Sky sensor](https://home-assistant.io/components/sensor.darksky/) 
 * [file sensor](https://home-assistant.io/components/sensor.file/)
 * [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/)
-* [have i been pwned sensor](https://home-assistant.io/components/sensor.haveibeenpwned/)
 * [Season](https://home-assistant.io/components/sensor.season/)
 * [Sun](https://home-assistant.io/components/sun/)
 * [template sensor](https://home-assistant.io/components/sensor.template/)
@@ -18,12 +17,6 @@ Sooo many sensors.
 ## Battery
 
 These are templates taken from work initially done by [skalavala](https://github.com/skalavala/smarthome) to turn the mobile battery level into a sensor, and dynamic icon.
-
-## Bin
-
-In theory the recycling and rubbish collections happen on a nice predictable schedule, and mostly they do. Except it's not always every other week, some are once a month, some are weekly, and sometimes they move the day. We live in an area in the UK covered by the [Green Box Day](http://www.greenboxday.co.uk/) service, who send out emails about the upcoming collection. Which is great, but parsing those in Home Assistant is a pain. As a result I'm using [Getmail](http://pyropus.ca/software/getmail/), to pass incoming emails for the relevant sender through a [local script](local/bin/parse-email). That script then spits out information in JSON format to the relevant files (one per collection type).
-
-This mass of sensors then pulls out the dates for each collection type, and then has sensors that change between _future_, _tomorrow_, _today_, and _past_ as appropriate. These values are then used in automations, and Floorplan.
 
 ## Dark Sky
 
@@ -38,10 +31,6 @@ The names of the resulting sensor entities are personXs_time_to_home.
 ## Hass
 
 Version number trackers, for a display in Overview that nobody ever looks at.
-
-## Have I Been Pwned
-
-If you use any online services, having your details breached is a fact of life these days, and Troy Hunt runs the [have i been pwned?](https://haveibeenpwned.com/) service. This is for the [related component](https://home-assistant.io/components/sensor.haveibeenpwned/).
 
 ## Met Office
 
