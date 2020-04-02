@@ -6,7 +6,23 @@ cards:
   - type: entities
     entities:
     - type: cast
-      view: /lovelace/cast
+      name: This view
+      view: cast
+  - type: entities
+    entities:
+    - type: cast
+      name: Overview
+      view: home
+  - type: entities
+    entities:
+    - type: cast
+      name: Floorplan
+      view: floorplan
+  - type: entities
+    entities:
+    - type: cast
+      name: Map
+      view: map
 
   - type: entity-button
     title: Living room
