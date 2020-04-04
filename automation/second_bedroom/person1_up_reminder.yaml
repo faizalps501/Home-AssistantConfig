@@ -1,6 +1,8 @@
 alias: 'person1 up reminder'
 initial_state: 'on'
 trigger:
+  - platform: time_pattern
+    minutes: "/10"
   - platform: state
     entity_id: input_boolean.person1_alarm_sounded
     to: 'on'
@@ -9,6 +11,12 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: state
+      entity_id: input_boolean.person1_alarm_sounded
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person1_in_bed
+      state: 'on'
     - condition: state
       entity_id: input_boolean.person1_home
       state: 'on'

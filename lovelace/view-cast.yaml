@@ -8,21 +8,15 @@ cards:
     - type: cast
       name: This view
       view: cast
-  - type: entities
-    entities:
     - type: cast
       name: Overview
       view: home
-  - type: entities
-    entities:
     - type: cast
-      name: Floorplan
-      view: floorplan
-  - type: entities
-    entities:
+      name: Ground floor
+      view: ground-floor
     - type: cast
-      name: Map
-      view: map
+      name: First floor
+      view: first-floor
 
   - type: entity-button
     title: Living room
