@@ -1,5 +1,5 @@
 - id: '1572606895884'
-  alias: New Automation
+  alias: A New Automation
   description: ''
   trigger:
   - device_id: 2baf7abb4347484aa0517a66fa6d4adb
