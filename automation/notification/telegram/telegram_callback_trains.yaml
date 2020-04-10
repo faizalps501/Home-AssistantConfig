@@ -1,4 +1,4 @@
-alias: 'Telegram callback'
+alias: 'Telegram callback trains'
 initial_state: 'on'
 trigger:
   - platform: event

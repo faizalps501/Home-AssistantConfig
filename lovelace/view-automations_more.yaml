@@ -34,6 +34,7 @@ cards:
   - automation.bin_notification
   - automation.printer_low
   - automation.lightning
+  - automation.garage_snapshot
 - type: entities
   title: Car related automations
   show_header_toggle: false
@@ -81,6 +82,7 @@ cards:
   entities:
   - automation.zigbee_offline
   - automation.zigbee_router_offline
+  - automation.zigbee_router_online
   - automation.living_room_table_on
   - automation.living_room_table_off
 - type: entities
