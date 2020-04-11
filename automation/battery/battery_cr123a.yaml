@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'Battery livingroom multi'
+alias: 'Battery CR123A'
 trigger:
   - platform: numeric_state
     entity_id: sensor.pi3_zwave_battery_living_room_multi
@@ -18,5 +18,5 @@ trigger:
       minutes: 5
 action:
   service: notify.logfile
-  data:
-    message: "SENDME The livingroom multi sensor is at {{ states('sensor.pi3_zwave_battery_living_room_multi') }}% battery, it uses a CR123A lithium battery"
+  data_template:
+    message: "SENDME The {{ trigger.to_state.name }} is at {{ trigger.to_state.state }}% battery, it uses a CR123A lithium battery"

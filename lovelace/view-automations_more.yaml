@@ -16,15 +16,12 @@ cards:
   title: Battery level automations
   show_header_toggle: false
   entities:
-  - automation.battery_garage_door_closed_car
-  - automation.battery_garage_door_closed_bike
-  - automation.battery_livingroom_multi
-  - automation.battery_utility_door
-  - automation.battery_utility_light_switch
-  - automation.battery_front_door
-  - automation.battery_patio_door_left
-  - automation.battery_remote
-  - automation.battery_green_remote
+  - automation.battery_cr123a
+  - automation.battery_cr1632
+  - automation.battery_cr2032
+  - automation.battery_cr2450
+  - automation.battery_er14250
+  - automation.battery_sensative
 - type: entities
   title: Misc automations
   show_header_toggle: false
@@ -108,4 +105,5 @@ cards:
   - automation.bt_front_offline_too_long
   - automation.bt_rear_offline
   - automation.motion_hook
+  - automation.front_camera_motion_off
   - automation.nearly_home
