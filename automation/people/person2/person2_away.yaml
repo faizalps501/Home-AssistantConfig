@@ -4,6 +4,9 @@ trigger:
   - platform: numeric_state
     entity_id: proximity.person2_home
     above: 400
+  - platform: numeric_state
+    entity_id: proximity.person2_home
+    above: 800
   - platform: state
     entity_id: 
       - device_tracker.40_4e_36_24_53_15
@@ -22,7 +25,7 @@ condition:
     entity_id: group.person_person2
     below: 2
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|count }}"
-  # Either a door just opened/closed, or we're far, far away
+  # Either a door just opened/closed, all are away and we're not near, or we're far, far away
   - condition: or
     conditions:
     # An exit door recently opened or closed, or motion in the vestibule
@@ -43,5 +46,9 @@ condition:
       - condition: numeric_state
         entity_id: proximity.person2_home
         above: 400
+    # Far away
+    - condition: numeric_state
+      entity_id: proximity.person2_home
+      above: 800
 action:
   - service: script.person2_away
