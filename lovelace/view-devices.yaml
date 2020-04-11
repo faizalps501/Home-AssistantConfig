@@ -40,6 +40,7 @@ cards:
   - entity: sensor.zigbee2mqtt_bridge_state
     name: Bridge
   - entity: binary_sensor.zigbee2mqtt_router_1
+    state_color: true
     name: Router
 - type: glance
   title: Power consumption

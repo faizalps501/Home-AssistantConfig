@@ -9,46 +9,78 @@ cards:
   title: Toggles for automations
   show_header_toggle: false
   entities:
-  - input_boolean.bedtime
-  - input_boolean.adults_away
-  - input_boolean.all_away
-  - input_boolean.home_occupied
-  - input_boolean.holiday_mode
+  - entity: input_boolean.bedtime
+    state_color: true
+  - entity: input_boolean.adults_away
+    state_color: true
+  - entity: input_boolean.all_away
+    state_color: true
+  - entity: input_boolean.home_occupied
+    state_color: true
+  - entity: input_boolean.holiday_mode
+    state_color: true
   - type: divider
-  - input_boolean.lighting_automations
-  - input_boolean.livingroom_lights_auto
+  - entity: input_boolean.lighting_automations
+    state_color: true
+  - entity: input_boolean.livingroom_lights_auto
+    state_color: true
   - type: divider
-  - input_boolean.guest_mode
-  - input_boolean.alarm_mode
+  - entity: input_boolean.guest_mode
+    state_color: true
+  - entity: input_boolean.alarm_mode
+    state_color: true
   - type: divider
-  - input_boolean.stream_camera
-  - input_boolean.test_mode
+  - entity: input_boolean.stream_camera
+    state_color: true
+  - entity: input_boolean.test_mode
+    state_color: true
 - type: entities
   title: Toggles for people automations
   show_header_toggle: false
   entities:
-  - input_boolean.person2_is_awake
-  - input_boolean.person2_in_bed
-  - input_boolean.person1_is_awake
-  - input_boolean.person1_in_bed
-  - input_boolean.person1_alarm_sounded
-  - input_boolean.person3_is_awake
-  - input_boolean.person3_in_bed
-  - input_boolean.person2_travelling
-  - input_boolean.person2_overseas
-  - input_boolean.person1_travelling
-  - input_boolean.person1_overseas
-  - input_boolean.person3_travelling
-  - input_boolean.person3_overseas
-  - input_boolean.person2_home
-  - input_boolean.person1_home
-  - input_boolean.person3_home
-  - input_boolean.person4_home
+  - entity: input_boolean.person2_is_awake
+    state_color: true
+  - entity: input_boolean.person2_in_bed
+    state_color: true
+  - entity: input_boolean.person1_is_awake
+    state_color: true
+  - entity: input_boolean.person1_in_bed
+    state_color: true
+  - entity: input_boolean.person1_alarm_sounded
+    state_color: true
+  - entity: input_boolean.person3_is_awake
+    state_color: true
+  - entity: input_boolean.person3_in_bed
+    state_color: true
+  - entity: input_boolean.person2_travelling
+    state_color: true
+  - entity: input_boolean.person2_overseas
+    state_color: true
+  - entity: input_boolean.person1_travelling
+    state_color: true
+  - entity: input_boolean.person1_overseas
+    state_color: true
+  - entity: input_boolean.person3_travelling
+    state_color: true
+  - entity: input_boolean.person3_overseas
+    state_color: true
+  - entity: input_boolean.person2_home
+    state_color: true
+  - entity: input_boolean.person1_home
+    state_color: true
+  - entity: input_boolean.person3_home
+    state_color: true
+  - entity: input_boolean.person4_home
+    state_color: true
   - type: divider
-  - input_boolean.notify_train_status_work
-  - input_boolean.person2_work_home
-  - input_boolean.notify_person2_working
-  - input_boolean.notify_person1_work
+  - entity: input_boolean.notify_train_status_work
+    state_color: true
+  - entity: input_boolean.person2_work_home
+    state_color: true
+  - entity: input_boolean.notify_person2_working
+    state_color: true
+  - entity: input_boolean.notify_person1_work
+    state_color: true
 - type: entities
   title: Inputs for automations
   show_header_toggle: false
@@ -69,10 +101,14 @@ cards:
   title: Switches
   show_header_toggle: false
   entities:
-  - switch.circadian_lighting_hall
-  - switch.circadian_lighting_living_room
-  - switch.circadian_lighting_master_bedroom
-  - switch.circadian_lighting_second_bedroom
+  - entity: switch.circadian_lighting_hall
+    state_color: true
+  - entity: switch.circadian_lighting_living_room
+    state_color: true
+  - entity: switch.circadian_lighting_master_bedroom
+    state_color: true
+  - entity: switch.circadian_lighting_second_bedroom
+    state_color: true
 - type: entities
   title: People
   show_header_toggle: false

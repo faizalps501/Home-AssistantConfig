@@ -10,53 +10,68 @@ cards:
   show_header_toggle: false
   entities:
   - input_select.living_room
-  - input_boolean.living_room_occupied
+  - entity: input_boolean.living_room_occupied
+    state_color: true
   - type: divider
   - input_select.family_room
-  - input_boolean.family_room_occupied
+  - entity: input_boolean.family_room_occupied
+    state_color: true
   - type: divider
   - input_select.kitchen
-  - input_boolean.kitchen_occupied
+  - entity: input_boolean.kitchen_occupied
+    state_color: true
   - type: divider
   - input_select.utility
-  - input_boolean.utility_occupied
+  - entity: input_boolean.utility_occupied
+    state_color: true
   - type: divider
   - input_select.toilet
-  - input_boolean.toilet_occupied
+  - entity: input_boolean.toilet_occupied
+    state_color: true
   - type: divider
   - input_select.garage
-  - input_boolean.garage_occupied
+  - entity: input_boolean.garage_occupied
+    state_color: true
 - type: entities
   title: Upstairs rooms
   show_header_toggle: false
   entities:
   - input_select.office
-  - input_boolean.office_occupied
+  - entity: input_boolean.office_occupied
+    state_color: true
   - type: divider
   - input_select.master_bedroom
-  - input_boolean.master_bedroom_occupied
+  - entity: input_boolean.master_bedroom_occupied
+    state_color: true
   - input_select.master_ensuite
-  - input_boolean.master_ensuite_occupied
+  - entity: input_boolean.master_ensuite_occupied
+    state_color: true
   - type: divider
   - input_select.second_bedroom
-  - input_boolean.second_bedroom_occupied
+  - entity: input_boolean.second_bedroom_occupied
+    state_color: true
   - input_select.second_ensuite
-  - input_boolean.second_ensuite_occupied
+  - entity: input_boolean.second_ensuite_occupied
+    state_color: true
   - type: divider
   - input_select.guest_bedroom
-  - input_boolean.guest_bedroom_occupied
+  - entity: input_boolean.guest_bedroom_occupied
+    state_color: true
   - type: divider
   - input_select.spare_bedroom
-  - input_boolean.spare_bedroom_occupied
+  - entity: input_boolean.spare_bedroom_occupied
+    state_color: true
   - type: divider
   - input_select.bathroom
-  - input_boolean.bathroom_occupied
+  - entity: input_boolean.bathroom_occupied
+    state_color: true
 - type: entities
   title: House
   show_header_toggle: false
   entities:
   - input_select.house
-  - input_boolean.home_occupied
+  - entity: input_boolean.home_occupied
+    state_color: true
   - type: divider
   - input_select.hall
   - input_select.vestibule
@@ -73,5 +88,7 @@ cards:
     icon: mdi:run
   - entity: binary_sensor.trend_living_room_light
     name: Living room getting brighter
+    state_color: true
   - entity: binary_sensor.trend_sun_elevation
     name: Sun rising
+    state_color: true
