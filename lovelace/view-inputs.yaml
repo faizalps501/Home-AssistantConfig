@@ -34,6 +34,9 @@ cards:
     state_color: true
   - entity: input_boolean.test_mode
     state_color: true
+  - type: divider
+  - entity: input_boolean.front_camera_motion
+    state_color: true
 - type: entities
   title: Toggles for people automations
   show_header_toggle: false
