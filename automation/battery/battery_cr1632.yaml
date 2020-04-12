@@ -3,7 +3,6 @@ alias: 'Battery CR1632'
 trigger:
   - platform: numeric_state
     entity_id: 
-    - sensor.bathroom_environment_battery
     - sensor.bathroom_window_battery
     - sensor.battery_person3_mobile
     - sensor.battery_person4_mobile
@@ -17,7 +16,6 @@ trigger:
     - sensor.guestbedroom_window_left_battery
     - sensor.guestbedroom_window_right_battery
     - sensor.hall_downstairs_motion_battery
-    - sensor.master_ensuite_environment_battery
     - sensor.master_window_ensuite_battery
     - sensor.master_window_left_battery
     - sensor.master_window_right_battery
@@ -25,7 +23,6 @@ trigger:
     - sensor.office_window_battery
     - sensor.patio_window_left_battery
     - sensor.patio_window_right_battery
-    - sensor.second_bedroom_ensuite_environment_battery
     - sensor.second_bedroom_window_ensuite_battery
     - sensor.second_bedroom_window_left_battery
     - sensor.second_bedroom_window_right_battery
@@ -39,7 +36,6 @@ trigger:
       minutes: 5
   - platform: numeric_state
     entity_id: 
-    - sensor.bathroom_environment_battery
     - sensor.bathroom_window_battery
     - sensor.battery_person3_mobile
     - sensor.battery_person4_mobile
@@ -53,7 +49,6 @@ trigger:
     - sensor.guestbedroom_window_left_battery
     - sensor.guestbedroom_window_right_battery
     - sensor.hall_downstairs_motion_battery
-    - sensor.master_ensuite_environment_battery
     - sensor.master_window_ensuite_battery
     - sensor.master_window_left_battery
     - sensor.master_window_right_battery
@@ -61,7 +56,6 @@ trigger:
     - sensor.office_window_battery
     - sensor.patio_window_left_battery
     - sensor.patio_window_right_battery
-    - sensor.second_bedroom_ensuite_environment_battery
     - sensor.second_bedroom_window_ensuite_battery
     - sensor.second_bedroom_window_left_battery
     - sensor.second_bedroom_window_right_battery
@@ -75,7 +69,6 @@ trigger:
       minutes: 5
   - platform: numeric_state
     entity_id: 
-    - sensor.bathroom_environment_battery
     - sensor.bathroom_window_battery
     - sensor.battery_person3_mobile
     - sensor.battery_person4_mobile
@@ -89,7 +82,6 @@ trigger:
     - sensor.guestbedroom_window_left_battery
     - sensor.guestbedroom_window_right_battery
     - sensor.hall_downstairs_motion_battery
-    - sensor.master_ensuite_environment_battery
     - sensor.master_window_ensuite_battery
     - sensor.master_window_left_battery
     - sensor.master_window_right_battery
@@ -97,7 +89,6 @@ trigger:
     - sensor.office_window_battery
     - sensor.patio_window_left_battery
     - sensor.patio_window_right_battery
-    - sensor.second_bedroom_ensuite_environment_battery
     - sensor.second_bedroom_window_ensuite_battery
     - sensor.second_bedroom_window_left_battery
     - sensor.second_bedroom_window_right_battery
