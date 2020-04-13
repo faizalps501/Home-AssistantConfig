@@ -3,10 +3,10 @@ initial_state: 'on'
 trigger:
   - platform: numeric_state
     entity_id: proximity.person2_home
-    above: 400
+    above: 300
   - platform: numeric_state
     entity_id: proximity.person2_home
-    above: 800
+    above: 600
   - platform: state
     entity_id: 
       - device_tracker.40_4e_36_24_53_15
@@ -43,10 +43,10 @@ condition:
         state: 'not_home'
       - condition: numeric_state
         entity_id: proximity.person2_home
-        above: 400
+        above: 300
     # Far away
     - condition: numeric_state
       entity_id: proximity.person2_home
-      above: 800
+      above: 600
 action:
   - service: script.person2_away
