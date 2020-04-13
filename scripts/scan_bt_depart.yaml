@@ -23,5 +23,5 @@ sequence:
   - delay: '00:01:05'
   - service: mqtt.publish
     data:
-      topic: monitor/scan/arrive
+      topic: monitor/scan/depart
       payload: ''
