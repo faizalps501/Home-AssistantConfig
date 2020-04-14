@@ -382,9 +382,7 @@ cards:
 
         - entities:
             - switch.pi3_spare_socket_switch
-            - switch.pi3_master_bedroom_socket_switch
             - switch.pi3_second_bedroom_switch
-            - switch.pi3_front_bedroom_switch
             - switch.pi3_family_room_socket_switch
             - switch.pi3_hall_downstairs_switch
             - switch.pi3_vestibule_switch
@@ -393,6 +391,16 @@ cards:
               class: 'doorbell-on'
             - state: 'off'
               class: 'doorbell-off'
+          propagate: true
+
+        - entities:
+            - switch.pi3_master_bedroom_socket_switch
+            - switch.pi3_front_bedroom_switch
+          states:
+            - state: 'on'
+              class: 'switch-on'
+            - state: 'off'
+              class: 'switch-off'
           propagate: true
 
         - entities:

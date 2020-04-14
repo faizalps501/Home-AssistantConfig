@@ -283,6 +283,15 @@ background-color: var(--primary-background-color);
   fill: #FFE500 !important;
 }
 
+.switch-on {
+  fill: #6F7500 !important;
+}
+
+.switch-off {
+  /* fill: #92C0AD !important; */
+  fill: #5d3d3e !important;
+}
+
 /* Temperature sensor */
 
 .temp-very-low-background {
