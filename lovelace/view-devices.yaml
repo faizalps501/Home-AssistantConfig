@@ -185,6 +185,7 @@ cards:
   title: 'Link status times'
   ignore_line_breaks: true
   content: |-
+    Zigbee:<BR>
     {% for state in states.sensor -%}
       {%- if state.attributes.linkquality %}
         {%- if "link" in state.name %}
@@ -192,6 +193,8 @@ cards:
         {%- endif -%}
       {%- endif -%}
     {%- endfor %}
+    <HR>
+    Z-Wave:<BR>
     {% for state in states.zwave -%}
        {{ relative_time(state.last_updated) }} ago for {{ state.name }}<BR>
     {%- endfor %}
