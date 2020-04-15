@@ -23,13 +23,15 @@ cards:
   title: Things
   show_header_toggle: false
   show_state: false
-  columns: 3
+  columns: 4
   entities:
+  - entity: binary_sensor.fritzbox_connectivity
+    name: Internet
+  - binary_sensor.remote_ui
   - entity: binary_sensor.first_floor_front
     name: BT Front
   - entity: binary_sensor.first_floor_rear
     name: BT Rear
-  - binary_sensor.remote_ui
 - type: entities
   title: Zigbee
   show_header_toggle: false
