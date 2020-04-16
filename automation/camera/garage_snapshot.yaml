@@ -7,4 +7,4 @@ action:
   - service: camera.snapshot
     data:
       entity_id: camera.garage_camera
-      filename: "/data/homeassistant/garage.jpg"
+      filename: "/data/homeassistant/cameras/garage.jpg"

@@ -1,13 +1,16 @@
 sequence:
   - service: camera.snapshot
-    data:
+    data_template:
       entity_id: camera.front_camera
-      filename: "/data/homeassistant/front.jpg"
+      filename: "/data/homeassistant/cameras/front_{{- states.input_boolean.front_camera_motion.last_updated.strftime('%Y%m%d-%H%M%S') -}}.jpg"
+  - service: image_processing.scan
+    entity_id: image_processing.doods_front_camera
   - delay: '00:00:02'
   - service: notify.discord
-    data:
-      message: "There was motion at the front"
+    data_template:
+      message: "There was motion at the front at {{ as_timestamp(states.input_boolean.front_camera_motion.last_updated)|timestamp_custom('%F %T', True) }}"
       target: !secret discord_camera_channel
       data:
         images:
-        - "/data/homeassistant/front.jpg"
+        - "/data/homeassistant/cameras/front_{{- states.input_boolean.front_camera_motion.last_updated.strftime('%Y%m%d-%H%M%S') -}}.jpg"
+        - "/data/homeassistant/cameras/front_camera_latest.jpg"
