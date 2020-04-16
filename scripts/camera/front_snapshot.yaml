@@ -1,0 +1,13 @@
+sequence:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.front_camera
+      filename: "/data/homeassistant/front.jpg"
+  - delay: '00:00:02'
+  - service: notify.discord
+    data:
+      message: "There was motion at the front"
+      target: !secret discord_camera_channel
+      data:
+        images:
+        - "/data/homeassistant/front.jpg"
