@@ -1,0 +1,109 @@
+title: More Automations
+id: automations_more
+path: automations_more
+icon: mdi:settings
+visible:
+  - user: 2e93f54c62e549c8aeperson2748de6bed9d
+cards:
+- type: entities
+  title: Automations at startup
+  show_header_toggle: false
+  entities:
+  - automation.startup_person3_up
+  - automation.startup_person1_up
+  - automation.startup_person2_up
+- type: entities
+  title: Battery level automations
+  show_header_toggle: false
+  entities:
+  - automation.battery_cr123a
+  - automation.battery_cr1632
+  - automation.battery_cr2032
+  - automation.battery_cr2450
+  - automation.battery_er14250
+  - automation.battery_sensative
+- type: entities
+  title: Misc automations
+  show_header_toggle: false
+  entities:
+  - automation.house_awake
+  - automation.weather_notification
+  - automation.bin_notification
+  - automation.printer_low
+  - automation.lightning
+  - automation.garage_snapshot
+- type: entities
+  title: Car related automations
+  show_header_toggle: false
+  entities:
+  - automation.car_home
+  - automation.car_away
+- type: entities
+  title: Seasonal automations
+  show_header_toggle: false
+  entities:
+  - automation.christmas_lights_on
+  - automation.christmas_lights_off
+  - automation.christmas_lights_off_season
+  - automation.season_is_christmas
+  - automation.season_is_easter
+  - automation.season_is_winter
+  - automation.season_is_spring
+  - automation.season_is_summer
+  - automation.season_is_autumn
+- type: entities
+  title: Camera related
+  show_header_toggle: false
+  entities:
+  - automation.start_camera_stream
+  - automation.stop_camera_stream
+- type: entities
+  title: Core HA automations
+  show_header_toggle: false
+  entities:
+  - automation.ha_update_available_notifications
+  - automation.ha_started
+  - automation.ha_stopped
+- type: entities
+  title: Misc HA automations
+  show_header_toggle: false
+  entities:
+  - automation.clear_states
+  - automation.plex_hook
+  - automation.device_unavailable
+  - automation.remote_ping
+  - automation.notify_about_hacs_updates
+- type: entities
+  title: Zigbee mesh automations
+  show_header_toggle: false
+  entities:
+  - automation.zigbee_offline
+  - automation.zigbee_router_offline
+  - automation.zigbee_router_online
+  - automation.living_room_table_on
+  - automation.living_room_table_off
+- type: entities
+  show_header_toggle: false
+  title: Alarm automations
+  entities:
+  - automation.alarm_arm_away
+  - automation.alarm_arm_at_night
+  - automation.alarm_disarm_in_the_morning
+  - automation.alarm_disarm_upon_return
+  - automation.alarm_armed_away_trigger
+  - automation.alarm_armed_home_trigger
+  - automation.alarm_armed_trigger_night
+  - automation.alarm_armed_trigger_frontdoor
+  - automation.alarm_triggered_away
+  - automation.alarm_triggered_home
+  - automation.alarm_disarm_hall
+- type: entities
+  show_header_toggle: false
+  title: Other bits
+  entities:
+  - automation.bt_front_offline
+  - automation.bt_front_offline_too_long
+  - automation.bt_rear_offline
+  - automation.motion_hook
+  - automation.front_camera_motion_off
+  - automation.nearly_home

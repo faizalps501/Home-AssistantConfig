@@ -1,0 +1,22 @@
+title: Admin
+custom_header: !include lovelace/custom_header.yaml
+views:
+  - !include lovelace-admin/view-people.yaml
+  - !include lovelace-admin/view-inputs.yaml
+  - !include lovelace-admin/view-information.yaml
+  - !include lovelace-admin/view-devices.yaml
+  - !include lovelace/view-spacer2.yaml
+  - !include lovelace-admin/view-cameras.yaml
+  - !include lovelace-admin/view-weather.yaml
+  - !include lovelace-admin/view-train_status.yaml
+  - !include lovelace-admin/view-spacer.yaml
+  - !include lovelace-admin/view-automations.yaml
+  - !include lovelace-admin/view-automations_bedrooms.yaml
+  - !include lovelace-admin/view-automations_person2.yaml
+  - !include lovelace-admin/view-automations_person3.yaml
+  - !include lovelace-admin/view-automations_person1.yaml
+  - !include lovelace-admin/view-automations_group.yaml
+  - !include lovelace-admin/view-automations_more.yaml
+  - !include lovelace-admin/view-automations_notifications.yaml
+  - !include lovelace-admin/view-scripts.yaml
+  - !include lovelace-admin/view-cast.yaml

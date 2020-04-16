@@ -1,0 +1,23 @@
+title: Notification automations
+id: notifications
+path: notifications
+icon: mdi:telegram
+visible:
+  - user: 2e93f54c62e549c8aeperson2748de6bed9d
+cards:
+- type: entities
+  show_header_toggle: false
+  title: Telegram
+  entities:
+  - automation.telegram_callback
+  - automation.telegram_callback_2
+  - automation.telegram_command
+  - automation.telegram_command_check
+  - automation.telegram_command_lights
+  - automation.telegram_command_lights_on
+  - automation.telegram_command_lights_off
+  - automation.telegram_command_status
+  - automation.telegram_command_trains
+  - automation.telegram_command_where
+  - automation.telegram_command_help
+  - automation.telegram_text

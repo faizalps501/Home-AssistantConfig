@@ -28,6 +28,14 @@ map:
 lovelace:
   mode: yaml
   resources: !include lovelace/resources.yaml
+  dashboards:
+    lovelace-admin:
+      mode: yaml
+      filename: ui-lovelace-admin.yaml
+      title: Admin
+      icon: mdi:view-carousel
+      show_in_sidebar: true
+      require_admin: true
 
 http: !include http.yaml
 
@@ -84,8 +92,5 @@ image_processing: !include_dir_list image_processing/
 
 mqtt: !include mqtt.yaml
 
-hacs: !include hacs.yaml
-
 circadian_lighting: !include circadian.yaml
-
 remote_homeassistant: !include remote_ha.yaml
