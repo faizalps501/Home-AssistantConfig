@@ -10,79 +10,112 @@ cards:
   show_header_toggle: false
   entities:
   - entity: input_boolean.bedtime
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.adults_away
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.all_away
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.home_occupied
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.holiday_mode
+    secondary_info: last-changed
     state_color: true
   - type: divider
   - entity: input_boolean.lighting_automations
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.livingroom_lights_auto
+    secondary_info: last-changed
     state_color: true
   - type: divider
   - entity: input_boolean.guest_mode
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.alarm_mode
+    secondary_info: last-changed
     state_color: true
   - type: divider
   - entity: input_boolean.stream_camera
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.test_mode
+    secondary_info: last-changed
     state_color: true
   - type: divider
   - entity: input_boolean.front_camera_motion
+    secondary_info: last-changed
     state_color: true
 - type: entities
   title: Toggles for people automations
   show_header_toggle: false
   entities:
   - entity: input_boolean.person2_is_awake
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person2_in_bed
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_is_awake
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_in_bed
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_alarm_sounded
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person3_is_awake
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person3_in_bed
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person2_travelling
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person2_overseas
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_travelling
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_overseas
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person3_travelling
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person3_overseas
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person2_home
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person1_home
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person3_home
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person4_home
+    secondary_info: last-changed
     state_color: true
   - type: divider
   - entity: input_boolean.notify_train_status_work
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.person2_work_home
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.notify_person2_working
+    secondary_info: last-changed
     state_color: true
   - entity: input_boolean.notify_person1_work
+    secondary_info: last-changed
     state_color: true
 - type: entities
   title: Inputs for automations
@@ -116,7 +149,7 @@ cards:
   title: People
   show_header_toggle: false
   entities:
-  - input_select.person3_status_dropdown
-  - input_select.person1_status_dropdown
-  - input_select.person2_status_dropdown
-  - input_select.person4_status_dropdown
+  - entity: input_select.person3_status_dropdown
+  - entity: input_select.person1_status_dropdown
+  - entity: input_select.person2_status_dropdown
+  - entity: input_select.person4_status_dropdown

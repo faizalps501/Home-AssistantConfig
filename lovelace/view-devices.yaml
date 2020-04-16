@@ -40,8 +40,10 @@ cards:
     name: Join
     icon: mdi:toggle-switch
   - entity: sensor.zigbee2mqtt_bridge_state
+    secondary_info: last-changed
     name: Bridge
   - entity: binary_sensor.zigbee2mqtt_router_1
+    secondary_info: last-changed
     state_color: true
     name: Router
 - type: glance
