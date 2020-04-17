@@ -1,0 +1,30 @@
+sequence:
+  - service: notify.logfile
+    data:
+      message: "Snapshotting front camera"
+  - service: camera.snapshot
+    data_template:
+      entity_id: camera.front_camera
+      filename: "/data/homeassistant/cameras/front_camera_snapshot.jpg"
+  - service: notify.logfile
+    data:
+      message: "Processing front camera with Doods"
+  - service: image_processing.scan
+    entity_id: image_processing.doods_front_camera
+  # Wait for Doods to finish processing
+  - service: notify.logfile
+    data:
+      message: "Waiting for Doods"
+  - wait_template: >-
+      {{ 0 < ((as_timestamp(now()) - as_timestamp(states.image_processing.doods_front_camera.last_updated)) < 2 ) }}
+    timeout: '00:00:15'
+    continue_on_timeout: 'true'
+  - service: notify.logfile
+    data:
+      message: "Notifying about front camera"
+  - service_template: >-
+      {%- if is_state_attr('image_processing.doods_front_camera','total_matches',0) -%}
+        script.front_camera_notify_nothing
+      {%- else -%}
+        script.front_camera_notify_findings
+      {% endif %}
