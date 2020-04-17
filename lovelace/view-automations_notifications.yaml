@@ -9,15 +9,27 @@ cards:
   show_header_toggle: false
   title: Telegram
   entities:
-  - automation.telegram_callback
-  - automation.telegram_callback_2
-  - automation.telegram_command
-  - automation.telegram_command_check
-  - automation.telegram_command_lights
-  - automation.telegram_command_lights_on
-  - automation.telegram_command_lights_off
-  - automation.telegram_command_status
-  - automation.telegram_command_trains
-  - automation.telegram_command_where
-  - automation.telegram_command_help
-  - automation.telegram_text
+  - entity: automation.telegram_callback
+    secondary_info: last-triggered
+  - entity: automation.telegram_callback_trains
+    secondary_info: last-triggered
+  - entity: automation.telegram_command
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_check
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_lights
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_lights_on
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_lights_off
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_status
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_trains
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_where
+    secondary_info: last-triggered
+  - entity: automation.telegram_command_help
+    secondary_info: last-triggered
+  - entity: automation.telegram_text
+    secondary_info: last-triggered

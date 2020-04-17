@@ -9,21 +9,35 @@ cards:
   title: People driven automations - person3
   show_header_toggle: false
   entities:
-  - automation.person3_next_alarm
-  - automation.person3_asleep
-  - automation.person3_in_bed
-  - automation.person3_away
-  - automation.person3_home
-  - automation.person3_up
-  - automation.person3_awake
-  - automation.person3_phone_unplugged
-  - automation.person3_phone_plugged
+  - entity: automation.person3_next_alarm
+    secondary_info: last-triggered
+  - entity: automation.person3_asleep
+    secondary_info: last-triggered
+  - entity: automation.person3_in_bed
+    secondary_info: last-triggered
+  - entity: automation.person3_away
+    secondary_info: last-triggered
+  - entity: automation.person3_home
+    secondary_info: last-triggered
+  - entity: automation.person3_up
+    secondary_info: last-triggered
+  - entity: automation.person3_awake
+    secondary_info: last-triggered
+  - entity: automation.person3_phone_unplugged
+    secondary_info: last-triggered
+  - entity: automation.person3_phone_plugged
+    secondary_info: last-triggered
 - type: entities
   title: Automations for travel - person3
   show_header_toggle: false
   entities:
-  - automation.person3_travelling
-  - automation.person3_coming_home
-  - automation.person3_on_the_move
-  - automation.person3_location_update
-  - automation.person3_changing_zones
+  - entity: automation.person3_travelling
+    secondary_info: last-triggered
+  - entity: automation.person3_coming_home
+    secondary_info: last-triggered
+  - entity: automation.person3_on_the_move
+    secondary_info: last-triggered
+  - entity: automation.person3_location_update
+    secondary_info: last-triggered
+  - entity: automation.person3_changing_zones
+    secondary_info: last-triggered

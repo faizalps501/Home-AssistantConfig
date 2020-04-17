@@ -9,56 +9,97 @@ cards:
   title: People driven automations - person2
   show_header_toggle: false
   entities:
-  - automation.person2_next_alarm
-  - automation.person2_asleep
-  - automation.person2_in_bed
-  - automation.person2_away
-  - automation.person2_home
-  - automation.person2_up
-  - automation.person2_awake
-  - automation.workday_for_person2
-  - automation.person2_travelling
-  - automation.person2_returning
-  - automation.person2_is_travelling
-  - automation.person2_is_not_travelling
-  - automation.person2_phone_unplugged
-  - automation.person2_phone_plugged
-  - automation.person2_tablet_plugged
-  - automation.person2_tablet_unplugged
+  - entity: automation.person2_next_alarm
+    secondary_info: last-triggered
+  - entity: automation.person2_asleep
+    secondary_info: last-triggered
+  - entity: automation.person2_in_bed
+    secondary_info: last-triggered
+  - entity: automation.person2_away
+    secondary_info: last-triggered
+  - entity: automation.person2_home
+    secondary_info: last-triggered
+  - entity: automation.person2_up
+    secondary_info: last-triggered
+  - entity: automation.person2_awake
+    secondary_info: last-triggered
+  - entity: automation.workday_for_person2
+    secondary_info: last-triggered
+  - entity: automation.person2_travelling
+    secondary_info: last-triggered
+  - entity: automation.person2_returning
+    secondary_info: last-triggered
+  - entity: automation.person2_is_travelling
+    secondary_info: last-triggered
+  - entity: automation.person2_is_not_travelling
+    secondary_info: last-triggered
+  - entity: automation.person2_phone_unplugged
+    secondary_info: last-triggered
+  - entity: automation.person2_phone_plugged
+    secondary_info: last-triggered
+  - entity: automation.person2_tablet_plugged
+    secondary_info: last-triggered
+  - entity: automation.person2_tablet_unplugged
+    secondary_info: last-triggered
 - type: entities
   title: Automations for travel - person2
   show_header_toggle: false
   entities:
-  - automation.person2_coming_home
-  - automation.person2_at_station
-  - automation.person2_at_gym
-  - automation.person2_returning_home
-  - automation.train_status
-  - automation.return_train_status
-  - automation.return_train_watcher
-  - automation.person2_on_the_move
-  - automation.person2_in_the_car
-  - automation.person2_location_update
-  - automation.person2_changing_zones
-  - automation.person2_driving
-  - automation.person2_not_driving
-  - automation.person2_overseas
-  - automation.person2_not_overseas
-  - automation.person2_gpslogger_tracker
+  - entity: automation.person2_coming_home
+    secondary_info: last-triggered
+  - entity: automation.person2_at_station
+    secondary_info: last-triggered
+  - entity: automation.person2_at_gym
+    secondary_info: last-triggered
+  - entity: automation.person2_returning_home
+    secondary_info: last-triggered
+  - entity: automation.train_status
+    secondary_info: last-triggered
+  - entity: automation.return_train_status
+    secondary_info: last-triggered
+  - entity: automation.return_train_watcher
+    secondary_info: last-triggered
+  - entity: automation.person2_on_the_move
+    secondary_info: last-triggered
+  - entity: automation.person2_in_the_car
+    secondary_info: last-triggered
+  - entity: automation.person2_location_update
+    secondary_info: last-triggered
+  - entity: automation.person2_changing_zones
+    secondary_info: last-triggered
+  - entity: automation.person2_driving
+    secondary_info: last-triggered
+  - entity: automation.person2_not_driving
+    secondary_info: last-triggered
+  - entity: automation.person2_overseas
+    secondary_info: last-triggered
+  - entity: automation.person2_not_overseas
+    secondary_info: last-triggered
+  - entity: automation.person2_gpslogger_tracker
+    secondary_info: last-triggered
 - type: entities
   title: Automations for alarms - person2
   show_header_toggle: false
   entities:
-  - automation.person2_on_holiday
-  - automation.person2_off_holiday
+  - entity: automation.person2_on_holiday
+    secondary_info: last-triggered
+  - entity: automation.person2_off_holiday
+    secondary_info: last-triggered
 - type: entities
   title: Automations changing inputs - person2
   show_header_toggle: false
   entities:
-  - automation.not_workday_for_person2
-  - automation.workday_for_person2_too
-  - automation.person2_working_from_home
-  - automation.person2_not_working_from_home
-  - automation.person2_working_trains
-  - automation.person2_working_away
-  - automation.person2_not_working_away
+  - entity: automation.not_workday_for_person2
+    secondary_info: last-triggered
+  - entity: automation.workday_for_person2_too
+    secondary_info: last-triggered
+  - entity: automation.person2_working_from_home
+    secondary_info: last-triggered
+  - entity: automation.person2_not_working_from_home
+    secondary_info: last-triggered
+  - entity: automation.person2_working_trains
+    secondary_info: last-triggered
+  - entity: automation.person2_working_away
+    secondary_info: last-triggered
+  - entity: automation.person2_not_working_away
+    secondary_info: last-triggered

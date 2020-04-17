@@ -8,69 +8,114 @@ cards:
 - type: entities
   title: person3
   entities:
-  - script.person3_traveltime
-  - script.person3_travel_sensor
-  - script.notify_person3_at_home
-  - script.person3_home
-  - script.person3_away
+  - entity: script.person3_traveltime
+    secondary_info: last-triggered
+  - entity: script.person3_travel_sensor
+    secondary_info: last-triggered
+  - entity: script.notify_person3_at_home
+    secondary_info: last-triggered
+  - entity: script.person3_home
+    secondary_info: last-triggered
+  - entity: script.person3_away
+    secondary_info: last-triggered
 - type: entities
   title: person4
   entities:
-  - script.person4_traveltime
-  - script.person4_travel_sensor
-  - script.person4_home
-  - script.person4_away
+  - entity: script.person4_traveltime
+    secondary_info: last-triggered
+  - entity: script.person4_travel_sensor
+    secondary_info: last-triggered
+  - entity: script.person4_home
+    secondary_info: last-triggered
+  - entity: script.person4_away
+    secondary_info: last-triggered
 - type: entities
   title: person1
   entities:
-  - script.person1_traveltime
-  - script.person1_travel_sensor
-  - script.wake_person1
-  - script.person1_home
-  - script.person1_away
+  - entity: script.person1_traveltime
+    secondary_info: last-triggered
+  - entity: script.person1_travel_sensor
+    secondary_info: last-triggered
+  - entity: script.wake_person1
+    secondary_info: last-triggered
+  - entity: script.person1_home
+    secondary_info: last-triggered
+  - entity: script.person1_away
+    secondary_info: last-triggered
 - type: entities
   title: person2
   entities:
-  - script.person2_traveltime
-  - script.person1_travel_sensor
-  - script.notify_person2_at_home
-  - script.person2_home
-  - script.person2_away
-  - script.notify_person2
+  - entity: script.person2_traveltime
+    secondary_info: last-triggered
+  - entity: script.person1_travel_sensor
+    secondary_info: last-triggered
+  - entity: script.notify_person2_at_home
+    secondary_info: last-triggered
+  - entity: script.person2_home
+    secondary_info: last-triggered
+  - entity: script.person2_away
+    secondary_info: last-triggered
+  - entity: script.notify_person2
+    secondary_info: last-triggered
 - type: entities
   title: Lights
   entities:
-  - script.bedhead_light_bright_pause
-  - script.bedhead_light_bright
-  - script.bedhead_light_cool_pause
-  - script.bedhead_light_cool
-  - script.bedhead_light_dim_pause
-  - script.bedhead_light_dim
-  - script.bedhead_light_warm_pause
-  - script.bedhead_light_warm
-  - script.bedtime_slow_off
+  - entity: script.bedhead_light_bright_pause
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_bright
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_cool_pause
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_cool
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_dim_pause
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_dim
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_warm_pause
+    secondary_info: last-triggered
+  - entity: script.bedhead_light_warm
+    secondary_info: last-triggered
+  - entity: script.bedtime_slow_off
+    secondary_info: last-triggered
 - type: entities
   Title: Misc
   entities:
-  - script.alarm_lights_enable
-  - script.alarm_lights_on
-  - script.garden_door_after_sunset
-  - script.garden_door_before_sunrise
-  - script.house_alert
-  - script.update_car_location
+  - entity: script.alarm_lights_enable
+    secondary_info: last-triggered
+  - entity: script.alarm_lights_on
+    secondary_info: last-triggered
+  - entity: script.garden_door_after_sunset
+    secondary_info: last-triggered
+  - entity: script.garden_door_before_sunrise
+    secondary_info: last-triggered
+  - entity: script.house_alert
+    secondary_info: last-triggered
+  - entity: script.update_car_location
+    secondary_info: last-triggered
 - type: entities
   title: Presence
   entities:
-  - script.scan_bt_arrive
-  - script.scan_bt_depart
-  - script.scan_bt_restart
+  - entity: script.scan_bt_arrive
+    secondary_info: last-triggered
+  - entity: script.scan_bt_depart
+    secondary_info: last-triggered
+  - entity: script.scan_bt_restart
+    secondary_info: last-triggered
 - type: entities
   title: Hall
   entities:
-  - script.hall_lights_night
-  - script.hall_string_off
-  - script.hall_string_on
-  - script.hall_strip_off
-  - script.hall_strip_on
-  - script.hall_strip_night
-  - script.hall_strip_dim
+  - entity: script.hall_lights_night
+    secondary_info: last-triggered
+  - entity: script.hall_string_off
+    secondary_info: last-triggered
+  - entity: script.hall_string_on
+    secondary_info: last-triggered
+  - entity: script.hall_strip_off
+    secondary_info: last-triggered
+  - entity: script.hall_strip_on
+    secondary_info: last-triggered
+  - entity: script.hall_strip_night
+    secondary_info: last-triggered
+  - entity: script.hall_strip_dim
+    secondary_info: last-triggered

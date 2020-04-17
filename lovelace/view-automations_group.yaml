@@ -9,63 +9,101 @@ cards:
   title: person4
   show_header_toggle: false
   entities:
-  - automation.person4_coming_home
-  - automation.person4_away
-  - automation.person4_home
-  - automation.person4_on_the_move
-  - automation.person4_location_update
-  - automation.person4_changing_zones
+  - entity: automation.person4_coming_home
+    secondary_info: last-triggered
+  - entity: automation.person4_away
+    secondary_info: last-triggered
+  - entity: automation.person4_home
+    secondary_info: last-triggered
+  - entity: automation.person4_on_the_move
+    secondary_info: last-triggered
+  - entity: automation.person4_location_update
+    secondary_info: last-triggered
+  - entity: automation.person4_changing_zones
+    secondary_info: last-triggered
 - type: entities
   title: People driven automations
   show_header_toggle: false
   entities:
-  - automation.bedtime
-  - automation.nearly_bedtime
+  - entity: automation.bedtime
+    secondary_info: last-triggered
+  - entity: automation.nearly_bedtime
+    secondary_info: last-triggered
   - type: divider
-  - automation.home_occupied
-  - automation.home_not_occupied
+  - entity: automation.home_occupied
+    secondary_info: last-triggered
+  - entity: automation.home_not_occupied
+    secondary_info: last-triggered
   - type: divider
-  - automation.adults_away
-  - automation.adults_returned
+  - entity: automation.adults_away
+    secondary_info: last-triggered
+  - entity: automation.adults_returned
+    secondary_info: last-triggered
   - type: divider
-  - automation.mark_person_as_just_arrived
-  - automation.mark_person_as_away
-  - automation.mark_person_as_home
-  - automation.mark_person_as_just_left
-  - automation.tasker_hook
+  - entity: automation.mark_person_as_just_arrived
+    secondary_info: last-triggered
+  - entity: automation.mark_person_as_away
+    secondary_info: last-triggered
+  - entity: automation.mark_person_as_home
+    secondary_info: last-triggered
+  - entity: automation.mark_person_as_just_left
+    secondary_info: last-triggered
+  - entity: automation.tasker_hook
+    secondary_info: last-triggered
   - type: divider
-  - automation.bedtime_something_open
-  - automation.adults_away_something_open
+  - entity: automation.bedtime_something_open
+    secondary_info: last-triggered
+  - entity: automation.adults_away_something_open
+    secondary_info: last-triggered
 - type: entities
   title: Guest and visitor related automations
   show_header_toggle: false
   entities:
-  - automation.guest_mode_on
-  - automation.guest_mode_off
-  - automation.guest_mode_off_nobody_home
+  - entity: automation.guest_mode_on
+    secondary_info: last-triggered
+  - entity: automation.guest_mode_off
+    secondary_info: last-triggered
+  - entity: automation.guest_mode_off_nobody_home
+    secondary_info: last-triggered
 - type: entities
   title: Automations for travel
   show_header_toggle: false
   entities:
-  - automation.holiday
-  - automation.holiday_over
+  - entity: automation.holiday
+    secondary_info: last-triggered
+  - entity: automation.holiday_over
+    secondary_info: last-triggered
   - type: divider
-  - automation.person2_at_amsterdam_airport
-  - automation.person2_at_brussels_airport
-  - automation.person2_at_paris_cdg_airport
-  - automation.person2_at_work_airport_returning
-  - automation.person2_at_work_airport
-  - automation.person2_at_dulles_airport
-  - automation.person2_at_lcy
-  - automation.person2_at_lhr
-  - automation.person2_at_sin
+  - entity: automation.person2_at_amsterdam_airport
+    secondary_info: last-triggered
+  - entity: automation.person2_at_brussels_airport
+    secondary_info: last-triggered
+  - entity: automation.person2_at_paris_cdg_airport
+    secondary_info: last-triggered
+  - entity: automation.person2_at_work_airport_returning
+    secondary_info: last-triggered
+  - entity: automation.person2_at_work_airport
+    secondary_info: last-triggered
+  - entity: automation.person2_at_dulles_airport
+    secondary_info: last-triggered
+  - entity: automation.person2_at_lcy
+    secondary_info: last-triggered
+  - entity: automation.person2_at_lhr
+    secondary_info: last-triggered
+  - entity: automation.person2_at_sin
+    secondary_info: last-triggered
   - type: divider
-  - automation.startup_location_update
+  - entity: automation.startup_location_update
+    secondary_info: last-triggered
 - type: entities
   title: Automations for work
   show_header_toggle: false
   entities:
-  - automation.person2_at_work
-  - automation.person2_left_work
-  - automation.trains_to_work
-  - automation.trains_from_work
+  - entity: automation.person2_at_work
+    secondary_info: last-triggered
+  - entity: automation.person2_left_work
+    secondary_info: last-triggered
+  - entity: automation.trains_to_work
+    secondary_info: last-triggered
+  - entity: automation.trains_from_work
+    secondary_info: last-triggered

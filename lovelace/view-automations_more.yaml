@@ -9,101 +9,161 @@ cards:
   title: Automations at startup
   show_header_toggle: false
   entities:
-  - automation.startup_person3_up
-  - automation.startup_person1_up
-  - automation.startup_person2_up
+  - entity: automation.startup_person3_up
+    secondary_info: last-triggered
+  - entity: automation.startup_person1_up
+    secondary_info: last-triggered
+  - entity: automation.startup_person2_up
+    secondary_info: last-triggered
 - type: entities
   title: Battery level automations
   show_header_toggle: false
   entities:
-  - automation.battery_cr123a
-  - automation.battery_cr1632
-  - automation.battery_cr2032
-  - automation.battery_cr2450
-  - automation.battery_er14250
-  - automation.battery_sensative
+  - entity: automation.battery_cr123a
+    secondary_info: last-triggered
+  - entity: automation.battery_cr1632
+    secondary_info: last-triggered
+  - entity: automation.battery_cr2032
+    secondary_info: last-triggered
+  - entity: automation.battery_cr2450
+    secondary_info: last-triggered
+  - entity: automation.battery_er14250
+    secondary_info: last-triggered
+  - entity: automation.battery_sensative
+    secondary_info: last-triggered
 - type: entities
   title: Misc automations
   show_header_toggle: false
   entities:
-  - automation.house_awake
-  - automation.weather_notification
-  - automation.bin_notification
-  - automation.printer_low
-  - automation.lightning
-  - automation.garage_snapshot
+  - entity: automation.house_awake
+    secondary_info: last-triggered
+  - entity: automation.weather_notification
+    secondary_info: last-triggered
+  - entity: automation.bin_notification
+    secondary_info: last-triggered
+  - entity: automation.printer_low
+    secondary_info: last-triggered
+  - entity: automation.lightning
+    secondary_info: last-triggered
+  - entity: automation.garage_snapshot
+    secondary_info: last-triggered
 - type: entities
   title: Car related automations
   show_header_toggle: false
   entities:
-  - automation.car_home
-  - automation.car_away
+  - entity: automation.car_home
+    secondary_info: last-triggered
+  - entity: automation.car_away
+    secondary_info: last-triggered
 - type: entities
   title: Seasonal automations
   show_header_toggle: false
   entities:
-  - automation.christmas_lights_on
-  - automation.christmas_lights_off
-  - automation.christmas_lights_off_season
-  - automation.season_is_christmas
-  - automation.season_is_easter
-  - automation.season_is_winter
-  - automation.season_is_spring
-  - automation.season_is_summer
-  - automation.season_is_autumn
+  - entity: automation.christmas_lights_on
+    secondary_info: last-triggered
+  - entity: automation.christmas_lights_off
+    secondary_info: last-triggered
+  - entity: automation.christmas_lights_off_season
+    secondary_info: last-triggered
+  - entity: automation.season_is_christmas
+    secondary_info: last-triggered
+  - entity: automation.season_is_easter
+    secondary_info: last-triggered
+  - entity: automation.season_is_winter
+    secondary_info: last-triggered
+  - entity: automation.season_is_spring
+    secondary_info: last-triggered
+  - entity: automation.season_is_summer
+    secondary_info: last-triggered
+  - entity: automation.season_is_autumn
+    secondary_info: last-triggered
 - type: entities
   title: Camera related
   show_header_toggle: false
   entities:
-  - automation.start_camera_stream
-  - automation.stop_camera_stream
+  - entity: automation.start_camera_stream
+    secondary_info: last-triggered
+  - entity: automation.stop_camera_stream
+    secondary_info: last-triggered
+  - entity: automation.motion_hook
+    secondary_info: last-triggered
+  - entity: automation.front_camera_motion_detected
+    secondary_info: last-triggered
+  - entity: automation.front_camera_motion_off
+    secondary_info: last-triggered
 - type: entities
   title: Core HA automations
   show_header_toggle: false
   entities:
-  - automation.ha_update_available_notifications
-  - automation.ha_started
-  - automation.ha_stopped
+  - entity: automation.ha_update_available_notifications
+    secondary_info: last-triggered
+  - entity: automation.ha_started
+    secondary_info: last-triggered
+  - entity: automation.ha_stopped
+    secondary_info: last-triggered
 - type: entities
   title: Misc HA automations
   show_header_toggle: false
   entities:
-  - automation.clear_states
-  - automation.plex_hook
-  - automation.device_unavailable
-  - automation.remote_ping
-  - automation.notify_about_hacs_updates
+  - entity: automation.clear_states
+    secondary_info: last-triggered
+  - entity: automation.plex_hook
+    secondary_info: last-triggered
+  - entity: automation.device_unavailable
+    secondary_info: last-triggered
+  - entity: automation.remote_ping
+    secondary_info: last-triggered
+  - entity: automation.notify_about_hacs_updates
+    secondary_info: last-triggered
 - type: entities
   title: Zigbee mesh automations
   show_header_toggle: false
   entities:
-  - automation.zigbee_offline
-  - automation.zigbee_router_offline
-  - automation.zigbee_router_online
-  - automation.living_room_table_on
-  - automation.living_room_table_off
+  - entity: automation.zigbee_offline
+    secondary_info: last-triggered
+  - entity: automation.zigbee_router_offline
+    secondary_info: last-triggered
+  - entity: automation.zigbee_router_online
+    secondary_info: last-triggered
+  - entity: automation.living_room_table_on
+    secondary_info: last-triggered
+  - entity: automation.living_room_table_off
+    secondary_info: last-triggered
 - type: entities
   show_header_toggle: false
   title: Alarm automations
   entities:
-  - automation.alarm_arm_away
-  - automation.alarm_arm_at_night
-  - automation.alarm_disarm_in_the_morning
-  - automation.alarm_disarm_upon_return
-  - automation.alarm_armed_away_trigger
-  - automation.alarm_armed_home_trigger
-  - automation.alarm_armed_trigger_night
-  - automation.alarm_armed_trigger_frontdoor
-  - automation.alarm_triggered_away
-  - automation.alarm_triggered_home
-  - automation.alarm_disarm_hall
+  - entity: automation.alarm_arm_away
+    secondary_info: last-triggered
+  - entity: automation.alarm_arm_at_night
+    secondary_info: last-triggered
+  - entity: automation.alarm_disarm_in_the_morning
+    secondary_info: last-triggered
+  - entity: automation.alarm_disarm_upon_return
+    secondary_info: last-triggered
+  - entity: automation.alarm_armed_away_trigger
+    secondary_info: last-triggered
+  - entity: automation.alarm_armed_home_trigger
+    secondary_info: last-triggered
+  - entity: automation.alarm_armed_trigger_night
+    secondary_info: last-triggered
+  - entity: automation.alarm_armed_trigger_frontdoor
+    secondary_info: last-triggered
+  - entity: automation.alarm_triggered_away
+    secondary_info: last-triggered
+  - entity: automation.alarm_triggered_home
+    secondary_info: last-triggered
+  - entity: automation.alarm_disarm_hall
+    secondary_info: last-triggered
 - type: entities
   show_header_toggle: false
   title: Other bits
   entities:
-  - automation.bt_front_offline
-  - automation.bt_front_offline_too_long
-  - automation.bt_rear_offline
-  - automation.motion_hook
-  - automation.front_camera_motion_off
-  - automation.nearly_home
+  - entity: automation.bt_front_offline
+    secondary_info: last-triggered
+  - entity: automation.bt_front_offline_too_long
+    secondary_info: last-triggered
+  - entity: automation.bt_rear_offline
+    secondary_info: last-triggered
+  - entity: automation.nearly_home
+    secondary_info: last-triggered
