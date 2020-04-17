@@ -30,7 +30,7 @@ sequence:
           {{ state_attr('image_processing.doods_front_camera','summary').person }} people ({%- for state in state_attr('image_processing.doods_front_camera','matches').person %}{{ state.score|round(0) }}% at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
         {%- if "car" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').car }} car(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').car %}{{ state.score|round(0) }}% at {{state.box}} {{ "Ignore" if (0.7260 < state.box[0] < 0.7330) and (0.4440 < state.box[1] < 0.4500) and (0.8345 < state.box[2] < 0.8375) and (0.5748 < state.box[3] < 0.5780) else "Valid" }}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+          {{ state_attr('image_processing.doods_front_camera','summary').car }} car(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').car %}{{ state.score|round(0) }}% at {{state.box}} {{ "parked" if (0.7240 < state.box[0] < 0.7330) and (0.4440 < state.box[1] < 0.4700) and (0.8200 < state.box[2] < 0.8500) and (0.540 < state.box[3] < 0.580) else "other" }}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
         {%- if "truck" in state_attr('image_processing.doods_front_camera','matches') %}
           {{ state_attr('image_processing.doods_front_camera','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').truck %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})

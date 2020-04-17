@@ -5,6 +5,15 @@ icon: mdi:engine
 visible:
   - user: 2e93f54c62e549c8aeperson2748de6bed9d
 cards:
+- type: conditional
+  conditions:
+  - entity: binary_sensor.updater
+    state: 'on'
+  card:
+    type: entities
+    entities: 
+    - entity: binary_sensor.updater
+      state_color: true
 - type: glance
   title: Devices
   show_header_toggle: false
