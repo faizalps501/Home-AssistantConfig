@@ -2,24 +2,37 @@ sequence:
   - service: notify.discord
     data_template:
       message: >-
-        There was motion at the front at {{ as_timestamp(states.input_boolean.front_camera_motion.last_updated)|timestamp_custom('%F %T', True) }}. We found 
-        {%- if "person" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').person }} people ({%- for state in state_attr('image_processing.doods_front_camera','matches').person %}{{ state.score|round(0) }}% at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+        There was motion at the front at {{ as_timestamp(states.input_boolean.front_camera_motion.last_updated)|timestamp_custom('%F %T', True) }}. We found {{ states.image_processing.doods_front_camera_snapshot.attributes.total_matches }} things, these were:
+        {%- if "person" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
+          {{ state_attr('image_processing.doods_front_camera_snapshot','summary').person }} people ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
-        {%- if "car" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').car }} car(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').car %}{{ state.score|round(0) }}% at {{state.box}} {{ "parked" if (0.7240 < state.box[0] < 0.7330) and (0.4440 < state.box[1] < 0.4700) and (0.8200 < state.box[2] < 0.8500) and (0.540 < state.box[3] < 0.580) else "other" }}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+        {%- if "car" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
+          {%- macro isParkedCar(box) -%}
+          {{- True if (
+              ((0.724 < box[0] < 0.754) and (0.440 < box[1] < 0.553) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
+               or
+              ((0.748 < box[0] < 0.756) and (0.548 < box[1] < 0.573) and (0.840 < box[2] < 0.854) and (0.665 < box[3] < 0.680))
+            ) else X -}}
+          {%- endmacro -%}
+          {%- macro getParkedCars() -%}
+          {%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car -%}{{- "X" if isParkedCar(state.box) -}}{%- endfor -%}
+          {%- endmacro -%}
+          {%- set parkedCars = getParkedCars()|length -%}
+          {%- set otherCars = state_attr('image_processing.doods_front_camera_snapshot','summary').car - parkedCars -%}
+          {% if otherCars > 0 and parkedCars > 0 %} {{otherCars}} cars and {{parkedCars}} parked{% elif parkedCars > 0 %} {{parkedCars}} parked cars{% else %} {{otherCars}} cars{% endif %}
+          ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParkedCar(state.box) %}parked ({{ state.score|round(0) }}% confidence at {{state.box}}){% else %}moving ({{ state.score|round(0) }}% confidence at {{state.box}}){% endif %}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
-        {%- if "truck" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').truck %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+        {%- if "truck" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
+          {{ state_attr('image_processing.doods_front_camera_snapshot','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
-        {%- if "motorcycle" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').motorcycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+        {%- if "motorcycle" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
+          {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
-        {%- if "bicycle" in state_attr('image_processing.doods_front_camera','matches') %}
-          {{ state_attr('image_processing.doods_front_camera','summary').bicycle }} bicycle(s) ({%- for state in state_attr('image_processing.doods_front_camera','matches').bicycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+        {%- if "bicycle" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
+          {{ state_attr('image_processing.doods_front_camera_snapshot','summary').bicycle }} bicycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').bicycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
         {% endif %}
       target: !secret discord_camera_channel
       data:
         images:
         - "/data/homeassistant/cameras/front_camera_snapshot.jpg"
-        - "/data/homeassistant/cameras/front_camera_latest.jpg"
+        - "/data/homeassistant/cameras/front_camera_snapshot_latest.jpg"

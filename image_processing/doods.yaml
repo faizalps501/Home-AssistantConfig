@@ -6,6 +6,7 @@ detector: default
 confidence: 70
 source:
   - entity_id: camera.front_camera
+  - entity_id: camera.front_camera_snapshot
 file_out:
   - "/data/homeassistant/cameras/{{ camera_entity.split('.')[1] }}_latest.jpg"
   - "/data/homeassistant/cameras/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
