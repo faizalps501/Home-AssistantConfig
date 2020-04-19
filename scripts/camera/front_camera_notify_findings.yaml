@@ -9,7 +9,7 @@ sequence:
         {%- if "car" in state_attr('image_processing.doods_front_camera_snapshot','matches') %}
           {%- macro isParkedCar(box) -%}
           {{- True if (
-              ((0.724 < box[0] < 0.754) and (0.440 < box[1] < 0.553) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
+              ((0.723 < box[0] < 0.754) and (0.440 < box[1] < 0.553) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
                or
               ((0.748 < box[0] < 0.756) and (0.548 < box[1] < 0.573) and (0.840 < box[2] < 0.854) and (0.665 < box[3] < 0.680))
             ) else X -}}

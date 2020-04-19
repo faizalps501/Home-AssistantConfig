@@ -47,7 +47,7 @@ cards:
   entities:
   - entity: script.person2_traveltime
     secondary_info: last-triggered
-  - entity: script.person1_travel_sensor
+  - entity: script.person2_travel_sensor
     secondary_info: last-triggered
   - entity: script.notify_person2_at_home
     secondary_info: last-triggered
@@ -56,6 +56,8 @@ cards:
   - entity: script.person2_away
     secondary_info: last-triggered
   - entity: script.notify_person2
+    secondary_info: last-triggered
+  - entity: script.person2_notify_test
     secondary_info: last-triggered
 - type: entities
   title: Lights
@@ -93,6 +95,8 @@ cards:
     secondary_info: last-triggered
   - entity: script.update_car_location
     secondary_info: last-triggered
+  - entity: script.train_message
+    secondary_info: last-triggered
 - type: entities
   title: Presence
   entities:
@@ -118,4 +122,13 @@ cards:
   - entity: script.hall_strip_night
     secondary_info: last-triggered
   - entity: script.hall_strip_dim
+    secondary_info: last-triggered
+- type: entities
+  title: Camera
+  entities:
+  - entity: script.snapshot_front_camera
+    secondary_info: last-triggered
+  - entity: script.front_camera_notify_findings
+    secondary_info: last-triggered
+  - entity: script.front_camera_notify_nothing
     secondary_info: last-triggered
