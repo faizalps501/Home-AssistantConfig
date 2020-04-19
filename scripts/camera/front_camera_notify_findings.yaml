@@ -34,7 +34,7 @@ sequence:
         {%- if totalPeople > 0 -%}
           {%- macro personOnPath(box) -%}
           {{- True if (
-              ( 0.889 < box[2] )
+              ( 0.890 < box[2] )
             ) else X -}}
           {%- endmacro -%}
           {%- macro getPeopleOnPath() -%}
@@ -53,7 +53,7 @@ sequence:
         {%- if importantThings > 0 -%}
           There were {{ importantThings }} things that matter detected, these were:
           {%- if relevantPeople > 0 %}
-            {{ relevantPeople }} people ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %})
+            {{ relevantPeople }} people on the path ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %})
           {% endif %}
           {%- if otherCars > 0 %}
             {{otherCars}} cars
@@ -72,13 +72,13 @@ sequence:
           We saw nothing of importance.
         {% endif -%}
         {%- if otherThings > 0 %}
-          There were {{ otherThings }} other things detected, these were:
+          There were {{ otherThings }} things that probably don't matter detected, these were:
           {%- if parkedCars > 0 %}
             {{parkedCars}} parked cars
             ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParkedCar(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {%- endif -%}
           {%- if otherPeople > 0 %}
-            {{otherPeople}} other people
+            {{otherPeople}} people on the road
             ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {%- endif -%}
         {%- endif -%}
