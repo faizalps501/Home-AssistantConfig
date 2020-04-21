@@ -34,7 +34,7 @@ sequence:
         {%- if totalPeople > 0 -%}
           {%- macro personOnPath(box) -%}
           {{- True if (
-              ( 0.890 < box[2] )
+              ( 0.840 < box[2] )
             ) else X -}}
           {%- endmacro -%}
           {%- macro getPeopleOnPath() -%}
@@ -79,7 +79,7 @@ sequence:
           {%- endif -%}
           {%- if otherPeople > 0 %}
             {{otherPeople}} people on the road
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if not personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {%- endif -%}
         {%- endif -%}
       target: !secret discord_camera_channel
