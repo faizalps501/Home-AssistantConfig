@@ -60,13 +60,13 @@ sequence:
             ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParkedCar(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if totalTrucks > 0 %}
-            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
           {% endif %}
           {%- if totalMotorcycles > 0 %}
-            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {%endif %}{% endfor %})
+            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %} {{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {%endif %}{% endfor %})
           {% endif %}
           {%- if totalBicycles > 0 %}
-            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').bicycle }} bicycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').bicycle %}{{ state.score|round(0) }}%{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').bicycle }} bicycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').bicycle %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
           {% endif %}
         {% else %}
           We saw nothing of importance.

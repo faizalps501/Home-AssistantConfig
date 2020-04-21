@@ -1,9 +1,9 @@
 platform: doods
 scan_interval: 10000
 url: !secret doods_url
-timeout: 60
+timeout: 30
 detector: default
-confidence: 70
+confidence: 60
 source:
   - entity_id: camera.front_camera
   - entity_id: camera.front_camera_snapshot
