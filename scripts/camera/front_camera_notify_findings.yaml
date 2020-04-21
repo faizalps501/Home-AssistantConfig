@@ -11,24 +11,37 @@ sequence:
         {%- set totalBicycles = state_attr('image_processing.doods_front_camera_snapshot','summary').bicycle|default(0) -%}
         {%- set parkedCars = 0 -%}
         {%- set otherCars = 0 -%}
+        {%- set parkedTrucks = 0 -%}
+        {%- set otherTrucks = 0 -%}
         {%- set relevantPeople = 0 -%}
         {%- set otherPeople = 0 -%}
+        {%- macro isParked(box) -%}
+        {{- True if (
+            ((0.723 < box[0] < 0.754) and (0.440 < box[1] < 0.553) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
+             or
+            ((0.736 < box[0] < 0.756) and (0.445 < box[1] < 0.573) and (0.830 < box[2] < 0.854) and (0.565 < box[3] < 0.680))
+          ) else X -}}
+        {%- endmacro -%}
 
         {#- Split out parked cars from the rest - don't care about the parked ones -#}
         {%- if totalCars > 0 -%}
-          {%- macro isParkedCar(box) -%}
-          {{- True if (
-              ((0.723 < box[0] < 0.754) and (0.440 < box[1] < 0.553) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
-               or
-              ((0.736 < box[0] < 0.756) and (0.445 < box[1] < 0.573) and (0.830 < box[2] < 0.854) and (0.565 < box[3] < 0.680))
-            ) else X -}}
-          {%- endmacro -%}
           {%- macro getParkedCars() -%}
-          {%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car -%}{{- "X" if isParkedCar(state.box) -}}{%- endfor -%}
+          {%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car -%}{{- "X" if isParked(state.box) -}}{%- endfor -%}
           {%- endmacro -%}
           {%- set parkedCars = getParkedCars()|length -%}
           {%- set otherCars = state_attr('image_processing.doods_front_camera_snapshot','summary').car - parkedCars -%}
         {%- endif -%}
+
+        {%- if totalTrucks > 0 -%}
+          {%- macro getParkedTrucked() -%}
+          {%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck -%}{{- "X" if isParked(state.box) -}}{%- endfor -%}
+          {%- endmacro -%}
+          {%- set parkedTrucks = getParkedTrucks()|length -%}
+          {%- set otherTrucks = state_attr('image_processing.doods_front_camera_snapshot','summary').truck - parkedTrucks -%}
+        {%- endif -%}
+
+        {%- set parkedVehicles = parkedCars+parkedTrucks -%}
+        {%- set otherVehicles = otherCars+otherTrucks -%}
 
         {#- Split out people on the path/in the garden, from those on the road -#}
         {%- if totalPeople > 0 -%}
@@ -45,22 +58,23 @@ sequence:
         {%- endif -%}
 
         {#- total up the things into different categories -#}
-        {%- set importantThings = otherCars + totalTrucks + totalMotorcycles + totalBicycles + relevantPeople -%}
-        {%- set otherThings = parkedCars + otherPeople -%}
+        {%- set importantThings = otherCars + otherTrucks + totalMotorcycles + totalBicycles + relevantPeople -%}
+        {%- set otherThings = parkedCars + parkedTrucks + otherPeople -%}
 
         {#- Now produce the message -#}
         There was motion at the front at {{ as_timestamp(states.input_boolean.front_camera_motion.last_updated)|timestamp_custom('%F %T', True) }}.
-        {%- if importantThings > 0 -%}
+        {%- if importantThings > 0 %}
           There were {{ importantThings }} things that matter detected, these were:
           {%- if relevantPeople > 0 %}
             {{ relevantPeople }} people on the path ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').person %}{% if personOnPath(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %})
           {% endif %}
           {%- if otherCars > 0 %}
             {{otherCars}} cars
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParkedCar(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
-          {%- if totalTrucks > 0 %}
-            {{ state_attr('image_processing.doods_front_camera_snapshot','summary').truck }} truck(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {% endif %}{% endfor %})
+          {%- if otherTrucks > 0 %}
+            {{otherTrucks}} trucks
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if totalMotorcycles > 0 %}
             {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %} {{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {%endif %}{% endfor %})
@@ -73,9 +87,14 @@ sequence:
         {% endif -%}
         {%- if otherThings > 0 %}
           There were {{ otherThings }} things that probably don't matter detected, these were:
-          {%- if parkedCars > 0 %}
-            {{parkedCars}} parked cars
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParkedCar(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+          {%- if parkedVehicles > 0 %}
+            {{parkedVehicles}} parked vehicles
+            {%- if parkedCars > 0 %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParked(state.box) %}car {{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            {%- endif -%}
+            {%- if parkedTrucks > 0 %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if isParked(state.box) %}truck {{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            {%- endif -%}
           {%- endif -%}
           {%- if otherPeople > 0 %}
             {{otherPeople}} people on the road
