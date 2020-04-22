@@ -128,7 +128,7 @@ cards:
   entities:
   - entity: script.snapshot_front_camera
     secondary_info: last-triggered
-  - entity: script.front_camera_notify_findings
+  - entity: script.front_camera_notify
     secondary_info: last-triggered
   - entity: script.front_camera_notify_nothing
     secondary_info: last-triggered

@@ -33,3 +33,13 @@ cards:
     secondary_info: last-triggered
   - entity: automation.telegram_text
     secondary_info: last-triggered
+- type: entities
+  show_header_toggle: false
+  title: Text
+  entities:
+  - entity: input_text.camera_message
+    secondary_info: last-updated
+  - entity: input_text.telegram_message
+    secondary_info: last-updated
+  - entity: input_text.train_message
+    secondary_info: last-updated
