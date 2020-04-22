@@ -16,7 +16,7 @@ sequence:
       {%- macro isParked(box) -%}
 
       {{- True if (
-          ((0.720 < box[0] < 0.754) and (0.400 < box[1] < 0.450) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
+          ((0.720 < box[0] < 0.754) and (0.390 < box[1] < 0.450) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
            or
           ((0.730 < box[0] < 0.756) and (0.425 < box[1] < 0.493) and (0.830 < box[2] < 0.854) and (0.565 < box[3] < 0.680))
         ) else X -}}
@@ -85,7 +85,7 @@ sequence:
         {%- set otherPeople = 0 -%}
         {%- macro isParked(box) -%}
         {{- True if (
-            ((0.720 < box[0] < 0.754) and (0.400 < box[1] < 0.450) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
+            ((0.720 < box[0] < 0.754) and (0.390 < box[1] < 0.450) and (0.820 < box[2] < 0.850) and (0.518 < box[3] < 0.680))
              or
             ((0.730 < box[0] < 0.756) and (0.425 < box[1] < 0.493) and (0.830 < box[2] < 0.854) and (0.565 < box[3] < 0.680))
           ) else X -}}
