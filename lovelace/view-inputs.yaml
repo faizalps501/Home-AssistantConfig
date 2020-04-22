@@ -52,6 +52,9 @@ cards:
   - entity: input_boolean.front_camera_motion_interesting
     secondary_info: last-changed
     state_color: true
+  - entity: input_boolean.stream_front_camera_motion
+    secondary_info: last-changed
+    state_color: true
 - type: entities
   title: Toggles for people automations
   show_header_toggle: false

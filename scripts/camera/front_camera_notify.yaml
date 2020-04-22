@@ -61,7 +61,11 @@ sequence:
       input_boolean.turn_{{ "on" if importantThings > 0 else "off" }} 
     entity_id: input_boolean.front_camera_motion_interesting
   - service_template: >-
-      input_boolean.turn_{{ "on" if is_state('input_boolean.front_camera_motion_interesting','on') else "off" }} 
+      {%- if is_state('input_boolean.front_camera_motion_interesting','on') and is_state('input_boolean.stream_front_camera_motion','on') -%} 
+        input_boolean.turn_on
+      {%- else -%}
+        input_boolean.turn_off
+      {%- endif -%}
     entity_id: input_boolean.stream_camera
   - service: notify.discord
     data_template:
