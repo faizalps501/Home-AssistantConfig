@@ -13,7 +13,7 @@ file_out:
 area:
   # Exclude top and left
   top: 0.5
-  left: 0.4
+  right: 0.6
   covers: false
 labels:
   - person
