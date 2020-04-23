@@ -4,7 +4,7 @@ path: home
 icon: mdi:home
 cards:
   - type: custom:simple-weather-card
-    entity: weather.openweathermap
+    entity: weather.dark_sky
     name: in current location
     backdrop: 
       fade: true
@@ -235,7 +235,7 @@ cards:
       show_state: false
 
   - type: custom:weather-card
-    entity: weather.openweathermap
+    entity: weather.dark_sky
     current: true
     details: true
     forecast: true
