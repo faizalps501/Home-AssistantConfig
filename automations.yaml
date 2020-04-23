@@ -2,11 +2,8 @@
   alias: A New Automation
   description: ''
   trigger:
-  - device_id: 2baf7abb4347484aa0517a66fa6d4adb
-    domain: binary_sensor
-    entity_id: binary_sensor.guest_bedroom_window_right
-    platform: device
-    type: opened
+  - platform: template
+    value_template: '{{ states(''sensor.time'') == states(''input_datetime.ha_shutdown'')|as_timestamp()|timestamp_custom(''%H:%M'')  }}'
   condition: []
   action:
   - data:
