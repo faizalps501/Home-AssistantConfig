@@ -42,9 +42,8 @@ cards:
   - entity: input_boolean.stream_camera
     secondary_info: last-changed
     state_color: true
-  - entity: input_boolean.test_mode
+  - entity: input_select.camera_stream_target
     secondary_info: last-changed
-    state_color: true
   - type: divider
   - entity: input_boolean.front_camera_motion
     secondary_info: last-changed
@@ -53,6 +52,10 @@ cards:
     secondary_info: last-changed
     state_color: true
   - entity: input_boolean.stream_front_camera_motion
+    secondary_info: last-changed
+    state_color: true
+  - type: divider
+  - entity: input_boolean.test_mode
     secondary_info: last-changed
     state_color: true
 - type: entities
