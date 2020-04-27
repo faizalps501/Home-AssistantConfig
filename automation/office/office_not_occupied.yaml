@@ -8,4 +8,6 @@ trigger:
       minutes: 2
 action:
   - service: input_boolean.turn_off
-    entity_id: input_boolean.office_occupied
+    entity_id: 
+      - input_boolean.office_occupied
+      - input_boolean.stream_front_camera_motion

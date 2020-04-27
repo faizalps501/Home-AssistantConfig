@@ -58,10 +58,10 @@ sequence:
 
       {#- total up the things into different categories -#}
       {%- set importantThings = otherCars + otherTrucks + totalMotorcycles + totalBicycles + relevantPeople -%}
-      input_boolean.turn_{{ "on" if importantThings > 0 else "off" }} 
+      input_boolean.turn_{{ "on" if importantThings > 0 else "off" }}
     entity_id: input_boolean.front_camera_motion_interesting
   - service_template: >-
-      {%- if is_state('input_boolean.front_camera_motion_interesting','on') and is_state('input_boolean.stream_front_camera_motion','on') -%} 
+      {%- if is_state('input_boolean.front_camera_motion_interesting','on') and is_state('input_boolean.stream_front_camera_motion','on') -%}
         input_boolean.turn_on
       {%- else -%}
         input_boolean.turn_off
@@ -138,11 +138,11 @@ sequence:
           {% endif %}
           {%- if otherCars > 0 %}
             {{otherCars}} cars
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{%else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if otherTrucks > 0 %}
             {{otherTrucks}} trucks
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if totalMotorcycles > 0 %}
             {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %} {{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {%endif %}{% endfor %})
@@ -158,10 +158,10 @@ sequence:
           {%- if parkedVehicles > 0 %}
             {{parkedVehicles}} parked vehicles
             {%- if parkedCars > 0 %}
-              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParked(state.box) %}car {{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParked(state.box) %}car {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
             {%- endif -%}
             {%- if parkedTrucks > 0 %}
-              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if isParked(state.box) %}truck {{ state.score|round(0) }}% confidence at {{state.box}}){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if isParked(state.box) %}truck {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
             {%- endif -%}
           {%- endif -%}
           {%- if otherPeople > 0 %}
@@ -179,11 +179,3 @@ sequence:
         images:
         - "/data/homeassistant/cameras/front_camera_snapshot.jpg"
         - "/data/homeassistant/cameras/front_camera_snapshot_latest.jpg"
-  - condition: state
-    entity_id: input_boolean.front_camera_motion_interesting
-    state: 'on'
-  - delay: '00:01:00'
-  - service: input_boolean.turn_off
-    entity_id: 
-      - input_boolean.stream_camera
-      - input_boolean.front_camera_motion_interesting
