@@ -8,6 +8,5 @@ action:
     data_template:
       message: >
         Motion detection by {{ trigger.webhook_id }}  
-        Full data: {{ trigger.json }}
   - service: input_boolean.turn_on
     entity_id: input_boolean.front_camera_motion
