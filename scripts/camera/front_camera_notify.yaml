@@ -52,7 +52,7 @@ sequence:
         {%- set otherPeople = 0 -%}
         {%- macro isParked(box) -%}
         {{- True if (
-            ((0.720 < box[0] < 0.754) and (0.390 < box[1] < 0.460) and (0.820 < box[2] < 0.850) and (0.500 < box[3] < 0.580))
+            ((0.720 < box[0] < 0.754) and (0.360 < box[1] < 0.482) and (0.820 < box[2] < 0.852) and (0.500 < box[3] < 0.580))
              or
             ((0.740 < box[0] < 0.766) and (0.318 < box[1] < 0.400) and (0.830 < box[2] < 0.854) and (0.380 < box[3] < 0.550))
           ) else X -}}
@@ -105,11 +105,11 @@ sequence:
           {% endif %}
           {%- if otherCars > 0 %}
             {{otherCars}} cars
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{%else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high, {{ ((state.box[3]-state.box[1])|round(4) * (state.box[2]-state.box[0])|round(4))|round(4) }} area){%- if loop.last %}{%else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if otherTrucks > 0 %}
             {{otherTrucks}} trucks
-            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+            ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if not isParked(state.box) %}{{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high, {{ ((state.box[3]-state.box[1])|round(4) * (state.box[2]-state.box[0])|round(4))|round(4) }} area){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
           {% endif %}
           {%- if totalMotorcycles > 0 %}
             {{ state_attr('image_processing.doods_front_camera_snapshot','summary').motorcycle }} motorcycle(s) ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').motorcycle %} {{ state.score|round(0) }}% confidence at {{state.box}}{%- if loop.last %}{% else %}, {%endif %}{% endfor %})
@@ -125,10 +125,10 @@ sequence:
           {%- if parkedVehicles > 0 %}
             {{parkedVehicles}} parked vehicles
             {%- if parkedCars > 0 %}
-              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParked(state.box) %}car {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').car %}{% if isParked(state.box) %}car {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high, {{ ((state.box[3]-state.box[1])|round(4) * (state.box[2]-state.box[0])|round(4))|round(4) }} area){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
             {%- endif -%}
             {%- if parkedTrucks > 0 %}
-              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if isParked(state.box) %}truck {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
+              ({%- for state in state_attr('image_processing.doods_front_camera_snapshot','matches').truck %}{% if isParked(state.box) %}truck {{ state.score|round(0) }}% confidence at {{state.box}}, {{ (state.box[3]-state.box[1])|round(4) }} wide by {{ (state.box[2]-state.box[0])|round(4) }} high, {{ ((state.box[3]-state.box[1])|round(4) * (state.box[2]-state.box[0])|round(4))|round(4) }} area){%- if loop.last %}{% else %}, {% endif %}{% endif %}{% endfor %}
             {%- endif -%}
           {%- endif -%}
           {%- if otherPeople > 0 %}
