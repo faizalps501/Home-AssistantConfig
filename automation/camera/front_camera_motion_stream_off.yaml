@@ -2,9 +2,13 @@ initial_state: 'on'
 alias: 'Front camera motion stream off'
 trigger:
   - platform: state
-    entity_id: input_boolean.front_camera_motion_interesting
-    to: 'on'
+    entity_id: input_boolean.front_camera_motion
+    to: 'off'
     for: '00:01:00'
+condition:
+  - condition: state
+    entity_id: input_boolean.front_camera_motion_interesting
+    state: 'on'
 action:
   - service: input_boolean.turn_off
     entity_id: 
