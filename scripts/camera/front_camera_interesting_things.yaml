@@ -49,7 +49,7 @@ sequence:
         {%- if totalPeople > 0 -%}
           {%- macro personOnPath(box) -%}
           {{- True if (
-              ( 0.874 < box[2] )
+              ( 0.885 < box[2] )
             ) else X -}}
           {%- endmacro -%}
           {%- macro getPeopleOnPath() -%}
