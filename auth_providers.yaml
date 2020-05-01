@@ -1,0 +1,16 @@
+- type: homeassistant
+- type: trusted_networks
+  trusted_networks:
+    - 192.168.0.104/32
+    - 192.168.0.110/32
+    - 192.168.0.203/32
+    - 192.168.0.206/32
+    - 192.168.0.225/32
+  trusted_users:
+    192.168.0.104: 7989d710709249ee98e8f0cc8a3f38f3
+    192.168.0.110: 7989d710709249ee98e8f0cc8a3f38f3
+    192.168.0.203: 7989d710709249ee98e8f0cc8a3f38f3
+    192.168.0.206: 7989d710709249ee98e8f0cc8a3f38f3
+    192.168.0.225: 7989d710709249ee98e8f0cc8a3f38f3
+  allow_bypass_login: true
+  # Note that bypass_login only works if one user is authorized

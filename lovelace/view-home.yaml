@@ -1,8 +1,38 @@
 title: Overview
-id: overview
-path: overview
-icon: mdi:home-analytics
+id: home
+path: home
+icon: mdi:home
 cards:
+  - type: custom:simple-weather-card
+    entity: weather.dark_sky
+    name: in current location
+    backdrop: 
+      fade: true
+    primary_info:
+      - extrema
+      - precipitation
+      - precipitation_probability
+    secondary_info:
+      - wind_speed
+      - wind_bearing
+  - type: entity-filter
+    entities:
+      - entity: alert.garage_door_l
+        name: Garage door, bike
+      - entity: alert.garage_door_r
+        name: Garage door, car
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: entities
+      title: Alerts
+
+  - type: picture-entity
+    entity: camera.front_camera_motion
+    camera_view: live
+    show_name: false
+    show_state: false
 
   - type: glance
     columns: 5
@@ -204,3 +234,8 @@ cards:
       title: Lights
       show_state: false
 
+  - type: custom:weather-card
+    entity: weather.dark_sky
+    current: true
+    details: true
+    forecast: true

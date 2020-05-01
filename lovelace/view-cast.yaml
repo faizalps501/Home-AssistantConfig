@@ -3,40 +3,55 @@ id: cast
 path: cast
 icon: mdi:cast
 cards:
-  - type: entities
+  - type: glance
+    columns: 4
+    show_name: false
     entities:
-    - type: cast
-      name: This view
-      view: cast
-    - type: cast
-      name: Overview
-      view: home
-    - type: cast
-      name: Ground floor
-      view: ground-floor
-    - type: cast
-      name: First floor
-      view: first-floor
+      - input_text.person_person3
+      - input_text.person_person1
+      - input_text.person_person2
+      - input_text.person_person4
 
-  - type: entity-button
-    title: Living room
-    entity: light.living_room
-    icon: mdi:lightbulb
-    tap_action:
-      action: toggle
+  - type: entity-filter
+    entities:
+      - entity: light.living_room
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: entity-button
+      title: Living room
+      entity: light.living_room
+      icon: mdi:lightbulb
+      tap_action:
+        action: toggle
 
-  - type: entity-button
-    title: Living room socket
-    entity: switch.pi3_livingroom_socket_switch
-    icon: mdi:power-socket-uk
-    tap_action:
-      action: toggle
+  - type: entity-filter
+    entities:
+      - entity: switch.pi3_livingroom_socket_switch
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: entity-button
+      icon: mdi:power-socket-uk
+      title: Living room socket
+      entity: switch.pi3_livingroom_socket_switch
+      tap_action:
+        action: toggle
 
-  - type: entity-button
-    title: Hall
-    entity: light.hall
-    tap_action:
-      action: toggle
+  - type: entity-filter
+    entities:
+      - entity: light.hall
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: entity-button
+      title: Hall light
+      entity: light.hall
+      tap_action:
+        action: toggle
 
   - type: entity-filter
     entities:
