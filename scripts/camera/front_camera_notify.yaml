@@ -34,6 +34,9 @@ sequence:
         input_boolean.turn_off
       {%- endif -%}
     entity_id: input_boolean.stream_camera
+  - service: notify.logfile
+    data:
+      message: "Notifying"
   - service: notify.discord
     data_template:
       # Coordinates from Doods, which are from Tensorflow, are in the order of ymin, ymax, xmin, xmax
@@ -146,3 +149,6 @@ sequence:
         images:
         - "/data/homeassistant/cameras/front_camera_snapshot.jpg"
         - "/data/homeassistant/cameras/front_camera_snapshot_latest.jpg"
+  - service: notify.logfile
+    data:
+      message: "Finished front camera notifications"

@@ -15,7 +15,6 @@ homeassistant:
   whitelist_external_dirs:
     - /data/homeassistant
     - /home/homeassistant/maps
-  auth_providers: !include auth_providers.yaml
 
 logger:
   default: info
