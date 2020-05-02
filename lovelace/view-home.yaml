@@ -8,6 +8,8 @@ cards:
     name: in current location
     backdrop: 
       fade: true
+      day: '#666677'
+      night: '#444466'
     primary_info:
       - extrema
       - precipitation
