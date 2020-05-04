@@ -1,20 +1,4 @@
-homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Our home
-  # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret elevation
-  # metric for Metric, imperial for Imperial
-  unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Europe/London
-  # Customization file
-  customize: !include customize.yaml
-  whitelist_external_dirs:
-    - /data/homeassistant
-    - /home/homeassistant/maps
+homeassistant: !include homeassistant.yaml
 
 logger:
   default: info
@@ -25,31 +9,7 @@ config:
 
 frontend: !include frontend.yaml
 map:
-lovelace:
-  mode: yaml
-  resources: !include lovelace/resources.yaml
-  dashboards:
-    lovelace-people:
-      mode: yaml
-      filename: ui-lovelace-people.yaml
-      title: People
-      icon: mdi:account-group
-      show_in_sidebar: true
-      require_admin: false
-    lovelace-admin:
-      mode: yaml
-      filename: ui-lovelace-admin.yaml
-      title: Admin
-      icon: mdi:view-carousel
-      show_in_sidebar: true
-      require_admin: true
-    lovelace-automations:
-      mode: yaml
-      filename: ui-lovelace-automations.yaml
-      title: Automations
-      icon: mdi:robot
-      show_in_sidebar: true
-      require_admin: true
+lovelace: !include lovelace.yaml
 
 http: !include http.yaml
 
@@ -70,7 +30,6 @@ automation mine: !include_dir_list automation/
 scene: !include scenes.yaml
 scene mine: !include_dir_list scenes/
 
- 
 device_tracker: !include_dir_list device_tracker/
 proximity: !include_dir_merge_named proximity/
 sensor: !include_dir_merge_list sensors/
