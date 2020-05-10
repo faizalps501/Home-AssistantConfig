@@ -4,8 +4,15 @@ logger:
   default: info
 
 default_config:
-
+person:
+mobile_app:
+ssdp:
+system_health:
+updater:
+zeroconf:
 config:
+
+cloud:
 
 frontend: !include frontend.yaml
 map:
