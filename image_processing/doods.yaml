@@ -1,5 +1,5 @@
 platform: doods
-scan_interval: 10000
+scan_interval: 86400
 url: !secret doods_url
 timeout: 30
 detector: default

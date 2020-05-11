@@ -6,6 +6,6 @@
     value_template: '{{ states(''sensor.time'') == states(''input_datetime.ha_shutdown'')|as_timestamp()|timestamp_custom(''%H:%M'')  }}'
   condition: []
   action:
-  - data:
-      message: This is a test
-    service: notify.person2_telegram
+  - data: {}
+    entity_id: light.yeelight_strip1_286c07afc307
+    service: light.turn_off
