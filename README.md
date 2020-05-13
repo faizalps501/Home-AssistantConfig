@@ -1,5 +1,5 @@
-# Home Assistant (0.108.9) configuration
-This is my primary [Home Assistant](https://home-assistant.io/) Core configuration, This instance is running 0.108.9 on a VM, using an old laptop (Intel Core i5-3230M), with a manual Python virtual environment install [following this guide](https://home-assistant.io/docs/installation/raspberry-pi/).
+# Home Assistant (0.109.6) configuration
+This is my primary [Home Assistant](https://home-assistant.io/) Core configuration, This instance is running 0.109.6 on a VM, using an old laptop (Intel Core i5-3230M), with a manual Python virtual environment install [following this guide](https://home-assistant.io/docs/installation/raspberry-pi/).
 
 Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
 
