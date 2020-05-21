@@ -10,7 +10,7 @@ cards:
       cards:
       - type: map
         title: People
-        aspect_ratio: 49%
+        aspect_ratio: 25%
         default_zoom: 17
         hours_to_show: 12
         entities:
@@ -22,12 +22,6 @@ cards:
           - zone.friend2
           - zone.home_station
           - zone.work
-      - type: map
-        title: Lightning
-        aspect_ratio: 49%
-        default_zoom: 10
-        geo_location_sources: 
-          - all
     - type: horizontal-stack
       cards:
       - type: map
