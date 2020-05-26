@@ -46,7 +46,7 @@ cards:
   - type: vertical-stack
     cards:
     - type: custom:simple-weather-card
-      entity: weather.dark_sky
+      entity: weather.home
       name: by MetNo
       backdrop: 
         fade: true
