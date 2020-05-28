@@ -4,12 +4,6 @@ trigger:
   - platform: numeric_state
     entity_id: 
     - sensor.bathroom_window_battery
-    - sensor.battery_person3_mobile
-    - sensor.battery_person4_mobile
-    - sensor.battery_person1_mobile
-    - sensor.battery_person1_tablet
-    - sensor.battery_person2_mobile
-    - sensor.battery_person2_tablet
     - sensor.dimmer_switch_battery
     - sensor.family_window_left_battery
     - sensor.family_window_right_battery
@@ -37,12 +31,6 @@ trigger:
   - platform: numeric_state
     entity_id: 
     - sensor.bathroom_window_battery
-    - sensor.battery_person3_mobile
-    - sensor.battery_person4_mobile
-    - sensor.battery_person1_mobile
-    - sensor.battery_person1_tablet
-    - sensor.battery_person2_mobile
-    - sensor.battery_person2_tablet
     - sensor.dimmer_switch_battery
     - sensor.family_window_left_battery
     - sensor.family_window_right_battery
@@ -70,12 +58,6 @@ trigger:
   - platform: numeric_state
     entity_id: 
     - sensor.bathroom_window_battery
-    - sensor.battery_person3_mobile
-    - sensor.battery_person4_mobile
-    - sensor.battery_person1_mobile
-    - sensor.battery_person1_tablet
-    - sensor.battery_person2_mobile
-    - sensor.battery_person2_tablet
     - sensor.dimmer_switch_battery
     - sensor.family_window_left_battery
     - sensor.family_window_right_battery
