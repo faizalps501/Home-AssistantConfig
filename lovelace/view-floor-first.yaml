@@ -179,6 +179,9 @@ cards:
     - entity: sensor.pi3_office_multi_temperature
       name: Office
       color: "#4285F4"
+    - entity: sensor.dark_sky_temperature
+      name: Outside
+      color: 'silver'
 - type: custom:mini-graph-card
   title: Pressure
   points_per_hour: 3
