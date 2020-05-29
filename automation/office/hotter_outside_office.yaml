@@ -4,14 +4,19 @@ trigger:
   - platform: state
     entity_id: binary_sensor.office_window
     to: 'on'
+  - platform: numeric_state
+    entity_id: sensor.dark_sky_temperature
+    above: 23
   - platform: template
     value_template: >
-      {{ 
-        states('sensor.dark_sky_temperature')|int > 23
-          and
-        ( states('sensor.dark_sky_temperature')|int > sensor.pi3_office_multi_temperature )
-      }}
+      {{ states('sensor.dark_sky_temperature')|int > states('sensor.pi3_office_multi_temperature')|int }}
 condition:
+  - condition: numeric_state
+    entity_id: sensor.dark_sky_temperature
+    above: 23
+  - condition: template
+    value_template: >
+      {{ states('sensor.dark_sky_temperature')|int > states('sensor.pi3_office_multi_temperature')|int }}
   - condition: or
     conditions:
     - condition: state
