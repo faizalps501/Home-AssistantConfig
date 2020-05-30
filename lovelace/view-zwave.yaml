@@ -106,4 +106,3 @@ cards:
     {% for state in states.zwave -%}
        {{ relative_time(state.last_updated) }} ago for {{ state.name }}<BR>
     {%- endfor %}
-    
